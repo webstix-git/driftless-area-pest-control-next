@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Driftless Area Pest Control">
-  <rect width="32" height="32" rx="7" fill="#0d4f2b"/>
-  <rect x="1.5" y="1.5" width="29" height="29" rx="6" fill="none" stroke="#c79a2b" stroke-width="1.5" opacity="0.85"/>
-  <path
-    fill="#ffffff"
-    d="M10.2 7.2h6.1c4.35 0 7.2 2.55 7.2 6.85 0 4.35-2.85 6.95-7.2 6.95h-3.55V24.8H10.2V7.2zm2.55 2.35v9.1h3.45c2.85 0 4.55-1.55 4.55-4.55 0-2.95-1.7-4.55-4.55-4.55H12.75z"
-  />
-</svg>
