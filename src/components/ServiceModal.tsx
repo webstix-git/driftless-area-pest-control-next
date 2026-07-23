@@ -25,7 +25,7 @@ export default function ServiceModal() {
             </div>
             <div className="form-group">
               <label className="form-label" htmlFor="phoneNum">Phone Number *</label>
-              <input type="tel" id="phoneNum" className="form-control" placeholder="(608) 555-0199" required />
+              <input type="tel" id="phoneNum" className="form-control" placeholder="608-555-0199" required />
             </div>
           </div>
 

@@ -10,62 +10,6 @@ export const metadata: Metadata = {
 };
 
 const icons = {
-  vegetation: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 22V11" />
-      <path d="M12 14c-3 0-5.5-2-6.2-5 3.2.2 5.4 2.2 6.2 5z" />
-      <path d="M12 14c3 0 5.5-2 6.2-5-3.2.2-5.4 2.2-6.2 5z" />
-      <path d="M12 11c-1.2-2.8-1-5.5.5-7.5" />
-      <path d="M12 11c1.2-2.8 1-5.5-.5-7.5" />
-      <path d="M8 22c0-2 1-3.5 2.5-4" />
-      <path d="M16 22c0-2-1-3.5-2.5-4" />
-      <path d="M6.5 22h11" />
-    </svg>
-  ),
-  perimeter: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M8 17V11.5L12 8l4 3.5V17" />
-      <path d="M10.5 17v-3h3v3" />
-      <path d="M4 6h16v13H4z" />
-      <path d="M4 17h16" />
-      <path d="M4 12h1.5M18.5 12H20" />
-    </svg>
-  ),
-  fence: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M5 21V9" />
-      <path d="M12 21V9" />
-      <path d="M19 21V9" />
-      <path d="M4 9l1-4 1 4" />
-      <path d="M11 9l1-4 1 4" />
-      <path d="M18 9l1-4 1 4" />
-      <path d="M5 12h14" />
-      <path d="M5 16h14" />
-      <path d="M7.5 21c.3-1.4 1-2.4 2-3" />
-      <path d="M14.5 21c.3-1.4 1-2.4 2-3" />
-    </svg>
-  ),
-  exterior: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M4 9.5 12 3l8 6.5" />
-      <path d="M16.5 6.8V4.5h2" />
-      <rect x="10" y="7.2" width="1.4" height="1.4" />
-      <rect x="12.6" y="7.2" width="1.4" height="1.4" />
-      <rect x="10" y="9.6" width="1.4" height="1.4" />
-      <rect x="12.6" y="9.6" width="1.4" height="1.4" />
-      <path d="M5 21V14.5" />
-      <path d="M9 21V14.5" />
-      <path d="M13 21V14.5" />
-      <path d="M17 21V14.5" />
-      <path d="M21 21V14.5" />
-      <path d="M5 13.2 6.2 11.5 7.4 13.2" />
-      <path d="M9 13.2 10.2 11.5 11.4 13.2" />
-      <path d="M13 13.2 14.2 11.5 15.4 13.2" />
-      <path d="M17 13.2 18.2 11.5 19.4 13.2" />
-      <path d="M5 16.5h16" />
-      <path d="M5 19h16" />
-    </svg>
-  ),
   inspect: (
     <svg viewBox="0 0 24 24">
       <circle cx="11" cy="11" r="7" />
@@ -138,7 +82,7 @@ const content: ServiceDetailContent = {
   heroDescription:
     "Vegetation management for building perimeters, fence lines, and facility exteriors.",
   heroImage: "/images/service_ag.jpg",
-  heroImageAlt: "Perimeter weed control along a facility exterior",
+  heroImageAlt: "Technician applying perimeter weed treatment along a facility exterior",
   objectPosition: "100% 40%",
   breadcrumbLabel: "Perimeter Weed Control",
   introEyebrow: "Perimeter Care",
@@ -152,6 +96,8 @@ const content: ServiceDetailContent = {
     "This service supports agricultural and commercial sites that need cleaner grounds as part of a broader pest prevention plan.",
   ],
   introImageLabel: "facility perimeter vegetation assessment",
+  introImageSrc: "/images/service_ag.jpg",
+  introImageAlt: "Technician applying perimeter weed treatment along a facility exterior",
   segmentsTitle: (
     <>
       Areas we <span className="text-accent">manage</span>
@@ -164,28 +110,24 @@ const content: ServiceDetailContent = {
       benefit:
         "Practical plant and weed control that supports cleaner grounds around farms and facilities.",
       imageLabel: "vegetation management around facility",
-      icon: icons.vegetation,
     },
     {
       title: "Building Perimeters",
       benefit:
         "Clearer foundation edges that make inspections easier and reduce harborage next to structures.",
       imageLabel: "building perimeter weed control",
-      icon: icons.perimeter,
     },
     {
       title: "Fence Lines",
       benefit:
         "Fence-line vegetation management that keeps boundaries visible and less inviting to pests.",
       imageLabel: "fence line vegetation clearing",
-      icon: icons.fence,
     },
     {
       title: "Facility Exteriors",
       benefit:
         "Exterior grounds support that pairs with rodent, insect, and wildlife prevention programs.",
       imageLabel: "facility exterior grounds management",
-      icon: icons.exterior,
     },
   ],
   approachTitle: (
@@ -230,27 +172,10 @@ const content: ServiceDetailContent = {
   calloutBody:
     "Overgrown perimeters hide activity and give rodents and insects places to shelter. Keeping building edges, fence lines, and facility exteriors clear helps inspections, exclusion work, and ongoing pest programs work better together.",
   calloutPoints: [
-    {
-      text: "Less harborage around buildings",
-      icon: icons.perimeter,
-    },
-    {
-      text: "Easier exterior inspections",
-      icon: icons.inspect,
-    },
-    {
-      text: "Cleaner fence lines and edges",
-      icon: icons.fence,
-    },
-    {
-      text: "Support for broader IPM programs",
-      icon: (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-          <path d="m9 12 2 2 4-4" />
-        </svg>
-      ),
-    },
+    { text: "Less harborage around buildings" },
+    { text: "Easier exterior inspections" },
+    { text: "Cleaner fence lines and edges" },
+    { text: "Support for broader IPM programs" },
   ],
   calloutCta: "Ask about perimeter service",
   calloutImageLabel: "cleared facility perimeter after vegetation management",

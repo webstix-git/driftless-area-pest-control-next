@@ -1,6 +1,3 @@
-import CockroachIcon from "@/components/icons/CockroachIcon";
-import FlyIcon from "@/components/icons/FlyIcon";
-import BeeIcon from "@/components/icons/BeeIcon";
 import type { Metadata } from "next";
 import ServiceDetailLayout, {
   type ServiceDetailContent,
@@ -13,40 +10,6 @@ export const metadata: Metadata = {
 };
 
 const icons = {
-  food: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M3 21h18" />
-      <path d="M5 21V10h4V7h6v3h4v11" />
-      <path d="M9 14h.01M12 14h.01M15 14h.01" />
-      <path d="M9 17h.01M12 17h.01M15 17h.01" />
-      <path d="M7 7V4h2v3M15 7V5h2v2" />
-    </svg>
-  ),
-  warehouse: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M3 10.5 12 4l9 6.5V21H3V10.5z" />
-      <path d="M9 21v-7h6v7" />
-      <path d="M3 10.5h18" />
-      <path d="M7 14h2M15 14h2" />
-    </svg>
-  ),
-  retail: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M4 10h16v11H4z" />
-      <path d="M4 10 6.5 4h11L20 10" />
-      <path d="M9 21v-5h6v5" />
-      <path d="M7 13h.01M12 13h.01M17 13h.01" />
-    </svg>
-  ),
-  office: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M4 21V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16" />
-      <path d="M14 10h5a1 1 0 0 1 1 1v10" />
-      <path d="M4 21h16" />
-      <path d="M7 8h.01M10 8h.01M7 12h.01M10 12h.01M7 16h.01M10 16h.01" />
-      <path d="M17 14h.01M17 17h.01" />
-    </svg>
-  ),
   inspect: (
     <svg viewBox="0 0 24 24">
       <circle cx="11" cy="11" r="7" />
@@ -118,8 +81,8 @@ const content: ServiceDetailContent = {
   heroTitle: "Commercial Pest Control",
   heroDescription:
     "Inspection-led programs for warehouses, food plants, retail sites, and commercial buildings.",
-  heroImage: "/images/service_insect_control.jpg",
-  heroImageAlt: "Technician applying insect control treatment in a commercial facility",
+  heroImage: "/images/service_insect_control.png",
+  heroImageAlt: "Orange beetle larvae feeding on plant leaves",
   objectPosition: "10% 15%",
   breadcrumbLabel: "Commercial Pest Control",
   introEyebrow: "Commercial Facilities",
@@ -138,8 +101,8 @@ const content: ServiceDetailContent = {
     "Production-friendly scheduling",
   ],
   introImageLabel: "commercial facility pest inspection",
-  introImageSrc: "/images/service_insect_control.jpg",
-  introImageAlt: "Technician inspecting insect pressure in a commercial facility",
+  introImageSrc: "/images/service_insect_control.png",
+  introImageAlt: "Orange beetle larvae feeding on plant leaves",
   segmentsTitle: (
     <>
       Facilities we <span className="text-accent">protect</span>
@@ -155,16 +118,14 @@ const content: ServiceDetailContent = {
       imageLabel: "food plant commercial pest program",
       imageSrc: "/images/service_commercial.jpg",
       imageAlt: "Commercial food facility exterior and operations area",
-      icon: icons.food,
     },
     {
       title: "Warehouses",
       benefit:
         "Protecting stored product, packaging, and inventory from insect pressure and contamination.",
       imageLabel: "warehouse insect and pest control",
-      imageSrc: "/images/service_commercial_rodent.jpg",
+      imageSrc: "/images/service_commercial_rodent.png",
       imageAlt: "Warehouse and industrial storage pest protection",
-      icon: icons.warehouse,
     },
     {
       title: "Retail Stores",
@@ -173,7 +134,6 @@ const content: ServiceDetailContent = {
       imageLabel: "retail store commercial pest service",
       imageSrc: "/images/why_insect.jpg",
       imageAlt: "Technician treating insect activity along a facility baseboard",
-      icon: icons.retail,
     },
     {
       title: "Office Buildings",
@@ -182,7 +142,6 @@ const content: ServiceDetailContent = {
       imageLabel: "office building pest prevention",
       imageSrc: "/images/why_farm_facility.jpg",
       imageAlt: "Commercial building exterior for office pest prevention",
-      icon: icons.office,
     },
   ],
   approachTitle: (
@@ -227,35 +186,16 @@ const content: ServiceDetailContent = {
   calloutBody:
     "Our commercial programs address cockroaches, ants, spiders, flies, grain insects, and bees & wasps when appropriate — with treatments matched to your building layout, sanitation pressure, and production schedule.",
   calloutPoints: [
-    {
-      text: "Cockroaches, ants, and spiders",
-      icon: <CockroachIcon />,
-    },
-    {
-      text: "Flies and grain insects",
-      icon: <FlyIcon />,
-    },
-    {
-      text: "Bees & wasps when appropriate",
-      icon: <BeeIcon />,
-    },
-    {
-      text: "Documentation for site managers",
-      icon: (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M9 12h6" />
-          <path d="M9 16h6" />
-          <path d="M7 4h10l2 4v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8l2-4z" />
-          <path d="M9 4v4h6V4" />
-        </svg>
-      ),
-    },
+    { text: "Cockroaches, ants, and spiders" },
+    { text: "Flies and grain insects" },
+    { text: "Bees & wasps when appropriate" },
+    { text: "Documentation for site managers" },
   ],
   calloutCta: "Ask about commercial service",
   calloutImageLabel: "commercial insect control treatment detail",
   calloutImageSrc: "/images/blog_ants.jpg",
   calloutImageAlt: "Close detail of insect activity relevant to commercial facilities",
-  calloutBgImage: "/images/service_insect_control.jpg",
+  calloutBgImage: "/images/service_insect_control.png",
   whyTitle: (
     <>
       Why commercial facilities <span className="text-accent">choose</span> us
@@ -301,8 +241,8 @@ const content: ServiceDetailContent = {
     "Activity visibility between visits",
   ],
   complianceImageLabel: "audit-ready commercial pest documentation",
-  complianceImageSrc: "/images/service_remote_monitoring.jpg",
-  complianceImageAlt: "Reporting and monitoring support for commercial pest programs",
+  complianceImageSrc: "/images/service_remote_monitoring.png",
+  complianceImageAlt: "Remote monitoring dashboard with gateway and floor sensors in a warehouse",
   ctaTitle: (
     <>
       Let&apos;s keep your facility <span className="text-accent">protected</span>.

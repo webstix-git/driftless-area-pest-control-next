@@ -11,19 +11,16 @@ export const metadata: Metadata = {
 
 const teamMembers = [
   {
-    name: "Team Member Name",
-    description:
-      "Team description placeholder — coordinates inspections, biosecurity protocols, and service planning for dairies, grain sites, and commercial facilities.",
+    name: "Team member name",
+    description: "Team member information",
   },
   {
-    name: "Team Member Name",
-    description:
-      "Team description placeholder — leads on-site inspections, exclusion work, and rodent or insect programs with clear reporting for facility managers.",
+    name: "Team member name",
+    description: "Team member information",
   },
   {
-    name: "Team Member Name",
-    description:
-      "Team description placeholder — supports scheduling, follow-up, and communication so farms and industrial sites stay informed between visits.",
+    name: "Team member name",
+    description: "Team member information",
   },
 ];
 
@@ -34,9 +31,9 @@ export default function TeamPage() {
         <PageHero
           title="Our Team"
           description="Local specialists grounded in agricultural work and commercial facility service across southwestern Wisconsin."
-          imageSrc="/images/ag_expertise.jpg"
-          imageAlt="Pest management specialist inspecting a Wisconsin agricultural facility"
-          objectPosition="center 28%"
+          imageSrc="/images/about_banner.png"
+          imageAlt="Agricultural team reviewing field data on a tablet in a crop field at golden hour"
+          objectPosition="center 15%"
         />
 
         <Breadcrumb

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import ServiceDetailLayout, {
   type ServiceDetailContent,
 } from "@/components/ServiceDetailLayout";
-import BirdIcon from "@/components/icons/BirdIcon";
 
 export const metadata: Metadata = {
   title: "Wildlife Removal | Driftless Area Pest Control",
@@ -11,27 +10,6 @@ export const metadata: Metadata = {
 };
 
 const icons = {
-  bird: <BirdIcon />,
-  raccoon: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M8 8.5 6 5.2l3 1.6" />
-      <path d="M16 8.5 18 5.2l-3 1.6" />
-      <ellipse cx="12" cy="13.5" rx="6.5" ry="5.8" />
-      <path d="M6 12.5h12" />
-      <circle cx="9.2" cy="12.5" r="1.4" />
-      <circle cx="14.8" cy="12.5" r="1.4" />
-      <path d="M12 14.8v1.4" />
-      <path d="M10.6 17.2c.8.7 2 .7 2.8 0" />
-    </svg>
-  ),
-  skunk: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M15.236 22a3 3 0 0 0-2.2-5" />
-      <path d="M16 20a3 3 0 0 1 3-3h1a2 2 0 0 0 2-2v-2a4 4 0 0 0-4-4V4" />
-      <path d="M18 13h.01" />
-      <path d="M18 6a4 4 0 0 0-4 4 7 7 0 0 0-7 7c0-5 4-5 4-10.5a4.5 4.5 0 1 0-9 0 2.5 2.5 0 0 0 5 0C7 10 3 11 3 17c0 2.8 2.2 5 5 5h10" />
-    </svg>
-  ),
   exclusion: (
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M3 21h18" />
@@ -111,8 +89,8 @@ const content: ServiceDetailContent = {
   heroTitle: "Wildlife Removal",
   heroDescription:
     "Exclusion and prevention for birds, raccoons, and skunks around farms and commercial buildings.",
-  heroImage: "/images/service_wildlife_removal.jpg",
-  heroImageAlt: "Bird and wildlife exclusion on a facility",
+  heroImage: "/images/service_wildlife_removal.png",
+  heroImageAlt: "Technician installing bird exclusion mesh on a commercial building while a pigeon flies away",
   objectPosition: "95% 30%",
   breadcrumbLabel: "Wildlife Removal",
   introEyebrow: "Wildlife Management",
@@ -126,6 +104,9 @@ const content: ServiceDetailContent = {
     "Our wildlife services protect roofs, vents, docks, and exterior structures while supporting cleaner site conditions for managers and crews.",
   ],
   introImageLabel: "facility wildlife exclusion assessment",
+  introImageSrc: "/images/service_wildlife_removal.png",
+  introImageAlt: "Technician installing bird exclusion mesh on a commercial building while a pigeon flies away",
+  introImageObjectPosition: "100%",
   segmentsTitle: (
     <>
       Wildlife pressure we <span className="text-accent">address</span>
@@ -138,28 +119,24 @@ const content: ServiceDetailContent = {
       benefit:
         "Manage nesting and roosting pressure that contaminates roofs, docks, and exterior structures.",
       imageLabel: "bird control on facility exterior",
-      icon: icons.bird,
     },
     {
       title: "Raccoons",
       benefit:
         "Respond to raccoon activity around buildings with removal and exclusion that closes access paths.",
       imageLabel: "raccoon wildlife management",
-      icon: icons.raccoon,
     },
     {
       title: "Skunks",
       benefit:
         "Address skunk pressure around foundations and grounds to reduce odor, damage, and safety issues.",
       imageLabel: "skunk wildlife removal",
-      icon: icons.skunk,
     },
     {
       title: "Exclusion & Prevention",
       benefit:
         "Seal vents, openings, and nesting sites so wildlife cannot return to the same entry points.",
       imageLabel: "wildlife exclusion and prevention work",
-      icon: icons.exclusion,
     },
   ],
   approachTitle: (
@@ -204,22 +181,10 @@ const content: ServiceDetailContent = {
   calloutBody:
     "Removal alone is not enough if the same openings stay open. Our bird and wildlife services pair management with exclusion and prevention so farms and commercial sites can keep critical areas cleaner and safer.",
   calloutPoints: [
-    {
-      text: "Bird nesting prevention",
-      icon: icons.bird,
-    },
-    {
-      text: "Raccoon and skunk management",
-      icon: icons.raccoon,
-    },
-    {
-      text: "Exclusion for vents and openings",
-      icon: icons.exclusion,
-    },
-    {
-      text: "Facility exterior assessments",
-      icon: icons.inspect,
-    },
+    { text: "Bird nesting prevention" },
+    { text: "Raccoon and skunk management" },
+    { text: "Exclusion for vents and openings" },
+    { text: "Facility exterior assessments" },
   ],
   calloutCta: "Ask about wildlife service",
   calloutImageLabel: "wildlife exclusion sealing detail",

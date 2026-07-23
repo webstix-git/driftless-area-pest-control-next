@@ -3,7 +3,6 @@ import SiteShell from "@/components/SiteShell";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import PageCTA from "@/components/PageCTA";
-import GrainIcon from "@/components/icons/GrainIcon";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
@@ -39,66 +38,38 @@ const industries = [
   {
     title: "Dairy Farms",
     desc: "Fly and rodent programs built around barns, parlors, calf areas, and livestock movement — without disrupting milking schedules.",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4 20h16" />
-        <path d="M6 20V9.5L12 5l6 4.5V20" />
-        <path d="M9.5 20v-5h5v5" />
-        <path d="M9 11h.01M12 11h.01M15 11h.01" />
-      </svg>
-    ),
+    iconSrc: "/images/icons/industry-dairy.png",
+    iconAlt: "Dairy farms",
   },
   {
     title: "Grain & Feed",
     desc: "Bins, mills, and feed sites where insects and rodents threaten inventory, packaging integrity, and outbound product quality.",
-    icon: <GrainIcon />,
+    iconSrc: "/images/icons/industry-grain.png",
+    iconAlt: "Grain and feed",
   },
   {
     title: "Food Processing",
     desc: "Inspection-led insect and facility programs that support cleaner operations and clearer food-safety conversations.",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4 20h16" />
-        <path d="M6 20V10l6-5 6 5v10" />
-        <path d="M10 20v-5h4v5" />
-        <path d="M9 13h6" />
-      </svg>
-    ),
+    iconSrc: "/images/icons/industry-food.png",
+    iconAlt: "Food processing",
   },
   {
     title: "Warehouses",
     desc: "Targeted control for docks, racking, packaging zones, and storage areas where pests move with freight and foot traffic.",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M3 9.5 12 4l9 5.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" />
-        <path d="M9 21v-7h6v7" />
-        <path d="M3 9.5h18" />
-      </svg>
-    ),
+    iconSrc: "/images/icons/industry-warehouse.png",
+    iconAlt: "Warehouses",
   },
   {
     title: "Livestock Facilities",
     desc: "Practical pressure reduction around hog, poultry, and livestock housing — planned around animal health and daily workflows.",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4 19h16" />
-        <path d="M6 19V9l6-4 6 4v10" />
-        <path d="M9 19v-4h6v4" />
-        <circle cx="9.5" cy="12" r="1" />
-        <circle cx="14.5" cy="12" r="1" />
-      </svg>
-    ),
+    iconSrc: "/images/icons/industry-livestock.png",
+    iconAlt: "Livestock facilities",
   },
   {
     title: "Retail & Offices",
     desc: "Low-disruption programs that keep cockroaches, ants, spiders, and flies away from staff, customers, and common areas.",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="4" y="3" width="16" height="18" rx="1.5" />
-        <path d="M9 21v-5h6v5" />
-        <path d="M8 8h.01M12 8h.01M16 8h.01M8 12h.01M12 12h.01M16 12h.01" />
-      </svg>
-    ),
+    iconSrc: "/images/icons/industry-retail.png",
+    iconAlt: "Retail and offices",
   },
 ];
 
@@ -121,9 +92,9 @@ export default function AboutPage() {
       <PageHero
         title="About Us"
         description="A farm-rooted pest control team serving dairies, grain sites, warehouses, and industrial facilities across southwestern Wisconsin."
-        imageSrc="/images/ag_expertise.jpg"
-        imageAlt="Pest management specialist inspecting a Wisconsin agricultural facility"
-        objectPosition="center 28%"
+        imageSrc="/images/about_intro_main.png"
+        imageAlt="Technician reviewing dairy facility monitoring data on a tablet inside a Wisconsin dairy barn"
+        objectPosition="center 35%"
       />
 
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "About Us" }]} />
@@ -135,15 +106,19 @@ export default function AboutPage() {
             <div className="about-intro-visuals reveal-up">
               <div className="about-intro-main-img">
                 <img
-                  src="/images/about_intro_main.jpg"
-                  alt="Pest control technician walking a Wisconsin farm path toward grain silos"
+                  src="/images/about_intro_main.png"
+                  alt="Technician reviewing dairy facility monitoring data on a tablet inside a Wisconsin dairy barn"
                 />
-                <span className="about-intro-experience-badge">27+ Years Experience</span>
+                <span className="about-intro-experience-badge">
+                  <span className="about-intro-experience-kicker">Trusted Expertise</span>
+                  <strong>27+</strong>
+                  <span className="about-intro-experience-label">Years Experience</span>
+                </span>
               </div>
               <div className="about-intro-overlap-img">
                 <img
-                  src="/images/why_farm_facility.jpg"
-                  alt="Wisconsin agricultural facility exterior"
+                  src="/images/about_intro_overlap.png"
+                  alt="Inspector using a flashlight and tablet to check under commercial kitchen equipment"
                 />
               </div>
             </div>
@@ -245,22 +220,6 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-                <div className="why-feature">
-                  <div className="why-feature-icon" aria-hidden="true">
-                    <svg className="icon" viewBox="0 0 24 24">
-                      <path d="M4 19V5" />
-                      <path d="M4 19h16" />
-                      <path d="m7 14 3-3 3 2 5-6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3>Faster Visibility Between Visits</h3>
-                    <p>
-                      Optional remote monitoring and clear reporting help facilities stay ahead of
-                      pressure in regulated environments.
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -268,8 +227,8 @@ export default function AboutPage() {
               <div className="why-gallery">
                 <div className="why-gallery-layer why-gallery-main">
                   <img
-                    src="/images/why_cow_ag.jpg"
-                    alt="Technician inspecting a facility exterior foundation"
+                    src="/images/whychoose-big3.png"
+                    alt="Technician kneeling to inspect a facility foundation with a tablet near grain silos"
                   />
                 </div>
                 <div className="why-gallery-layer why-gallery-mid">
@@ -298,9 +257,6 @@ export default function AboutPage() {
           <ol className="rc-flow reveal-up">
             <li className="rc-flow-step">
               <article className="rc-flow-card">
-                <div className="rc-flow-card-top">
-                  <span className="rc-flow-num">1</span>
-                </div>
                 <span className="rc-flow-label">Step 1</span>
                 <h3>Inspect</h3>
                 <p>We walk the site to locate activity, entry points, and pressure areas.</p>
@@ -308,9 +264,6 @@ export default function AboutPage() {
             </li>
             <li className="rc-flow-step">
               <article className="rc-flow-card">
-                <div className="rc-flow-card-top">
-                  <span className="rc-flow-num">2</span>
-                </div>
                 <span className="rc-flow-label">Step 2</span>
                 <h3>Identify the Source</h3>
                 <p>We find why pests are present — not just where they are showing up.</p>
@@ -318,9 +271,6 @@ export default function AboutPage() {
             </li>
             <li className="rc-flow-step">
               <article className="rc-flow-card">
-                <div className="rc-flow-card-top">
-                  <span className="rc-flow-num">3</span>
-                </div>
                 <span className="rc-flow-label">Step 3</span>
                 <h3>Customized Plan</h3>
                 <p>We build a facility-specific program around your layout and schedule.</p>
@@ -328,9 +278,6 @@ export default function AboutPage() {
             </li>
             <li className="rc-flow-step">
               <article className="rc-flow-card">
-                <div className="rc-flow-card-top">
-                  <span className="rc-flow-num">4</span>
-                </div>
                 <span className="rc-flow-label">Step 4</span>
                 <h3>Monitor &amp; Maintain</h3>
                 <p>We keep monitoring and follow-up in place so pressure stays visible.</p>
@@ -364,7 +311,7 @@ export default function AboutPage() {
                 className={`audience-card reveal-up${index === 1 ? " stagger-delay-1" : ""}${index === 2 ? " stagger-delay-2" : ""}`}
               >
                 <div className="audience-icon" aria-hidden="true">
-                  {item.icon}
+                  <img src={item.iconSrc} alt="" />
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
@@ -442,9 +389,8 @@ export default function AboutPage() {
             <span className="section-eyebrow">FAQ</span>
             <h2>Frequently Asked Questions</h2>
             <p>
-              Straight answers to the questions commercial and agricultural clients
-              <br />
-              ask most often.
+              Straight answers to the questions commercial and agricultural clients ask most
+              often.
             </p>
           </div>
 

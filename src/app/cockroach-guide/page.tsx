@@ -1,16 +1,4 @@
 import type { Metadata } from "next";
-import {
-  CookingPot,
-  Egg,
-  Fan,
-  Grip,
-  MoonStar,
-  Package,
-  RectangleEllipsis,
-  Settings,
-  Waves,
-  Wind,
-} from "lucide-react";
 import SiteShell from "@/components/SiteShell";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -26,32 +14,26 @@ const warningSigns = [
   {
     title: "Droppings",
     detail: "Near appliances, sinks, drains, and baseboards.",
-    icon: <Grip aria-hidden="true" />,
   },
   {
     title: "Warm motors",
     detail: "Activity around compressors and electrical panels.",
-    icon: <Settings aria-hidden="true" />,
   },
   {
     title: "Sticky monitors",
     detail: "Live or dead insects in sticky monitors and glue boards.",
-    icon: <RectangleEllipsis aria-hidden="true" />,
   },
   {
     title: "Egg cases",
     detail: "Oothecae in cracks, hinges, and equipment voids.",
-    icon: <Egg aria-hidden="true" />,
   },
   {
     title: "Musty odor",
     detail: "In severe or long-running pressure areas.",
-    icon: <Wind aria-hidden="true" />,
   },
   {
     title: "Night sightings",
     detail: "During night checks or early-morning open.",
-    icon: <MoonStar aria-hidden="true" />,
   },
 ];
 
@@ -61,28 +43,24 @@ const hotspots = [
     desc: "Food residue, grease films, and moisture under equipment create reliable harborage.",
     img: "/images/facility_kitchen_prep.png",
     imgAlt: "Commercial kitchen prep area with stainless equipment",
-    icon: <CookingPot aria-hidden="true" />,
   },
   {
     title: "Floor Drains & Wet Zones",
     desc: "Damp drains, mop sinks, and poorly sealed floor transitions invite overnight travel.",
     img: "/images/facility_floor_drain.png",
     imgAlt: "Circular stainless floor drain in a commercial facility",
-    icon: <Waves aria-hidden="true" />,
   },
   {
     title: "Warm Mechanical Rooms",
     desc: "Motors, panels, and heat sources attract cockroaches seeking shelter during the day.",
     img: "/images/facility_mechanical_room.png",
     imgAlt: "Warm mechanical room with motors and electrical equipment",
-    icon: <Fan aria-hidden="true" />,
   },
   {
     title: "Storage & Packaging",
     desc: "Cardboard, pallets, and cluttered corners give cover near food and packaging inventory.",
     img: "/images/facility_storage_packaging.png",
     imgAlt: "Warehouse storage aisle with pallet racking and packaging",
-    icon: <Package aria-hidden="true" />,
   },
 ];
 
@@ -107,9 +85,9 @@ export default function CockroachGuidePage() {
       <div className="guide-page">
         <PageHero
           title="Cockroach Guide"
-          description="A practical field guide for commercial kitchens, food plants, and facility spaces where warmth, moisture, and harborage create risk."
+          description="A practical guide for commercial kitchens, food plants, and facility managers dealing with cockroach pressure in Wisconsin."
           imageSrc="/images/cockroach_guide_hero.png"
-          imageAlt="American cockroach in detailed macro view for facility identification"
+          imageAlt="Close-up of a cockroach on a textured surface"
           objectPosition="center 45%"
         />
 
@@ -129,41 +107,40 @@ export default function CockroachGuidePage() {
                 What facility teams should <span className="text-accent">watch for</span>
               </h2>
               <p>
-                Cockroaches exploit warmth, moisture, and food residue around equipment bases,
-                floor drains, and storage rooms. In commercial settings, early signs usually show
-                up before staff see large numbers of insects.
+                Cockroaches thrive where food, moisture, and shelter overlap — especially in kitchens,
+                food plants, and warm mechanical spaces. Catching early signs keeps pressure from
+                spreading into production and customer areas.
               </p>
               <p>
-                A strong response combines sanitation corrections, crack-and-crevice treatment, and
-                follow-up monitoring — not one-time spraying alone.
+                Use this guide to recognize activity, focus inspections on the right hotspots, and
+                know when to bring in a structured response.
               </p>
               <ul className="rc-intro-highlights">
-                <li>Kitchens &amp; food plants</li>
-                <li>Warehouses &amp; break areas</li>
-                <li>Early detection focus</li>
+                <li>Early warning signs staff can spot</li>
+                <li>Hotspots that drive repeat pressure</li>
+                <li>Practical next steps for managers</li>
               </ul>
             </div>
-
             <div className="rc-intro-media guide-id-media reveal-up stagger-delay-1">
               <div className="guide-id-pair">
                 <figure className="guide-id-card">
                   <img
-                    src="/images/cockroach_top.png"
-                    alt="Top-down identification view of an American cockroach"
+                    src="/images/cockroach_side.png"
+                    alt="Side view of an American cockroach for identification"
                   />
                   <figcaption>
-                    <strong>Top-down ID</strong>
-                    <span>American cockroach</span>
+                    <strong>Side profile</strong>
+                    <span>American cockroach identification</span>
                   </figcaption>
                 </figure>
                 <figure className="guide-id-card">
                   <img
-                    src="/images/cockroach_side.png"
-                    alt="Side profile identification view of an American cockroach"
+                    src="/images/cockroach_top.png"
+                    alt="Top view of an American cockroach for identification"
                   />
                   <figcaption>
-                    <strong>Side profile ID</strong>
-                    <span>Facility identification</span>
+                    <strong>Top view</strong>
+                    <span>Body shape and markings</span>
                   </figcaption>
                 </figure>
               </div>
@@ -190,9 +167,6 @@ export default function CockroachGuidePage() {
                   key={item.title}
                   className={`rc-why-item reveal-up stagger-delay-${(index % 3) + 1}`}
                 >
-                  <span className="rc-why-icon" aria-hidden="true">
-                    {item.icon}
-                  </span>
                   <h3>{item.title}</h3>
                   <p>{item.detail}</p>
                 </article>
@@ -226,9 +200,6 @@ export default function CockroachGuidePage() {
                     </div>
                   </div>
                   <div className="rc-serve-copy">
-                    <span className="rc-serve-icon" aria-hidden="true">
-                      {item.icon}
-                    </span>
                     <h3>{item.title}</h3>
                     <p>{item.desc}</p>
                   </div>
@@ -255,9 +226,6 @@ export default function CockroachGuidePage() {
               {steps.map((step, index) => (
                 <li key={step.title} className="rc-flow-step">
                   <article className="rc-flow-card">
-                    <div className="rc-flow-card-top">
-                      <span className="rc-flow-num">{index + 1}</span>
-                    </div>
                     <span className="rc-flow-label">Step {index + 1}</span>
                     <h3>{step.title}</h3>
                     <p>{step.desc}</p>

@@ -11,7 +11,7 @@ export type ServiceSegment = {
   imageLabel: string;
   imageSrc?: string;
   imageAlt?: string;
-  icon: ReactNode;
+  icon?: ReactNode;
 };
 
 export type ServiceStep = {
@@ -30,7 +30,7 @@ export type ServiceCalloutPoint =
   | string
   | {
       text: string;
-      icon: ReactNode;
+      icon?: ReactNode;
     };
 
 export type ServiceDetailContent = {
@@ -47,6 +47,7 @@ export type ServiceDetailContent = {
   introImageLabel: string;
   introImageSrc?: string;
   introImageAlt?: string;
+  introImageObjectPosition?: string;
   segmentsEyebrow?: string;
   segmentsTitle: ReactNode;
   segmentsLead: string;
@@ -99,17 +100,23 @@ function ServiceMedia({
   label,
   aspect,
   className = "",
+  objectPosition,
 }: {
   src?: string;
   alt?: string;
   label: string;
   aspect: string;
   className?: string;
+  objectPosition?: string;
 }) {
   if (src) {
     return (
       <div className={`rc-media ${className}`.trim()} style={{ aspectRatio: aspect }}>
-        <img src={src} alt={alt || label} />
+        <img
+          src={src}
+          alt={alt || label}
+          style={objectPosition ? { objectPosition } : undefined}
+        />
       </div>
     );
   }
@@ -158,6 +165,7 @@ export default function ServiceDetailLayout({ content }: { content: ServiceDetai
               alt={content.introImageAlt}
               label={content.introImageLabel}
               aspect="5 / 4"
+              objectPosition={content.introImageObjectPosition}
             />
           </div>
         </div>
@@ -186,9 +194,11 @@ export default function ServiceDetailLayout({ content }: { content: ServiceDetai
                   />
                 </div>
                 <div className="rc-serve-copy">
-                  <span className="rc-serve-icon" aria-hidden="true">
-                    {segment.icon}
-                  </span>
+                  {segment.icon ? (
+                    <span className="rc-serve-icon" aria-hidden="true">
+                      {segment.icon}
+                    </span>
+                  ) : null}
                   <h3>{segment.title}</h3>
                   <p>{segment.benefit}</p>
                 </div>
@@ -209,9 +219,6 @@ export default function ServiceDetailLayout({ content }: { content: ServiceDetai
             {content.steps.map((step, index) => (
               <li key={step.title} className="rc-flow-step">
                 <article className="rc-flow-card">
-                  <div className="rc-flow-card-top">
-                    <span className="rc-flow-num">{index + 1}</span>
-                  </div>
                   <span className="rc-flow-label">Step {index + 1}</span>
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>
@@ -239,9 +246,11 @@ export default function ServiceDetailLayout({ content }: { content: ServiceDetai
                 const item = resolveCalloutPoint(point, index);
                 return (
                   <li key={item.text}>
-                    <span className="rc-monitor-point-icon" aria-hidden="true">
-                      {item.icon}
-                    </span>
+                    {item.icon ? (
+                      <span className="rc-monitor-point-icon" aria-hidden="true">
+                        {item.icon}
+                      </span>
+                    ) : null}
                     {item.text}
                   </li>
                 );

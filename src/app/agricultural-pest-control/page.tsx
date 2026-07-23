@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import ServiceDetailLayout, {
   type ServiceDetailContent,
 } from "@/components/ServiceDetailLayout";
-import GrainIcon from "@/components/icons/GrainIcon";
-import ChickenIcon from "@/components/icons/ChickenIcon";
-import HogIcon from "@/components/icons/HogIcon";
-import CowIcon from "@/components/icons/CowIcon";
 
 export const metadata: Metadata = {
   title: "Agricultural Pest Control | Driftless Area Pest Control",
@@ -14,10 +10,6 @@ export const metadata: Metadata = {
 };
 
 const icons = {
-  dairy: <CowIcon />,
-  poultry: <ChickenIcon />,
-  hog: <HogIcon />,
-  grain: <GrainIcon />,
   inspect: (
     <svg viewBox="0 0 24 24">
       <circle cx="11" cy="11" r="7" />
@@ -88,8 +80,8 @@ const content: ServiceDetailContent = {
   heroTitle: "Agricultural Pest Control",
   heroDescription:
     "Biosecurity-aware pest management for dairy, poultry, hog, grain, and feed operations.",
-  heroImage: "/images/service_ag_pest.jpg",
-  heroImageAlt: "Technician providing pest management on a dairy farm",
+  heroImage: "/images/service_ag_pest.png",
+  heroImageAlt: "Technician spraying treatment across agricultural turf and crop grounds",
   objectPosition: "58% 20%",
   breadcrumbLabel: "Agricultural Pest Control",
   introEyebrow: "Agricultural Operations",
@@ -103,6 +95,8 @@ const content: ServiceDetailContent = {
     "We help dairies, poultry houses, hog facilities, grain sites, and feed mills reduce rodent, fly, and insect pressure with inspection-led programs.",
   ],
   introImageLabel: "agricultural facility pest walkthrough",
+  introImageSrc: "/images/service_ag_pest.png",
+  introImageAlt: "Technician spraying treatment across agricultural turf and crop grounds",
   segmentsEyebrow: "Who We Serve",
   segmentsTitle: (
     <>
@@ -116,28 +110,24 @@ const content: ServiceDetailContent = {
       benefit:
         "Support for barns, parlors, and calf areas with fly and rodent programs built around milk quality and herd health.",
       imageLabel: "dairy farm pest management",
-      icon: icons.dairy,
     },
     {
       title: "Chicken Farms",
       benefit:
         "Poultry-focused service that accounts for housing layout, manure pressure, and biosecurity protocols.",
       imageLabel: "poultry facility pest control",
-      icon: icons.poultry,
     },
     {
       title: "Hog Facilities",
       benefit:
         "Practical pest pressure reduction around barns and production areas without disrupting livestock routines.",
       imageLabel: "hog facility pest program",
-      icon: icons.hog,
     },
     {
       title: "Grain & Feed Operations",
       benefit:
         "Defense for grain facilities, feed mills, and stored-product areas where insects and rodents put inventory at risk.",
       imageLabel: "grain and feed mill pest protection",
-      icon: icons.grain,
     },
   ],
   approachTitle: (
@@ -182,30 +172,10 @@ const content: ServiceDetailContent = {
   calloutBody:
     "We follow site protocols carefully and plan around livestock facilities, feed mills, and production schedules. Our agricultural work supports dairies, poultry, hog, grain, and feed sites that need pest pressure reduced without putting animal health or biosecurity at risk.",
   calloutPoints: [
-    {
-      text: "Dairy, poultry, and hog support",
-      icon: icons.dairy,
-    },
-    {
-      text: "Grain facilities and feed mills",
-      icon: <GrainIcon />,
-    },
-    {
-      text: "Livestock facility awareness",
-      icon: (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 19h16" />
-          <path d="M6 19V9l6-4 6 4v10" />
-          <path d="M9 19v-4h6v4" />
-          <circle cx="9.5" cy="12" r="1" />
-          <circle cx="14.5" cy="12" r="1" />
-        </svg>
-      ),
-    },
-    {
-      text: "Biosecurity-conscious protocols",
-      icon: icons.shield,
-    },
+    { text: "Dairy, poultry, and hog support" },
+    { text: "Grain facilities and feed mills" },
+    { text: "Livestock facility awareness" },
+    { text: "Biosecurity-conscious protocols" },
   ],
   calloutCta: "Ask about farm service",
   calloutImageLabel: "biosecurity-aware farm pest service",

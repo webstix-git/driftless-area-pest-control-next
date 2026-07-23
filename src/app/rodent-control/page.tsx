@@ -10,40 +10,6 @@ export const metadata: Metadata = {
 };
 
 const icons = {
-  food: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M3 21h18" />
-      <path d="M5 21V10h4V7h6v3h4v11" />
-      <path d="M9 14h.01M12 14h.01M15 14h.01" />
-      <path d="M9 17h.01M12 17h.01M15 17h.01" />
-      <path d="M7 7V4h2v3M15 7V5h2v2" />
-    </svg>
-  ),
-  warehouse: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M3 10.5 12 4l9 6.5V21H3V10.5z" />
-      <path d="M9 21v-7h6v7" />
-      <path d="M3 10.5h18" />
-      <path d="M7 14h2M15 14h2" />
-    </svg>
-  ),
-  retail: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M4 10h16v11H4z" />
-      <path d="M4 10 6.5 4h11L20 10" />
-      <path d="M9 21v-5h6v5" />
-      <path d="M7 13h.01M12 13h.01M17 13h.01" />
-    </svg>
-  ),
-  office: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M4 21V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16" />
-      <path d="M14 10h5a1 1 0 0 1 1 1v10" />
-      <path d="M4 21h16" />
-      <path d="M7 8h.01M10 8h.01M7 12h.01M10 12h.01M7 16h.01M10 16h.01" />
-      <path d="M17 14h.01M17 17h.01" />
-    </svg>
-  ),
   inspect: (
     <svg viewBox="0 0 24 24">
       <circle cx="11" cy="11" r="7" />
@@ -114,8 +80,8 @@ const content: ServiceDetailContent = {
   heroTitle: "Commercial & Industrial Rodent Control",
   heroDescription:
     "Root-cause rodent control for the facilities that can't afford activity.",
-  heroImage: "/images/service_commercial_rodent.jpg",
-  heroImageAlt: "Commercial and industrial rodent control",
+  heroImage: "/images/service_commercial_rodent.png",
+  heroImageAlt: "Mouse on a warehouse floor near stored goods",
   objectPosition: "35% 30%",
   breadcrumbLabel: "Rodent Control & Exclusion",
   introEyebrow: "Rodent Control",
@@ -129,6 +95,8 @@ const content: ServiceDetailContent = {
     "We work with food-safety and biosecurity awareness in mind, so our plans support cleaner operations, clearer documentation, and fewer surprises between visits.",
   ],
   introImageLabel: "facility rodent inspection walkthrough",
+  introImageSrc: "/images/service_commercial_rodent.png",
+  introImageAlt: "Mouse on a warehouse floor near stored goods",
   segmentsTitle: (
     <>
       Facilities we <span className="text-accent">protect</span>
@@ -141,28 +109,24 @@ const content: ServiceDetailContent = {
       benefit:
         "Audit-ready rodent control that supports your food-safety and compliance requirements.",
       imageLabel: "food processing facility rodent program",
-      icon: icons.food,
     },
     {
       title: "Warehouses",
       benefit:
         "Protecting stored product, packaging, and inventory from rodent damage and contamination.",
       imageLabel: "warehouse rodent protection",
-      icon: icons.warehouse,
     },
     {
       title: "Retail Stores",
       benefit:
         "Discreet, professional service that keeps rodents out of sight and off your shelves.",
       imageLabel: "retail store rodent prevention",
-      icon: icons.retail,
     },
     {
       title: "Office Buildings",
       benefit:
         "A clean, healthy workspace through proactive rodent prevention and monitoring.",
       imageLabel: "office building rodent monitoring",
-      icon: icons.office,
     },
   ],
   approachTitle: (
@@ -207,42 +171,10 @@ const content: ServiceDetailContent = {
   calloutBody:
     "Our remote rodent monitoring helps us catch activity between visits. Electronic reporting, faster response, preventive maintenance plans, and audit-ready records help your team stay ahead of pressure — especially in food and regulated environments.",
   calloutPoints: [
-    {
-      text: "Electronic reporting",
-      icon: (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-          <path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z" />
-          <path d="M9 13h6" />
-          <path d="M9 17h4" />
-        </svg>
-      ),
-    },
-    {
-      text: "Faster response",
-      icon: (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M13 2 4 14h7l-1 8 10-14h-7l0-6z" />
-        </svg>
-      ),
-    },
-    {
-      text: "Preventive maintenance plans",
-      icon: (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-        </svg>
-      ),
-    },
-    {
-      text: "Audit and food-safety readiness",
-      icon: (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-          <path d="m9 12 2 2 4-4" />
-        </svg>
-      ),
-    },
+    { text: "Electronic reporting" },
+    { text: "Faster response" },
+    { text: "Preventive maintenance plans" },
+    { text: "Audit and food-safety readiness" },
   ],
   calloutCta: "Ask about remote monitoring",
   calloutImageLabel: "remote rodent monitoring dashboard",

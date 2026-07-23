@@ -1,9 +1,6 @@
 "use client";
 
 import SiteShell from "./SiteShell";
-import RodentIcon from "@/components/icons/RodentIcon";
-import CockroachIcon from "@/components/icons/CockroachIcon";
-import BirdIcon from "@/components/icons/BirdIcon";
 import { CONTACT } from "@/lib/contact";
 
 export default function HomePage() {
@@ -16,7 +13,7 @@ export default function HomePage() {
            ========================================================================== */}
       <section className="hero-section" id="hero">
         <div className="hero-bg">
-          <img src="/images/hero_bg.jpg" alt="Pest control technician walking toward grain silos on a Wisconsin farm" />
+          <img src="/images/hero_bg.png" alt="Farmer spraying crop rows at golden hour across a Wisconsin agricultural field" />
         </div>
         <div className="hero-overlay"></div>
 
@@ -42,13 +39,15 @@ export default function HomePage() {
           <div className="about-intro-grid">
             <div className="about-intro-visuals reveal-up">
               <div className="about-intro-main-img">
-                <img src="/images/ag_expertise.jpg" alt="Pest management specialist inspecting a Wisconsin agricultural facility" />
+                <img src="/images/about_intro_main.png" alt="Technician reviewing dairy facility monitoring data on a tablet inside a Wisconsin dairy barn" />
                 <span className="about-intro-experience-badge">
-                  27+ Years Experience
+                  <span className="about-intro-experience-kicker">Trusted Expertise</span>
+                  <strong>27+</strong>
+                  <span className="about-intro-experience-label">Years Experience</span>
                 </span>
               </div>
               <div className="about-intro-overlap-img">
-                <img src="/images/service_insect_control.jpg" alt="Close inspection for insect and pest activity" />
+                <img src="/images/about_intro_overlap.png" alt="Inspector using a flashlight and tablet to check under commercial kitchen equipment" />
               </div>
             </div>
 
@@ -87,12 +86,9 @@ export default function HomePage() {
           <div className="premium-services-grid">
             <a href="/rodent-control" className="premium-service-card reveal-up">
               <div className="premium-service-media">
-                <img className="pos-rodent" src="/images/service_commercial_rodent.jpg" alt="Commercial and industrial rodent control" />
+                <img className="pos-rodent" src="/images/service_commercial_rodent.png" alt="Mouse on a warehouse floor near stored goods" />
               </div>
               <div className="premium-service-body">
-                <span className="premium-service-icon" aria-hidden="true">
-                  <RodentIcon className="icon-lg" />
-                </span>
                 <h3>Commercial &amp; Industrial Rodent Control</h3>
                 <p className="premium-service-desc">Protect food plants, warehouses, retail sites, and offices with inspection-led rodent programs built for commercial and industrial facilities.</p>
                 <div className="premium-service-details">
@@ -117,12 +113,9 @@ export default function HomePage() {
 
             <a href="/agricultural-pest-control" className="premium-service-card reveal-up stagger-delay-1">
               <div className="premium-service-media">
-                <img className="pos-ag" src="/images/service_ag_pest.jpg" alt="Agricultural pest management on farm facilities" />
+                <img className="pos-ag" src="/images/service_ag_pest.png" alt="Technician spraying treatment across agricultural turf and crop grounds" />
               </div>
               <div className="premium-service-body">
-                <span className="premium-service-icon" aria-hidden="true">
-                  <svg className="icon" viewBox="0 0 24 24"><path d="M2 22 16 8"/><path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z"/><path d="M11.47 17.47 13 19l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L5 19l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/><path d="M20 13v2a4 4 0 0 1-4 4h-2v-2a4 4 0 0 1 4-4Z"/></svg>
-                </span>
                 <h3>Agricultural Pest Management</h3>
                 <p className="premium-service-desc">Support dairy, poultry, hog, grain, and feed operations with biosecurity-aware pest management designed around how farms actually run.</p>
                 <div className="premium-service-details">
@@ -150,12 +143,9 @@ export default function HomePage() {
 
             <a href="/commercial-pest-control" className="premium-service-card reveal-up stagger-delay-2">
               <div className="premium-service-media">
-                <img className="pos-insect" src="/images/service_insect_control.jpg" alt="Technician applying insect control treatment along a facility baseboard" />
+                <img className="pos-insect" src="/images/service_insect_control.png" alt="Orange beetle larvae feeding on plant leaves" />
               </div>
               <div className="premium-service-body">
-                <span className="premium-service-icon" aria-hidden="true">
-                  <CockroachIcon className="icon-lg" />
-                </span>
                 <h3>Insect Control</h3>
                 <p className="premium-service-desc">Control cockroaches, ants, spiders, flies, grain insects, and stinging pests with targeted treatments for commercial and agricultural sites.</p>
                 <div className="premium-service-details">
@@ -182,12 +172,9 @@ export default function HomePage() {
 
             <a href="/wildlife-removal" className="premium-service-card reveal-up">
               <div className="premium-service-media">
-                <img className="pos-wildlife" src="/images/service_wildlife_removal.jpg" alt="Bird and wildlife management and exclusion" />
+                <img className="pos-wildlife" src="/images/service_wildlife_removal.png" alt="Technician installing bird exclusion mesh on a commercial building while a pigeon flies away" />
               </div>
               <div className="premium-service-body">
-                <span className="premium-service-icon" aria-hidden="true">
-                  <BirdIcon className="icon" />
-                </span>
                 <h3>Bird &amp; Wildlife Management</h3>
                 <p className="premium-service-desc">Manage birds, raccoons, and skunks with exclusion and prevention services that stop wildlife from nesting in or contaminating your facility.</p>
                 <div className="premium-service-details">
@@ -213,12 +200,9 @@ export default function HomePage() {
 
             <a href="/services" className="premium-service-card reveal-up stagger-delay-1">
               <div className="premium-service-media">
-                <img className="pos-monitoring" src="/images/service_remote_monitoring.jpg" alt="Remote pest monitoring sensors and reporting" />
+                <img className="pos-monitoring" src="/images/service_remote_monitoring.png" alt="Remote monitoring dashboard with gateway and floor sensors in a warehouse" />
               </div>
               <div className="premium-service-body">
-                <span className="premium-service-icon" aria-hidden="true">
-                  <svg className="icon" viewBox="0 0 24 24"><path d="M4.9 19.1C1.9 16.1 1.9 11.3 4.9 8.3"/><path d="M7.8 16.2c-1.6-1.6-1.6-4.1 0-5.7"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c1.6 1.6 1.6 4.1 0 5.7"/><path d="M19.1 4.9c3 3 3 7.8 0 10.8"/></svg>
-                </span>
                 <h3>Remote Monitoring</h3>
                 <p className="premium-service-desc">Get 24/7 rodent monitoring, faster response, electronic reporting, and audit-ready support that strengthens food safety and preventive maintenance.</p>
                 <div className="premium-service-details">
@@ -244,12 +228,9 @@ export default function HomePage() {
 
             <a href="/weed-control" className="premium-service-card reveal-up stagger-delay-2">
               <div className="premium-service-media">
-                <img className="pos-weed" src="/images/service_ag.jpg" alt="Facility exterior and perimeter grounds for vegetation management" />
+                <img className="pos-weed" src="/images/service_ag.jpg" alt="Technician applying perimeter weed treatment along a facility exterior" />
               </div>
               <div className="premium-service-body">
-                <span className="premium-service-icon" aria-hidden="true">
-                  <svg className="icon" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-                </span>
                 <h3>Perimeter Weed Control</h3>
                 <p className="premium-service-desc">Keep building perimeters, fence lines, and facility exteriors clear with vegetation management that reduces pest harborage around your site.</p>
                 <div className="premium-service-details">
@@ -320,7 +301,7 @@ export default function HomePage() {
             <div className="why-visual reveal-up stagger-delay-1">
               <div className="why-gallery">
                 <div className="why-gallery-layer why-gallery-main">
-                  <img src="/images/why_cow_ag.jpg" alt="Technician inspecting a facility exterior foundation" />
+                  <img src="/images/whychoose-big3.png" alt="Technician kneeling to inspect a facility foundation with a tablet near grain silos" />
                 </div>
                 <div className="why-gallery-layer why-gallery-mid">
                   <img src="/images/why_insect.jpg" alt="Technician sealing entry points along a facility foundation" />
@@ -440,7 +421,7 @@ export default function HomePage() {
           <div className="faq-header reveal-up">
             <span className="section-eyebrow">FAQ</span>
             <h2>Frequently Asked Questions</h2>
-            <p>Straight answers to the questions commercial and agricultural clients<br />ask most often.</p>
+            <p>Straight answers to the questions commercial and agricultural clients ask most often.</p>
           </div>
 
           <div className="faq-list reveal-up">

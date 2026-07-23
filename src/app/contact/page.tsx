@@ -98,7 +98,7 @@ export default function ContactPage() {
               </div>
 
               <button type="submit" className="btn btn-accent contact-submit-btn">
-                Submit Message
+                Send
               </button>
             </form>
           </div>
