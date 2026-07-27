@@ -17,7 +17,7 @@ export const SERVICE_TYPE_OPTIONS = [
 
 export type ServiceTypeValue = (typeof SERVICE_TYPE_OPTIONS)[number]["value"];
 
-const FACILITY_TYPE_OPTIONS = [
+export const FACILITY_TYPE_OPTIONS = [
   { value: "", label: "Select facility type" },
   { value: "food-processing", label: "Food Processing" },
   { value: "warehouse", label: "Warehouse" },
@@ -42,6 +42,10 @@ type ServiceConversionFormProps = {
   defaultServiceType?: ServiceTypeValue | string;
   headline?: string;
   supportingLine?: string;
+  /** `band` = full service-page section; `embedded` = form only (Contact Us). */
+  variant?: "band" | "embedded";
+  formTitle?: string;
+  formDescription?: string;
 };
 
 const initialErrors: FormErrors = {};
@@ -83,6 +87,9 @@ export default function ServiceConversionForm({
   defaultServiceType = "other",
   headline = "Ready to protect your facility? Let's talk.",
   supportingLine = "Tell us about your site and we will help you map the right next step for commercial or agricultural pest pressure.",
+  variant = "band",
+  formTitle = "Request Service",
+  formDescription = "We'll get back to you quickly to talk through your needs.",
 }: ServiceConversionFormProps) {
   const formId = useId();
   const [values, setValues] = useState<FormState>({
@@ -98,6 +105,7 @@ export default function ServiceConversionForm({
   const [submitted, setSubmitted] = useState(false);
 
   const fieldId = (name: string) => `${formId}-${name}`;
+  const isEmbedded = variant === "embedded";
 
   const updateField = (field: keyof FormState, value: string) => {
     setValues((prev) => ({ ...prev, [field]: value }));
@@ -141,7 +149,6 @@ export default function ServiceConversionForm({
       ].join("\n")
     );
 
-    // Opens the user's mail client without forcing a full page unload when possible.
     const mailtoUrl = `${CONTACT.emailHref}?subject=${subject}&body=${body}`;
     try {
       const mailLink = document.createElement("a");
@@ -157,13 +164,215 @@ export default function ServiceConversionForm({
     setSubmitted(true);
   };
 
+  const formBody = submitted ? (
+    <div className="scf-success" role="status" aria-live="polite">
+      <h3>Thanks — we&apos;ve received your request and will be in touch.</h3>
+      <p>
+        Our team will review your details and follow up to talk through the next step for your
+        facility.
+      </p>
+    </div>
+  ) : (
+    <form className="scf-form" onSubmit={handleSubmit} noValidate>
+      <div className="scf-form-header">
+        <h3 className="scf-form-title">{formTitle}</h3>
+        <p className="scf-form-desc">{formDescription}</p>
+      </div>
+
+      <div className="scf-form-grid">
+        <div className="form-group">
+          <label className="form-label" htmlFor={fieldId("name")}>
+            Name: <span className="scf-required" aria-hidden="true">*</span>
+          </label>
+          <input
+            id={fieldId("name")}
+            name="name"
+            type="text"
+            className={`form-control${errors.name ? " is-invalid" : ""}`}
+            autoComplete="name"
+            placeholder="Enter your full name"
+            value={values.name}
+            onChange={(e) => updateField("name", e.target.value)}
+            aria-required="true"
+            aria-invalid={errors.name ? "true" : "false"}
+            aria-describedby={errors.name ? fieldId("name-error") : undefined}
+          />
+          {errors.name ? (
+            <p id={fieldId("name-error")} className="scf-error">
+              {errors.name}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="form-group">
+          <label className="form-label" htmlFor={fieldId("business")}>
+            Business / Facility Name:{" "}
+            <span className="scf-required" aria-hidden="true">*</span>
+          </label>
+          <input
+            id={fieldId("business")}
+            name="business"
+            type="text"
+            className={`form-control${errors.business ? " is-invalid" : ""}`}
+            autoComplete="organization"
+            placeholder="Enter business or facility name"
+            value={values.business}
+            onChange={(e) => updateField("business", e.target.value)}
+            aria-required="true"
+            aria-invalid={errors.business ? "true" : "false"}
+            aria-describedby={errors.business ? fieldId("business-error") : undefined}
+          />
+          {errors.business ? (
+            <p id={fieldId("business-error")} className="scf-error">
+              {errors.business}
+            </p>
+          ) : null}
+        </div>
+      </div>
+
+      <div className="scf-form-grid">
+        <div className="form-group">
+          <label className="form-label" htmlFor={fieldId("phone")}>
+            Phone: <span className="scf-required" aria-hidden="true">*</span>
+          </label>
+          <input
+            id={fieldId("phone")}
+            name="phone"
+            type="tel"
+            className={`form-control${errors.phone ? " is-invalid" : ""}`}
+            autoComplete="tel"
+            placeholder="(608) 555-0123"
+            value={values.phone}
+            onChange={(e) => updateField("phone", e.target.value)}
+            aria-required="true"
+            aria-invalid={errors.phone ? "true" : "false"}
+            aria-describedby={errors.phone ? fieldId("phone-error") : undefined}
+          />
+          {errors.phone ? (
+            <p id={fieldId("phone-error")} className="scf-error">
+              {errors.phone}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="form-group">
+          <label className="form-label" htmlFor={fieldId("email")}>
+            Email: <span className="scf-required" aria-hidden="true">*</span>
+          </label>
+          <input
+            id={fieldId("email")}
+            name="email"
+            type="email"
+            className={`form-control${errors.email ? " is-invalid" : ""}`}
+            autoComplete="email"
+            placeholder="you@company.com"
+            value={values.email}
+            onChange={(e) => updateField("email", e.target.value)}
+            aria-required="true"
+            aria-invalid={errors.email ? "true" : "false"}
+            aria-describedby={errors.email ? fieldId("email-error") : undefined}
+          />
+          {errors.email ? (
+            <p id={fieldId("email-error")} className="scf-error">
+              {errors.email}
+            </p>
+          ) : null}
+        </div>
+      </div>
+
+      <div className="scf-form-grid">
+        <div className="form-group">
+          <label className="form-label" htmlFor={fieldId("serviceType")}>
+            Service Type: <span className="scf-required" aria-hidden="true">*</span>
+          </label>
+          <select
+            id={fieldId("serviceType")}
+            name="serviceType"
+            className={`form-control${errors.serviceType ? " is-invalid" : ""}`}
+            value={values.serviceType}
+            onChange={(e) => updateField("serviceType", e.target.value)}
+            aria-required="true"
+            aria-invalid={errors.serviceType ? "true" : "false"}
+            aria-describedby={errors.serviceType ? fieldId("serviceType-error") : undefined}
+          >
+            {SERVICE_TYPE_OPTIONS.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+          {errors.serviceType ? (
+            <p id={fieldId("serviceType-error")} className="scf-error">
+              {errors.serviceType}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="form-group">
+          <label className="form-label" htmlFor={fieldId("facilityType")}>
+            Facility Type: <span className="scf-required" aria-hidden="true">*</span>
+          </label>
+          <select
+            id={fieldId("facilityType")}
+            name="facilityType"
+            className={`form-control${errors.facilityType ? " is-invalid" : ""}`}
+            value={values.facilityType}
+            onChange={(e) => updateField("facilityType", e.target.value)}
+            aria-required="true"
+            aria-invalid={errors.facilityType ? "true" : "false"}
+            aria-describedby={errors.facilityType ? fieldId("facilityType-error") : undefined}
+          >
+            {FACILITY_TYPE_OPTIONS.map((option) => (
+              <option
+                key={option.value || "placeholder"}
+                value={option.value}
+                disabled={option.value === ""}
+              >
+                {option.label}
+              </option>
+            ))}
+          </select>
+          {errors.facilityType ? (
+            <p id={fieldId("facilityType-error")} className="scf-error">
+              {errors.facilityType}
+            </p>
+          ) : null}
+        </div>
+      </div>
+
+      <div className="form-group">
+        <label className="form-label" htmlFor={fieldId("message")}>
+          Message:
+        </label>
+        <textarea
+          id={fieldId("message")}
+          name="message"
+          className="form-control scf-textarea"
+          rows={4}
+          placeholder="Tell us about your needs (optional)"
+          value={values.message}
+          onChange={(e) => updateField("message", e.target.value)}
+        />
+      </div>
+
+      <button type="submit" className="btn btn-accent scf-submit">
+        Send Request
+      </button>
+    </form>
+  );
+
+  if (isEmbedded) {
+    return (
+      <div className="scf-embedded" id="request-service">
+        {formBody}
+      </div>
+    );
+  }
+
   return (
     <section className="scf-band" id="request-service" aria-labelledby={fieldId("heading")}>
       <div className="scf-band-bg" aria-hidden="true">
-        <img
-          src="/images/final_cta_bg.jpg"
-          alt=""
-        />
+        <img src="/images/final_cta_bg.jpg" alt="" />
       </div>
       <div className="scf-band-overlay" aria-hidden="true" />
       <div className="container scf-grid">
@@ -243,203 +452,7 @@ export default function ServiceConversionForm({
           </ul>
         </div>
 
-        <div className="scf-card reveal-up stagger-delay-1">
-          {submitted ? (
-            <div className="scf-success" role="status" aria-live="polite">
-              <h3>Thanks — we&apos;ve received your request and will be in touch.</h3>
-              <p>
-                Our team will review your details and follow up to talk through the next step for
-                your facility.
-              </p>
-            </div>
-          ) : (
-            <form className="scf-form" onSubmit={handleSubmit} noValidate>
-              <div className="scf-form-header">
-                <h3 className="scf-form-title">Request Service</h3>
-                <p className="scf-form-desc">
-                  We&apos;ll get back to you quickly to talk through your needs.
-                </p>
-              </div>
-
-              <div className="scf-form-grid">
-                <div className="form-group">
-                  <label className="form-label" htmlFor={fieldId("name")}>
-                    Name <span className="scf-required" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    id={fieldId("name")}
-                    name="name"
-                    type="text"
-                    className={`form-control${errors.name ? " is-invalid" : ""}`}
-                    autoComplete="name"
-                    value={values.name}
-                    onChange={(e) => updateField("name", e.target.value)}
-                    aria-required="true"
-                    aria-invalid={errors.name ? "true" : "false"}
-                    aria-describedby={errors.name ? fieldId("name-error") : undefined}
-                  />
-                  {errors.name ? (
-                    <p id={fieldId("name-error")} className="scf-error">
-                      {errors.name}
-                    </p>
-                  ) : null}
-                </div>
-
-                <div className="form-group">
-                  <label className="form-label" htmlFor={fieldId("business")}>
-                    Business / Facility Name{" "}
-                    <span className="scf-required" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    id={fieldId("business")}
-                    name="business"
-                    type="text"
-                    className={`form-control${errors.business ? " is-invalid" : ""}`}
-                    autoComplete="organization"
-                    value={values.business}
-                    onChange={(e) => updateField("business", e.target.value)}
-                    aria-required="true"
-                    aria-invalid={errors.business ? "true" : "false"}
-                    aria-describedby={errors.business ? fieldId("business-error") : undefined}
-                  />
-                  {errors.business ? (
-                    <p id={fieldId("business-error")} className="scf-error">
-                      {errors.business}
-                    </p>
-                  ) : null}
-                </div>
-              </div>
-
-              <div className="scf-form-grid">
-                <div className="form-group">
-                  <label className="form-label" htmlFor={fieldId("phone")}>
-                    Phone <span className="scf-required" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    id={fieldId("phone")}
-                    name="phone"
-                    type="tel"
-                    className={`form-control${errors.phone ? " is-invalid" : ""}`}
-                    autoComplete="tel"
-                    value={values.phone}
-                    onChange={(e) => updateField("phone", e.target.value)}
-                    aria-required="true"
-                    aria-invalid={errors.phone ? "true" : "false"}
-                    aria-describedby={errors.phone ? fieldId("phone-error") : undefined}
-                  />
-                  {errors.phone ? (
-                    <p id={fieldId("phone-error")} className="scf-error">
-                      {errors.phone}
-                    </p>
-                  ) : null}
-                </div>
-
-                <div className="form-group">
-                  <label className="form-label" htmlFor={fieldId("email")}>
-                    Email <span className="scf-required" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    id={fieldId("email")}
-                    name="email"
-                    type="email"
-                    className={`form-control${errors.email ? " is-invalid" : ""}`}
-                    autoComplete="email"
-                    value={values.email}
-                    onChange={(e) => updateField("email", e.target.value)}
-                    aria-required="true"
-                    aria-invalid={errors.email ? "true" : "false"}
-                    aria-describedby={errors.email ? fieldId("email-error") : undefined}
-                  />
-                  {errors.email ? (
-                    <p id={fieldId("email-error")} className="scf-error">
-                      {errors.email}
-                    </p>
-                  ) : null}
-                </div>
-              </div>
-
-              <div className="scf-form-grid">
-                <div className="form-group">
-                  <label className="form-label" htmlFor={fieldId("serviceType")}>
-                    Service Type <span className="scf-required" aria-hidden="true">*</span>
-                  </label>
-                  <select
-                    id={fieldId("serviceType")}
-                    name="serviceType"
-                    className={`form-control${errors.serviceType ? " is-invalid" : ""}`}
-                    value={values.serviceType}
-                    onChange={(e) => updateField("serviceType", e.target.value)}
-                    aria-required="true"
-                    aria-invalid={errors.serviceType ? "true" : "false"}
-                    aria-describedby={errors.serviceType ? fieldId("serviceType-error") : undefined}
-                  >
-                    {SERVICE_TYPE_OPTIONS.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.serviceType ? (
-                    <p id={fieldId("serviceType-error")} className="scf-error">
-                      {errors.serviceType}
-                    </p>
-                  ) : null}
-                </div>
-
-                <div className="form-group">
-                  <label className="form-label" htmlFor={fieldId("facilityType")}>
-                    Facility Type <span className="scf-required" aria-hidden="true">*</span>
-                  </label>
-                  <select
-                    id={fieldId("facilityType")}
-                    name="facilityType"
-                    className={`form-control${errors.facilityType ? " is-invalid" : ""}`}
-                    value={values.facilityType}
-                    onChange={(e) => updateField("facilityType", e.target.value)}
-                    aria-required="true"
-                    aria-invalid={errors.facilityType ? "true" : "false"}
-                    aria-describedby={
-                      errors.facilityType ? fieldId("facilityType-error") : undefined
-                    }
-                  >
-                    {FACILITY_TYPE_OPTIONS.map((option) => (
-                      <option
-                        key={option.value || "placeholder"}
-                        value={option.value}
-                        disabled={option.value === ""}
-                      >
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.facilityType ? (
-                    <p id={fieldId("facilityType-error")} className="scf-error">
-                      {errors.facilityType}
-                    </p>
-                  ) : null}
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label className="form-label" htmlFor={fieldId("message")}>
-                  Message
-                </label>
-                <textarea
-                  id={fieldId("message")}
-                  name="message"
-                  className="form-control scf-textarea"
-                  rows={4}
-                  value={values.message}
-                  onChange={(e) => updateField("message", e.target.value)}
-                />
-              </div>
-
-              <button type="submit" className="btn btn-accent scf-submit">
-                Send Request
-              </button>
-            </form>
-          )}
-        </div>
+        <div className="scf-card reveal-up stagger-delay-1">{formBody}</div>
       </div>
     </section>
   );

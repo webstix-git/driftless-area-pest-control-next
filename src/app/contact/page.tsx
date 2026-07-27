@@ -5,17 +5,7 @@ import SiteShell from "@/components/SiteShell";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import PageCTA from "@/components/PageCTA";
-
-const services = [
-  { value: "", label: "Select a service" },
-  { value: "commercial", label: "Commercial Pest Control" },
-  { value: "agricultural", label: "Agricultural Pest Control" },
-  { value: "rodent", label: "Rodent Control & Exclusion" },
-  { value: "wildlife", label: "Wildlife Removal" },
-  { value: "weed", label: "Perimeter Weed Control" },
-  { value: "monitoring", label: "Remote Monitoring" },
-  { value: "other", label: "Other / Not sure" },
-];
+import ServiceConversionForm from "@/components/ServiceConversionForm";
 
 const mapEmbedSrc =
   "https://maps.google.com/maps?q=18617+County+Highway+A,+Wisconsin&t=&z=14&ie=UTF8&iwloc=&output=embed";
@@ -38,69 +28,12 @@ export default function ContactPage() {
 
       <section className="page-section bg-cream">
         <div className="container contact-page-grid">
-          <div className="content-card reveal-up">
-            <h2 className="contact-form-title">Send a Message</h2>
-            <p className="contact-form-lead">
-              Share a few details and we&apos;ll follow up soon.
-            </p>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert(
-                  "Thank you! Your message has been received. Our team will contact you shortly."
-                );
-              }}
-            >
-              <div className="form-grid">
-                <div className="form-group">
-                  <label className="form-label" htmlFor="contactName">
-                    Full Name *
-                  </label>
-                  <input type="text" id="contactName" className="form-control" required />
-                </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="contactPhone">
-                    Phone Number *
-                  </label>
-                  <input type="tel" id="contactPhone" className="form-control" required />
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label className="form-label" htmlFor="contactEmail">
-                  Email Address *
-                </label>
-                <input type="email" id="contactEmail" className="form-control" required />
-              </div>
-
-              <div className="form-group">
-                <label className="form-label" htmlFor="contactService">
-                  Service Needed *
-                </label>
-                <select id="contactService" className="form-control" required defaultValue="">
-                  {services.map((service) => (
-                    <option
-                      key={service.value || "placeholder"}
-                      value={service.value}
-                      disabled={service.value === ""}
-                    >
-                      {service.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="form-group">
-                <label className="form-label" htmlFor="contactMessage">
-                  How Can We Help? *
-                </label>
-                <textarea id="contactMessage" className="form-control" rows={4} required />
-              </div>
-
-              <button type="submit" className="btn btn-accent contact-submit-btn">
-                Send
-              </button>
-            </form>
+          <div className="content-card reveal-up contact-form-card">
+            <ServiceConversionForm
+              variant="embedded"
+              formTitle="Contact Us"
+              formDescription="Share a few details and we'll follow up soon."
+            />
           </div>
 
           <div className="contact-side reveal-up stagger-delay-1">
