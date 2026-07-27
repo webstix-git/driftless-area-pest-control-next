@@ -238,5 +238,5 @@ const content: ServiceDetailContent = {
 };
 
 export default function WildlifeRemovalPage() {
-  return <ServiceDetailLayout content={content} />;
+  return <ServiceDetailLayout content={content} defaultServiceType="wildlife" />;
 }

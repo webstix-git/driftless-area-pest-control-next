@@ -19,9 +19,9 @@ export default function HomePage() {
 
         <div className="container">
           <div className="hero-content reveal-up active">
-            <h1 className="hero-title">Commercial, Industrial &amp; Agricultural <span className="text-accent">Pest</span> Solutions</h1>
+            <h1 className="hero-title">Commercial, Industrial &amp; Agricultural<br /><span className="text-accent">Pest</span> Solutions</h1>
             <p className="hero-subtitle">
-              Protecting farms, businesses, and industrial facilities across Wisconsin with reliable pest management.
+              Protecting farms, businesses, and industrial facilities<br />across Wisconsin with reliable pest management.
             </p>
             <div className="hero-actions">
               <a href="/services" className="btn btn-accent">Explore Our Services</a>
@@ -228,7 +228,7 @@ export default function HomePage() {
 
             <a href="/weed-control" className="premium-service-card reveal-up stagger-delay-2">
               <div className="premium-service-media">
-                <img className="pos-weed" src="/images/service_ag.jpg" alt="Technician applying perimeter weed treatment along a facility exterior" />
+                <img className="pos-weed" src="/images/service_ag.png" alt="Technician applying perimeter weed treatment along a facility exterior" />
               </div>
               <div className="premium-service-body">
                 <h3>Perimeter Weed Control</h3>

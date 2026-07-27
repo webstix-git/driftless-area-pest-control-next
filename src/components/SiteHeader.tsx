@@ -1,8 +1,21 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { CONTACT } from "@/lib/contact";
 
+const SERVICE_FORM_PATHS = new Set([
+  "/services",
+  "/rodent-control",
+  "/commercial-pest-control",
+  "/agricultural-pest-control",
+  "/wildlife-removal",
+  "/weed-control",
+]);
+
 export default function SiteHeader() {
+  const pathname = usePathname();
+  const quoteHref = SERVICE_FORM_PATHS.has(pathname) ? "#request-service" : "/contact";
+
   return (
     <>
       <header className="site-header" id="siteHeader">
@@ -66,7 +79,7 @@ export default function SiteHeader() {
               <svg className="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               {CONTACT.phoneDisplay}
             </a>
-            <a href="/contact" className="btn btn-accent">Get a Free Quote</a>
+            <a href={quoteHref} className="btn btn-accent">Get a Free Quote</a>
             <button className="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
               <span></span><span></span><span></span>
             </button>
@@ -77,14 +90,27 @@ export default function SiteHeader() {
       {/* Mobile Off-Canvas Drawer */}
       <div className="drawer-overlay" id="drawerOverlay"></div>
       <div className="mobile-drawer" id="mobileDrawer">
-        <div className="mobile-drawer-body">
-          <a href="/" className="brand-logo mobile-drawer-brand">
+        <div className="mobile-drawer-header">
+          <a href="/" className="brand-logo mobile-drawer-brand close-drawer">
             <div className="logo-badge">D</div>
             <div className="logo-text-group">
               <span className="logo-title">Driftless Area</span>
               <span className="logo-subtitle">Pest Control</span>
             </div>
           </a>
+          <button
+            type="button"
+            id="mobileDrawerClose"
+            className="mobile-drawer-close close-drawer"
+            aria-label="Close navigation menu"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+        <div className="mobile-drawer-body">
           <ul className="mobile-nav-list">
             <li><a href="/" className="mobile-nav-link close-drawer">Home</a></li>
             <li><a href="/about" className="mobile-nav-link close-drawer">About Us</a></li>
@@ -110,7 +136,7 @@ export default function SiteHeader() {
             <svg className="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Call {CONTACT.phoneDisplay}
           </a>
-          <a href="/contact" className="btn btn-accent close-drawer" style={{width: '100%'}}>Get a Free Quote</a>
+          <a href={quoteHref} className="btn btn-accent close-drawer" style={{width: '100%'}}>Get a Free Quote</a>
         </div>
       </div>
     </>

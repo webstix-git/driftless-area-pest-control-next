@@ -95,11 +95,6 @@ const content: ServiceDetailContent = {
     "Commercial facilities need pest programs that hold up under audits, foot traffic, and production schedules. We inspect first, then build a plan around entry points, sanitation pressure, and high-risk zones.",
     "From warehouses to food plants and retail sites, our team focuses on practical prevention, targeted insect control, and clear reporting your managers can use.",
   ],
-  introHighlights: [
-    "Inspection-led programs",
-    "Audit-aware documentation",
-    "Production-friendly scheduling",
-  ],
   introImageLabel: "commercial facility pest inspection",
   introImageSrc: "/images/service_insect_control.png",
   introImageAlt: "Orange beetle larvae feeding on plant leaves",
@@ -253,5 +248,5 @@ const content: ServiceDetailContent = {
 };
 
 export default function CommercialPestControlPage() {
-  return <ServiceDetailLayout content={content} />;
+  return <ServiceDetailLayout content={content} defaultServiceType="insect" />;
 }

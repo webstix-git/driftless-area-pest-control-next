@@ -27,27 +27,44 @@ export default function SiteShell({ children }: SiteShellProps) {
     const mobileToggle = document.getElementById("mobileToggle");
     const mobileDrawer = document.getElementById("mobileDrawer");
     const drawerOverlay = document.getElementById("drawerOverlay");
-    const closeDrawerBtns = document.querySelectorAll(".close-drawer");
+
+    function openMobileDrawer() {
+      if (!mobileDrawer || !drawerOverlay || !mobileToggle) return;
+      mobileDrawer.classList.add("open");
+      drawerOverlay.classList.add("active");
+      mobileToggle.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMobileDrawer() {
+      if (!mobileDrawer || !drawerOverlay || !mobileToggle) return;
+      mobileDrawer.classList.remove("open");
+      drawerOverlay.classList.remove("active");
+      mobileToggle.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
 
     function toggleMobileDrawer() {
-      if (!mobileDrawer || !drawerOverlay || !mobileToggle) return;
-      const isOpen = mobileDrawer.classList.contains("open");
-      if (isOpen) {
-        mobileDrawer.classList.remove("open");
-        drawerOverlay.classList.remove("active");
-        mobileToggle.setAttribute("aria-expanded", "false");
+      if (!mobileDrawer) return;
+      if (mobileDrawer.classList.contains("open")) {
+        closeMobileDrawer();
       } else {
-        mobileDrawer.classList.add("open");
-        drawerOverlay.classList.add("active");
-        mobileToggle.setAttribute("aria-expanded", "true");
+        openMobileDrawer();
       }
     }
 
+    const onDrawerClick = (e: MouseEvent) => {
+      const target = e.target as Element | null;
+      if (!target) return;
+      const closeEl = target.closest(".close-drawer, #mobileDrawerClose");
+      if (closeEl) {
+        closeMobileDrawer();
+      }
+    };
+
     mobileToggle?.addEventListener("click", toggleMobileDrawer);
-    drawerOverlay?.addEventListener("click", toggleMobileDrawer);
-    closeDrawerBtns.forEach((btn) =>
-      btn.addEventListener("click", toggleMobileDrawer)
-    );
+    drawerOverlay?.addEventListener("click", closeMobileDrawer);
+    document.addEventListener("click", onDrawerClick);
 
     const serviceModal = document.getElementById("serviceModal");
     const openModalBtns = document.querySelectorAll(".open-modal-btn");
@@ -73,11 +90,13 @@ export default function SiteShell({ children }: SiteShellProps) {
     serviceModal?.addEventListener("click", onModalBackdropClick);
 
     const onKeyDown = (e: KeyboardEvent) => {
-      if (
-        e.key === "Escape" &&
-        serviceModal?.classList.contains("active")
-      ) {
-        closeModal();
+      if (e.key === "Escape") {
+        if (serviceModal?.classList.contains("active")) {
+          closeModal();
+        }
+        if (mobileDrawer?.classList.contains("open")) {
+          closeMobileDrawer();
+        }
       }
     };
     document.addEventListener("keydown", onKeyDown);
@@ -111,10 +130,9 @@ export default function SiteShell({ children }: SiteShellProps) {
     return () => {
       window.removeEventListener("scroll", onScroll);
       mobileToggle?.removeEventListener("click", toggleMobileDrawer);
-      drawerOverlay?.removeEventListener("click", toggleMobileDrawer);
-      closeDrawerBtns.forEach((btn) =>
-        btn.removeEventListener("click", toggleMobileDrawer)
-      );
+      drawerOverlay?.removeEventListener("click", closeMobileDrawer);
+      document.removeEventListener("click", onDrawerClick);
+      document.body.style.overflow = "";
       openModalBtns.forEach((btn) => btn.removeEventListener("click", openModal));
       closeModalBtn?.removeEventListener("click", closeModal);
       serviceModal?.removeEventListener("click", onModalBackdropClick);

@@ -3,7 +3,9 @@ import SiteShell from "./SiteShell";
 import PageHero from "./PageHero";
 import Breadcrumb from "./Breadcrumb";
 import ImagePlaceholder from "./ImagePlaceholder";
-import { CONTACT } from "@/lib/contact";
+import ServiceConversionForm, {
+  type ServiceTypeValue,
+} from "./ServiceConversionForm";
 
 export type ServiceSegment = {
   title: string;
@@ -124,7 +126,16 @@ function ServiceMedia({
   return <ImagePlaceholder label={label} aspect={aspect} className={className} />;
 }
 
-export default function ServiceDetailLayout({ content }: { content: ServiceDetailContent }) {
+type ServiceDetailLayoutProps = {
+  content: ServiceDetailContent;
+  /** Pre-selects Service Type in the mid-page conversion form. */
+  defaultServiceType?: ServiceTypeValue | string;
+};
+
+export default function ServiceDetailLayout({
+  content,
+  defaultServiceType = "other",
+}: ServiceDetailLayoutProps) {
   return (
     <SiteShell>
       <PageHero
@@ -256,7 +267,7 @@ export default function ServiceDetailLayout({ content }: { content: ServiceDetai
                 );
               })}
             </ul>
-            <a href="/contact" className="btn btn-gold">{content.calloutCta}</a>
+            <a href="#request-service" className="btn btn-gold">{content.calloutCta}</a>
           </div>
           <div className="rc-monitor-media reveal-up stagger-delay-1">
             <ServiceMedia
@@ -322,25 +333,7 @@ export default function ServiceDetailLayout({ content }: { content: ServiceDetai
         </div>
       </section>
 
-      <section className="cta-section" id="cta-band">
-        <div className="cta-bg">
-          <img src="/images/final_cta_bg.jpg" alt="" />
-        </div>
-        <div className="cta-overlay"></div>
-        <div className="container">
-          <div className="cta-content reveal-up">
-            <h2>{content.ctaTitle}</h2>
-            <p>{content.ctaBody}</p>
-            <div className="cta-buttons">
-              <a href="/contact" className="btn btn-accent">Request Service</a>
-              <a href={CONTACT.phoneHref} className="btn btn-gold">
-                <svg className="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                Call {CONTACT.phoneDisplay}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceConversionForm defaultServiceType={defaultServiceType} />
     </SiteShell>
   );
 }

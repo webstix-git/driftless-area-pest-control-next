@@ -81,7 +81,7 @@ const content: ServiceDetailContent = {
   heroTitle: "Perimeter Weed Control",
   heroDescription:
     "Vegetation management for building perimeters, fence lines, and facility exteriors.",
-  heroImage: "/images/service_ag.jpg",
+  heroImage: "/images/service_ag.png",
   heroImageAlt: "Technician applying perimeter weed treatment along a facility exterior",
   objectPosition: "100% 40%",
   breadcrumbLabel: "Perimeter Weed Control",
@@ -96,7 +96,7 @@ const content: ServiceDetailContent = {
     "This service supports agricultural and commercial sites that need cleaner grounds as part of a broader pest prevention plan.",
   ],
   introImageLabel: "facility perimeter vegetation assessment",
-  introImageSrc: "/images/service_ag.jpg",
+  introImageSrc: "/images/service_ag.png",
   introImageAlt: "Technician applying perimeter weed treatment along a facility exterior",
   segmentsTitle: (
     <>
@@ -229,5 +229,5 @@ const content: ServiceDetailContent = {
 };
 
 export default function WeedControlPage() {
-  return <ServiceDetailLayout content={content} />;
+  return <ServiceDetailLayout content={content} defaultServiceType="weed" />;
 }

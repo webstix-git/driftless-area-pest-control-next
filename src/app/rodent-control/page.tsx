@@ -228,5 +228,5 @@ const content: ServiceDetailContent = {
 };
 
 export default function RodentControlPage() {
-  return <ServiceDetailLayout content={content} />;
+  return <ServiceDetailLayout content={content} defaultServiceType="rodent" />;
 }

@@ -229,5 +229,7 @@ const content: ServiceDetailContent = {
 };
 
 export default function AgriculturalPestControlPage() {
-  return <ServiceDetailLayout content={content} />;
+  return (
+    <ServiceDetailLayout content={content} defaultServiceType="agricultural" />
+  );
 }

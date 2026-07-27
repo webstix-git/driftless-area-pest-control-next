@@ -3,6 +3,7 @@ import SiteShell from "@/components/SiteShell";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import PageCTA from "@/components/PageCTA";
+import ServiceConversionForm from "@/components/ServiceConversionForm";
 
 export const metadata: Metadata = {
   title: "Services Overview | Driftless Area Pest Control",
@@ -233,7 +234,7 @@ export default function ServicesPage() {
               <div className="premium-service-media">
                 <img
                   className="pos-weed"
-                  src="/images/service_ag.jpg"
+                  src="/images/service_ag.png"
                   alt="Technician applying perimeter weed treatment along a facility exterior"
                 />
               </div>
@@ -268,6 +269,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <ServiceConversionForm defaultServiceType="other" />
 
       <PageCTA />
     </SiteShell>
