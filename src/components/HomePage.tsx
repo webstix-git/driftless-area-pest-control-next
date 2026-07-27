@@ -21,7 +21,8 @@ export default function HomePage() {
           <div className="hero-content reveal-up active">
             <h1 className="hero-title">Commercial, Industrial &amp; Agricultural<br /><span className="text-accent">Pest</span> Solutions</h1>
             <p className="hero-subtitle">
-              Protecting farms, businesses, and industrial facilities<br />across Wisconsin with reliable pest management.
+              Protecting farms, businesses, and industrial&nbsp;facilities across Wisconsin with
+              reliable pest management.
             </p>
             <div className="hero-actions">
               <a href="/services" className="btn btn-accent">Explore Our Services</a>
