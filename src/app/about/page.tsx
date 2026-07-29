@@ -126,11 +126,12 @@ export default function AboutPage() {
               </h2>
               <p className="about-intro-lead">
                 Driftless Area Pest Control serves dairies, grain sites, warehouses, and industrial
-                facilities throughout southwestern Wisconsin. Our business is built on more than 27
-                years of hands-on agricultural experience, giving us a firsthand understanding of
-                the challenges farms and commercial operations face every day. We know that every
-                property is different, which is why we take the time to understand your operation
-                before recommending a solution.
+                facilities throughout southwestern Wisconsin. For the past 2.5 years, we&apos;ve
+                helped businesses protect their operations with practical pest management
+                solutions. Wade brings more than 27 years of hands-on agricultural experience,
+                providing a firsthand understanding of farm operations, biosecurity, and facility
+                management. That experience helps us recommend practical solutions that fit the way
+                your operation works.
               </p>
               <p className="about-intro-lead">
                 Every service begins with a thorough site walkthrough. We identify entry points,
