@@ -41,6 +41,11 @@ export default function HomePage() {
             <div className="about-intro-visuals reveal-up">
               <div className="about-intro-main-img">
                 <img src="/images/about_intro_main.png" alt="Technician reviewing dairy facility monitoring data on a tablet inside a Wisconsin dairy barn" />
+                <span className="about-intro-experience-badge">
+                  <span className="about-intro-experience-kicker">Trusted Expertise</span>
+                  <strong>2.5+</strong>
+                  <span className="about-intro-experience-label">Years Experience</span>
+                </span>
               </div>
               <div className="about-intro-overlap-img">
                 <img src="/images/about_intro_overlap.png" alt="Inspector using a flashlight and tablet to check under commercial kitchen equipment" />
@@ -53,7 +58,7 @@ export default function HomePage() {
               </span>
               <h2>Pest Control Built Around How <span className="text-accent">Farms</span> and Facilities Operate</h2>
               <p className="about-intro-lead">
-                Driftless Area Pest Control serves dairies, grain sites, warehouses, and industrial facilities throughout southwestern Wisconsin. For the past 2.5 years, we&apos;ve helped businesses protect their operations with practical pest management solutions. Wade brings more than 27 years of hands-on agricultural experience, providing a firsthand understanding of farm operations, biosecurity, and facility management. That experience helps us recommend practical solutions that fit the way your operation works.
+                Driftless Area Pest Control has been serving farms, grain sites, warehouses, and industrial facilities across southwestern Wisconsin for the past 2.5 years. Our approach is shaped by more than 27 years of hands-on agricultural experience, giving us a practical understanding of farm operations, biosecurity, and the day-to-day challenges commercial facilities face.
               </p>
               <p className="about-intro-lead">
                 Every service begins with a thorough site walkthrough. We identify entry points, problem areas, and the conditions that attract pests, then build a customized plan that fits your facility, your schedule, and your long-term goals.
