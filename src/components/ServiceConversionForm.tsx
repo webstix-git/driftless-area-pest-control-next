@@ -8,7 +8,7 @@ export const SERVICE_TYPE_OPTIONS = [
   { value: "rodent", label: "Commercial & Industrial Rodent Control" },
   { value: "agricultural", label: "Agricultural Pest Management" },
   { value: "insect", label: "Insect Control" },
-  { value: "bird-wildlife", label: "Bird & Wildlife Management" },
+  { value: "bird-wildlife", label: "Wildlife Removal" },
   { value: "wildlife", label: "Wildlife Removal" },
   { value: "weed", label: "Perimeter Weed Control" },
   { value: "monitoring", label: "Remote Monitoring" },

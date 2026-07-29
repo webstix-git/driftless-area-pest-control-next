@@ -41,11 +41,6 @@ export default function HomePage() {
             <div className="about-intro-visuals reveal-up">
               <div className="about-intro-main-img">
                 <img src="/images/about_intro_main.png" alt="Technician reviewing dairy facility monitoring data on a tablet inside a Wisconsin dairy barn" />
-                <span className="about-intro-experience-badge">
-                  <span className="about-intro-experience-kicker">Trusted Expertise</span>
-                  <strong>27+</strong>
-                  <span className="about-intro-experience-label">Years Experience</span>
-                </span>
               </div>
               <div className="about-intro-overlap-img">
                 <img src="/images/about_intro_overlap.png" alt="Inspector using a flashlight and tablet to check under commercial kitchen equipment" />
@@ -58,10 +53,10 @@ export default function HomePage() {
               </span>
               <h2>Pest Control Built Around How <span className="text-accent">Farms</span> and Facilities Operate</h2>
               <p className="about-intro-lead">
-                Driftless Area Pest Control works with dairies, grain sites, warehouses, and industrial buildings throughout southwestern Wisconsin. Our team comes from agriculture, so we understand biosecurity, production schedules, and why a one-size spray route rarely solves the problem.
+                Driftless Area Pest Control serves dairies, grain sites, warehouses, and industrial facilities throughout southwestern Wisconsin. Our business is built on more than 27 years of hands-on agricultural experience, giving us a firsthand understanding of the challenges farms and commercial operations face every day. We know that every property is different, which is why we take the time to understand your operation before recommending a solution.
               </p>
               <p className="about-intro-lead">
-                We start with a site walkthrough, then build a plan around your entry points, schedules, and pressure areas.
+                Every service begins with a thorough site walkthrough. We identify entry points, problem areas, and the conditions that attract pests, then build a customized plan that fits your facility, your schedule, and your long-term goals.
               </p>
 
               <a href="/about" className="btn btn-service-green about-intro-cta">
@@ -176,7 +171,7 @@ export default function HomePage() {
                 <img className="pos-wildlife" src="/images/service_wildlife_removal.png" alt="Technician installing bird exclusion mesh on a commercial building while a pigeon flies away" />
               </div>
               <div className="premium-service-body">
-                <h3>Bird &amp; Wildlife Management</h3>
+                <h3>Wildlife Removal</h3>
                 <p className="premium-service-desc">Manage birds, raccoons, and skunks with exclusion and prevention services that stop wildlife from nesting in or contaminating your facility.</p>
                 <div className="premium-service-details">
                   <div className="premium-service-details-inner">
@@ -233,14 +228,14 @@ export default function HomePage() {
               </div>
               <div className="premium-service-body">
                 <h3>Perimeter Weed Control</h3>
-                <p className="premium-service-desc">Keep building perimeters, fence lines, and facility exteriors clear with vegetation management that reduces pest harborage around your site.</p>
+                <p className="premium-service-desc">Keep building perimeters and facility exteriors clear with vegetation management that reduces pest harborage around your site.</p>
                 <div className="premium-service-details">
                   <div className="premium-service-details-inner">
                     <p className="premium-service-label">Includes</p>
                     <ul className="premium-service-list">
                       <li>Vegetation Management</li>
                       <li>Building Perimeters</li>
-                      <li>Fence Lines</li>
+                      <li>Access Areas</li>
                       <li>Facility Exteriors</li>
                     </ul>
                   </div>
@@ -274,7 +269,7 @@ export default function HomePage() {
               <span className="why-badge">Why Choose Us</span>
               <h2>Why Facilities <span className="text-accent">Trust</span> Driftless Area Pest Control</h2>
               <p className="why-lead">
-                Founded on a multi-generational dairy farm, we inspect first, seal entry points, and build plans around biosecurity — not spray-route checklists.
+                Every property is different, so we take the time to inspect the situation, understand what's causing the problem, and recommend the right solution for your business or farm.
               </p>
 
               <div className="why-features">

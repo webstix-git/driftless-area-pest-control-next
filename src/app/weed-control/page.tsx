@@ -6,7 +6,7 @@ import ServiceDetailLayout, {
 export const metadata: Metadata = {
   title: "Perimeter Weed Control | Driftless Area Pest Control",
   description:
-    "Perimeter weed and vegetation management for building exteriors, fence lines, and facility grounds in Wisconsin.",
+    "Perimeter weed and vegetation management for building exteriors and facility grounds in Wisconsin.",
 };
 
 const icons = {
@@ -80,7 +80,7 @@ const icons = {
 const content: ServiceDetailContent = {
   heroTitle: "Perimeter Weed Control",
   heroDescription:
-    "Vegetation management for building perimeters, fence lines, and facility exteriors.",
+    "Vegetation management for building perimeters and facility exteriors.",
   heroImage: "/images/service_ag.png",
   heroImageAlt: "Technician applying perimeter weed treatment along a facility exterior",
   objectPosition: "100% 40%",
@@ -92,7 +92,7 @@ const content: ServiceDetailContent = {
     </>
   ),
   introParagraphs: [
-    "Weeds and overgrowth around buildings create shelter for rodents and insects. Perimeter vegetation management keeps fence lines, foundations, and facility exteriors easier to inspect and maintain.",
+    "Weeds and overgrowth around buildings create shelter for rodents and insects. Perimeter vegetation management keeps foundations and facility exteriors easier to inspect and maintain.",
     "This service supports agricultural and commercial sites that need cleaner grounds as part of a broader pest prevention plan.",
   ],
   introImageLabel: "facility perimeter vegetation assessment",
@@ -118,10 +118,10 @@ const content: ServiceDetailContent = {
       imageLabel: "building perimeter weed control",
     },
     {
-      title: "Fence Lines",
+      title: "Access Areas",
       benefit:
-        "Fence-line vegetation management that keeps boundaries visible and less inviting to pests.",
-      imageLabel: "fence line vegetation clearing",
+        "Clearer lot edges and access routes that reduce harborage and make grounds easier to maintain.",
+      imageLabel: "access area vegetation clearing",
     },
     {
       title: "Facility Exteriors",
@@ -141,7 +141,7 @@ const content: ServiceDetailContent = {
     {
       title: "Inspect",
       description:
-        "We review building edges, fence lines, and exterior growth that can shelter pests.",
+        "We review building edges and exterior growth that can shelter pests.",
       icon: icons.inspect,
     },
     {
@@ -170,11 +170,11 @@ const content: ServiceDetailContent = {
     </>
   ),
   calloutBody:
-    "Overgrown perimeters hide activity and give rodents and insects places to shelter. Keeping building edges, fence lines, and facility exteriors clear helps inspections, exclusion work, and ongoing pest programs work better together.",
+    "Overgrown perimeters hide activity and give rodents and insects places to shelter. Keeping building edges and facility exteriors clear helps inspections, exclusion work, and ongoing pest programs work better together.",
   calloutPoints: [
     { text: "Less harborage around buildings" },
     { text: "Easier exterior inspections" },
-    { text: "Cleaner fence lines and edges" },
+    { text: "Cleaner perimeter edges" },
     { text: "Support for broader IPM programs" },
   ],
   calloutCta: "Ask about perimeter service",
@@ -188,11 +188,11 @@ const content: ServiceDetailContent = {
     {
       title: "Customized plans",
       description:
-        "We design perimeter work around your building layout, fence lines, and access needs.",
+        "We design perimeter work around your building layout and access needs.",
       icon: icons.chart,
     },
     {
-      title: "27+ years of experience",
+      title: "Built on Experience",
       description:
         "Our team brings decades of agricultural and facility experience to exterior site work.",
       icon: icons.experience,

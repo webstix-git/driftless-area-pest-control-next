@@ -192,7 +192,7 @@ const content: ServiceDetailContent = {
       icon: icons.chart,
     },
     {
-      title: "27+ years of experience",
+      title: "Built on Experience",
       description:
         "Our team brings decades of hands-on dairy and agricultural experience to every site visit.",
       icon: icons.experience,

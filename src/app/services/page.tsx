@@ -163,7 +163,7 @@ export default function ServicesPage() {
                 />
               </div>
               <div className="premium-service-body">
-                <h3>Bird &amp; Wildlife Management</h3>
+                <h3>Wildlife Removal</h3>
                 <p className="premium-service-desc">
                   Manage birds, raccoons, and skunks with exclusion and prevention services that
                   stop wildlife from nesting in or contaminating your facility.
@@ -241,8 +241,8 @@ export default function ServicesPage() {
               <div className="premium-service-body">
                 <h3>Perimeter Weed Control</h3>
                 <p className="premium-service-desc">
-                  Keep building perimeters, fence lines, and facility exteriors clear with
-                  vegetation management that reduces pest harborage around your site.
+                  Keep building perimeters and facility exteriors clear with vegetation
+                  management that reduces pest harborage around your site.
                 </p>
                 <div className="premium-service-details">
                   <div className="premium-service-details-inner">
@@ -250,7 +250,7 @@ export default function ServicesPage() {
                     <ul className="premium-service-list">
                       <li>Vegetation Management</li>
                       <li>Building Perimeters</li>
-                      <li>Fence Lines</li>
+                      <li>Access Areas</li>
                       <li>Facility Exteriors</li>
                     </ul>
                   </div>

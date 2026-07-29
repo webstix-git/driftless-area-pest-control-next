@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 
 const experienceCards = [
   {
-    value: "27+",
-    label: "Years Experience",
-    desc: "Hands-on agricultural and facility pest work across southwestern Wisconsin.",
+    value: "Trusted",
+    label: "Built on Experience",
+    desc: "Hands-on experience serving farms and commercial facilities across southwestern Wisconsin.",
   },
   {
     value: "8+",
@@ -109,11 +109,6 @@ export default function AboutPage() {
                   src="/images/about_intro_main.png"
                   alt="Technician reviewing dairy facility monitoring data on a tablet inside a Wisconsin dairy barn"
                 />
-                <span className="about-intro-experience-badge">
-                  <span className="about-intro-experience-kicker">Trusted Expertise</span>
-                  <strong>27+</strong>
-                  <span className="about-intro-experience-label">Years Experience</span>
-                </span>
               </div>
               <div className="about-intro-overlap-img">
                 <img
@@ -130,15 +125,17 @@ export default function AboutPage() {
                 Facilities Operate
               </h2>
               <p className="about-intro-lead">
-                Driftless Area Pest Control works with dairies, grain sites, warehouses, and
-                industrial buildings throughout southwestern Wisconsin. Our team comes from
-                agriculture, so we understand biosecurity, production schedules, and why a
-                one-size spray route rarely solves the problem.
+                Driftless Area Pest Control serves dairies, grain sites, warehouses, and industrial
+                facilities throughout southwestern Wisconsin. Our business is built on more than 27
+                years of hands-on agricultural experience, giving us a firsthand understanding of
+                the challenges farms and commercial operations face every day. We know that every
+                property is different, which is why we take the time to understand your operation
+                before recommending a solution.
               </p>
               <p className="about-intro-lead">
-                We start with a site walkthrough, then build a plan around your entry points,
-                schedules, and pressure areas — sealing gaps and correcting attractants instead of
-                only treating symptoms.
+                Every service begins with a thorough site walkthrough. We identify entry points,
+                problem areas, and the conditions that attract pests, then build a customized plan
+                that fits your facility, your schedule, and your long-term goals.
               </p>
               <a href="/team" className="btn btn-service-green about-intro-cta">
                 Meet Our Team
@@ -185,8 +182,9 @@ export default function AboutPage() {
                 Control
               </h2>
               <p className="why-lead">
-                Founded on a multi-generational dairy farm, we inspect first, seal entry points,
-                and build plans around biosecurity — not spray-route checklists.
+                Every property is different, so we take the time to inspect the situation, understand
+                what's causing the problem, and recommend the right solution for your business or
+                farm.
               </p>
 
               <div className="why-features">
