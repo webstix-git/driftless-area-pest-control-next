@@ -19,6 +19,13 @@ const counties = [
   "Iowa County",
   "Lafayette County",
   "Juneau County",
+  "La Crosse County",
+  "Monroe County",
+  "Columbia County",
+  "Jackson County",
+  "Adams County",
+  "Western Dane County",
+  "Trempealeau County",
 ];
 
 const localBenefits = [
@@ -183,7 +190,7 @@ export default function ServiceAreaPage() {
                 />
               </div>
               <div className="service-area-local-badge" aria-hidden="true">
-                <span className="service-area-local-badge-value">8+</span>
+                <span className="service-area-local-badge-value">15+</span>
                 <span className="service-area-local-badge-label">Counties Served</span>
               </div>
             </div>

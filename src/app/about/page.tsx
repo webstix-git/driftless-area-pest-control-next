@@ -18,7 +18,7 @@ const experienceCards = [
     desc: "Hands-on experience serving farms and commercial facilities across southwestern Wisconsin.",
   },
   {
-    value: "8+",
+    value: "15+",
     label: "Counties Served",
     desc: "Local coverage across the Driftless Region and neighboring counties.",
   },
@@ -82,6 +82,13 @@ const counties = [
   "Iowa County",
   "Lafayette County",
   "Juneau County",
+  "La Crosse County",
+  "Monroe County",
+  "Columbia County",
+  "Jackson County",
+  "Adams County",
+  "Western Dane County",
+  "Trempealeau County",
 ];
 
 export default function AboutPage() {

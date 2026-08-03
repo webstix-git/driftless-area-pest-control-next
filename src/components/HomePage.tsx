@@ -41,11 +41,6 @@ export default function HomePage() {
             <div className="about-intro-visuals reveal-up">
               <div className="about-intro-main-img">
                 <img src="/images/about_intro_main.png" alt="Technician reviewing dairy facility monitoring data on a tablet inside a Wisconsin dairy barn" />
-                <span className="about-intro-experience-badge">
-                  <span className="about-intro-experience-kicker">Trusted Expertise</span>
-                  <strong>2.5+</strong>
-                  <span className="about-intro-experience-label">Years Experience</span>
-                </span>
               </div>
               <div className="about-intro-overlap-img">
                 <img src="/images/about_intro_overlap.png" alt="Inspector using a flashlight and tablet to check under commercial kitchen equipment" />
@@ -333,6 +328,13 @@ export default function HomePage() {
                 <span className="county-tag">Iowa County</span>
                 <span className="county-tag">Lafayette County</span>
                 <span className="county-tag">Juneau County</span>
+                <span className="county-tag">La Crosse County</span>
+                <span className="county-tag">Monroe County</span>
+                <span className="county-tag">Columbia County</span>
+                <span className="county-tag">Jackson County</span>
+                <span className="county-tag">Adams County</span>
+                <span className="county-tag">Western Dane County</span>
+                <span className="county-tag">Trempealeau County</span>
               </div>
 
               <a href="/service-area" className="btn btn-accent">Check Service for Your Location</a>
