@@ -346,8 +346,9 @@ export default function HomePage() {
               <div className="home-product-body">
                 <h3 className="home-product-title">Pit Magic</h3>
                 <p className="home-product-desc">
-                  Pit Magic Manure Treatment for Swine Deep Pits
-                  <br />
+                  Pit Magic Manure Treatment for{" "}
+                  <span className="nowrap">Swine Deep Pits</span>{" "}
+                  <br className="home-product-desc-br" />
                   and Lagoons
                 </p>
                 <ul className="home-product-features">

@@ -1542,6 +1542,10 @@
       color: var(--color-slate-subtle);
     }
 
+    .home-product-desc .nowrap {
+      white-space: nowrap;
+    }
+
     .home-product-features {
       list-style: none;
       margin: 0.25rem 0 10px;
@@ -1659,6 +1663,14 @@
     @media (max-width: 768px) {
       .home-products-grid {
         grid-template-columns: 1fr;
+      }
+
+      .home-product-desc .nowrap {
+        white-space: normal;
+      }
+
+      .home-product-desc-br {
+        display: none;
       }
 
       .home-products-exec {
