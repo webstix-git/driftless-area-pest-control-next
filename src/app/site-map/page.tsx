@@ -39,6 +39,17 @@ const navSections = [
     ],
   },
   {
+    title: "Products",
+    href: "/literature/premium-executive-literature.pdf",
+    links: [
+      { href: "/literature/pit-magic-infosheet.pdf", label: "Pit Magic Info Sheet" },
+      { href: "/literature/pit-magic-label.pdf", label: "Pit Magic Label" },
+      { href: "/literature/litter-magic-infosheet.pdf", label: "Litter Magic Info Sheet" },
+      { href: "/literature/litter-magic-label.pdf", label: "Litter Magic Label" },
+      { href: "/literature/premium-executive-literature.pdf", label: "Premium Executive Literature" },
+    ],
+  },
+  {
     title: "Resources",
     href: "/resources",
     links: [
@@ -61,7 +72,7 @@ export default function SitemapPage() {
     <SiteShell>
       <PageHero
         title="Sitemap"
-        description="Site pages organized to match the main navigation — Home, About, Services, Resources, and Contact."
+        description="Site pages organized to match the main navigation — Home, About, Services, Products, Resources, and Contact."
         imageSrc="/images/why_farm_facility.jpg"
         imageAlt="Farm facility exterior"
         objectPosition="center 40%"

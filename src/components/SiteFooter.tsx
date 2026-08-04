@@ -8,12 +8,12 @@ export default function SiteFooter() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <a href="/" className="brand-logo" style={{marginBottom: '1rem'}}>
-              <div className="logo-badge">D</div>
-              <div className="logo-text-group">
-                <span className="logo-title">Driftless Area</span>
-                <span className="logo-subtitle">Pest Control</span>
-              </div>
+            <a href="/" className="brand-logo brand-logo--footer" style={{marginBottom: '1rem'}}>
+              <img
+                src="/images/logos/logo-white.png"
+                alt="Driftless Area Pest Control"
+                className="brand-logo-img"
+              />
             </a>
             <p>Protecting farms, businesses, and facilities across Wisconsin with thoughtful pest management and dependable service.</p>
           </div>
@@ -39,6 +39,17 @@ export default function SiteFooter() {
               <li><a href="/rodent-control">Rodent Exclusion</a></li>
               <li><a href="/wildlife-removal">Wildlife Removal</a></li>
               <li><a href="/weed-control">Perimeter Weed Control</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-col">
+            <h4>Products</h4>
+            <ul className="footer-links">
+              <li><a href="/literature/pit-magic-infosheet.pdf" target="_blank" rel="noopener noreferrer">Pit Magic Info Sheet</a></li>
+              <li><a href="/literature/pit-magic-label.pdf" target="_blank" rel="noopener noreferrer">Pit Magic Label</a></li>
+              <li><a href="/literature/litter-magic-infosheet.pdf" target="_blank" rel="noopener noreferrer">Litter Magic Info Sheet</a></li>
+              <li><a href="/literature/litter-magic-label.pdf" target="_blank" rel="noopener noreferrer">Litter Magic Label</a></li>
+              <li><a href="/literature/premium-executive-literature.pdf" target="_blank" rel="noopener noreferrer">Executive Literature</a></li>
             </ul>
           </div>
 

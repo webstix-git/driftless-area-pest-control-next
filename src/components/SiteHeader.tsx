@@ -21,11 +21,11 @@ export default function SiteHeader() {
       <header className="site-header" id="siteHeader">
         <div className="container header-inner">
           <a href="/" className="brand-logo" aria-label="Driftless Area Pest Control Home">
-            <div className="logo-badge">D</div>
-            <div className="logo-text-group">
-              <span className="logo-title">Driftless Area</span>
-              <span className="logo-subtitle">Pest Control</span>
-            </div>
+            <img
+              src="/images/logos/logo-dark.png"
+              alt="Driftless Area Pest Control"
+              className="brand-logo-img"
+            />
           </a>
 
           <nav aria-label="Main Navigation">
@@ -58,6 +58,19 @@ export default function SiteHeader() {
                 </ul>
               </li>
               <li className="nav-item">
+                <span className="nav-link" role="button" tabIndex={0} aria-haspopup="true">
+                  Products
+                  <svg className="icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </span>
+                <ul className="dropdown-menu" aria-label="Products Submenu">
+                  <li><a href="/literature/pit-magic-infosheet.pdf" className="dropdown-link" target="_blank" rel="noopener noreferrer">Pit Magic Info Sheet</a></li>
+                  <li><a href="/literature/pit-magic-label.pdf" className="dropdown-link" target="_blank" rel="noopener noreferrer">Pit Magic Label</a></li>
+                  <li><a href="/literature/litter-magic-infosheet.pdf" className="dropdown-link" target="_blank" rel="noopener noreferrer">Litter Magic Info Sheet</a></li>
+                  <li><a href="/literature/litter-magic-label.pdf" className="dropdown-link" target="_blank" rel="noopener noreferrer">Litter Magic Label</a></li>
+                  <li><a href="/literature/premium-executive-literature.pdf" className="dropdown-link" target="_blank" rel="noopener noreferrer">Premium Executive Literature</a></li>
+                </ul>
+              </li>
+              <li className="nav-item">
                 <a href="/resources" className="nav-link">
                   Resources
                   <svg className="icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
@@ -75,10 +88,6 @@ export default function SiteHeader() {
           </nav>
 
           <div className="header-actions">
-            <a href={CONTACT.phoneHref} className="phone-link">
-              <svg className="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              {CONTACT.phoneDisplay}
-            </a>
             <a href={quoteHref} className="btn btn-accent">Get a Free Quote</a>
             <button className="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
               <span></span><span></span><span></span>
@@ -92,11 +101,11 @@ export default function SiteHeader() {
       <div className="mobile-drawer" id="mobileDrawer">
         <div className="mobile-drawer-header">
           <a href="/" className="brand-logo mobile-drawer-brand close-drawer">
-            <div className="logo-badge">D</div>
-            <div className="logo-text-group">
-              <span className="logo-title">Driftless Area</span>
-              <span className="logo-subtitle">Pest Control</span>
-            </div>
+            <img
+              src="/images/logos/logo-dark.png"
+              alt="Driftless Area Pest Control"
+              className="brand-logo-img"
+            />
           </a>
           <button
             type="button"
@@ -123,6 +132,12 @@ export default function SiteHeader() {
             <li><a href="/rodent-control" className="mobile-nav-link close-drawer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Rodent Control & Exclusion</a></li>
             <li><a href="/wildlife-removal" className="mobile-nav-link close-drawer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Wildlife Removal</a></li>
             <li><a href="/weed-control" className="mobile-nav-link close-drawer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Perimeter Weed Control</a></li>
+            <li><span className="mobile-nav-link" style={{ cursor: "default", opacity: 0.7 }}>Products</span></li>
+            <li><a href="/literature/pit-magic-infosheet.pdf" className="mobile-nav-link close-drawer" target="_blank" rel="noopener noreferrer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Pit Magic Info Sheet</a></li>
+            <li><a href="/literature/pit-magic-label.pdf" className="mobile-nav-link close-drawer" target="_blank" rel="noopener noreferrer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Pit Magic Label</a></li>
+            <li><a href="/literature/litter-magic-infosheet.pdf" className="mobile-nav-link close-drawer" target="_blank" rel="noopener noreferrer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Litter Magic Info Sheet</a></li>
+            <li><a href="/literature/litter-magic-label.pdf" className="mobile-nav-link close-drawer" target="_blank" rel="noopener noreferrer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Litter Magic Label</a></li>
+            <li><a href="/literature/premium-executive-literature.pdf" className="mobile-nav-link close-drawer" target="_blank" rel="noopener noreferrer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Premium Executive Literature</a></li>
             <li><a href="/resources" className="mobile-nav-link close-drawer">Resources</a></li>
             <li><a href="/pest-library" className="mobile-nav-link close-drawer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Pest Library</a></li>
             <li><a href="/cockroach-guide" className="mobile-nav-link close-drawer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Cockroach Guide</a></li>
