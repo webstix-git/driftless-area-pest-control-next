@@ -2,7 +2,6 @@
 
 import { FileText } from "lucide-react";
 import SiteShell from "./SiteShell";
-import ImagePlaceholder from "./ImagePlaceholder";
 import { CONTACT } from "@/lib/contact";
 
 export default function HomePage() {
@@ -269,60 +268,93 @@ export default function HomePage() {
            ========================================================================== */}
       <section className="home-products-section" id="products">
         <div className="container">
-          <div className="home-products-top reveal-up">
-            <div className="home-products-header">
-              <span className="section-eyebrow">Our Products</span>
-              <h2>
-                Biological treatment products we <span className="text-accent">supply</span>
-              </h2>
-              <p>
-                Microbial products for manure, litter, and waste systems. Download the info sheet or
-                product label for each.
-              </p>
-            </div>
-
-            <a
-              href="/literature/premium-executive-literature.pdf"
-              className="home-products-exec"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="home-products-exec-icon" aria-hidden="true">
-                <FileText />
-              </div>
-              <div className="home-products-exec-copy">
-                <span className="home-products-exec-tag">Both Products</span>
-                <h3>Premium Executive Literature</h3>
-                <p>
-                  Combined Bacillus overview of Pit Magic and Litter Magic for commercial agriculture.
-                </p>
-                <span className="home-products-exec-link">
-                  Download PDF
-                  <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <line x1="5" x2="19" y1="12" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                  </svg>
-                </span>
-              </div>
-            </a>
+          <div className="home-products-header reveal-up">
+            <span className="section-eyebrow">Our Products</span>
+            <h2>
+              Biological <span className="text-accent">Treatment</span> Products
+            </h2>
+            <p>
+              Sustainable microbial solutions for manure, litter, and waste management. Better for
+              animals. Better for the environment. Better for tomorrow.
+            </p>
           </div>
 
-          <div className="home-products-grid">
-            <article className="home-product-card reveal-up">
-              <div className="home-product-visual">
-                <ImagePlaceholder label="Pit Magic" aspect="16 / 10" className="home-product-skeleton" />
-                <span className="home-product-pdf-badge">
-                  <FileText className="home-product-pdf-icon" aria-hidden="true" />
+          <a
+            href="/literature/premium-executive-literature.pdf"
+            className="home-products-exec reveal-up"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="home-products-exec-copy">
+              <h3>Product Information Guide</h3>
+              <p>Get the combined overview of Pit Magic and Litter Magic in one easy guide.</p>
+            </div>
+            <span className="home-products-exec-link">
+              <svg className="menu-pdf-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"
+                  opacity="0.15"
+                />
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"
+                />
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M14 2v6h6"
+                />
+                <text
+                  x="12"
+                  y="17.2"
+                  textAnchor="middle"
+                  fill="currentColor"
+                  fontSize="6.2"
+                  fontWeight="800"
+                  fontFamily="system-ui, sans-serif"
+                >
                   PDF
-                </span>
+                </text>
+              </svg>
+              Download PDF
+              <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <line x1="5" x2="19" y1="12" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </span>
+          </a>
+
+          <div className="home-products-grid">
+            <article className="home-product-card reveal-up" id="pit-magic">
+              <div className="home-product-media">
+                <img
+                  src="/images/product_pit_magic_banner.png?v=5"
+                  alt="Pit Magic livestock treatment product"
+                  className="home-product-banner"
+                  width={1024}
+                  height={576}
+                />
               </div>
               <div className="home-product-body">
-                <h3>Pit Magic</h3>
-                <p className="home-product-role">Pit &amp; Lagoon Treatment</p>
+                <h3 className="home-product-title">Pit Magic</h3>
                 <p className="home-product-desc">
-                  Biological manure treatment for swine deep pits, lagoons, and digesters. Breaks
-                  down solids and reduces ammonia and odor.
+                  Pit Magic Manure Treatment for Swine Deep Pits
+                  <br />
+                  and Lagoons
                 </p>
+                <ul className="home-product-features">
+                  <li>Reduces ammonia and odors</li>
+                  <li>Breaks down solids and improves flow</li>
+                  <li>Supports a healthier environment</li>
+                </ul>
                 <div className="home-product-links">
                   <a
                     href="/literature/pit-magic-infosheet.pdf"
@@ -346,21 +378,27 @@ export default function HomePage() {
               </div>
             </article>
 
-            <article className="home-product-card reveal-up stagger-delay-1">
-              <div className="home-product-visual">
-                <ImagePlaceholder label="Litter Magic" aspect="16 / 10" className="home-product-skeleton" />
-                <span className="home-product-pdf-badge">
-                  <FileText className="home-product-pdf-icon" aria-hidden="true" />
-                  PDF
-                </span>
+            <article className="home-product-card reveal-up stagger-delay-1" id="litter-magic">
+              <div className="home-product-media">
+                <img
+                  src="/images/product_litter_magic_banner.png?v=5"
+                  alt="Litter Magic poultry litter treatment product"
+                  className="home-product-banner"
+                  width={1024}
+                  height={570}
+                />
               </div>
               <div className="home-product-body">
-                <h3>Litter Magic</h3>
-                <p className="home-product-role">Poultry Litter Treatment</p>
+                <h3 className="home-product-title">Litter Magic</h3>
                 <p className="home-product-desc">
-                  Biological litter treatment for turkey and chicken barns. Reduces moisture and
-                  ammonia and extends litter life.
+                  Litter Magic is a specialized product designed to improve the quality and
+                  management of poultry litter.
                 </p>
+                <ul className="home-product-features">
+                  <li>Reduces moisture and litter odor</li>
+                  <li>Extends litter life and improves quality</li>
+                  <li>Supports bird health and barn hygiene</li>
+                </ul>
                 <div className="home-product-links">
                   <a
                     href="/literature/litter-magic-infosheet.pdf"

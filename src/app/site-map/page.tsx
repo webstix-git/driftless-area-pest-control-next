@@ -40,13 +40,11 @@ const navSections = [
   },
   {
     title: "Products",
-    href: "/literature/premium-executive-literature.pdf",
+    href: "/#products",
     links: [
-      { href: "/literature/pit-magic-infosheet.pdf", label: "Pit Magic Info Sheet" },
-      { href: "/literature/pit-magic-label.pdf", label: "Pit Magic Label" },
-      { href: "/literature/litter-magic-infosheet.pdf", label: "Litter Magic Info Sheet" },
-      { href: "/literature/litter-magic-label.pdf", label: "Litter Magic Label" },
-      { href: "/literature/premium-executive-literature.pdf", label: "Premium Executive Literature" },
+      { href: "/literature/premium-executive-literature.pdf", label: "Our Products" },
+      { href: "/#pit-magic", label: "Pit Magic" },
+      { href: "/#litter-magic", label: "Litter Magic" },
     ],
   },
   {

@@ -85,7 +85,9 @@ export default function ContactPage() {
                       href={CONTACT.emailHref}
                       className="contact-detail-value contact-detail-email"
                     >
-                      {CONTACT.emailDisplay}
+                      {CONTACT.emailLocal}
+                      <wbr />
+                      @{CONTACT.emailDomain}
                     </a>
                   </div>
                 </li>

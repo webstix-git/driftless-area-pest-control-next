@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, type ReactNode } from "react";
+import { useLenis } from "lenis/react";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import ServiceModal from "./ServiceModal";
@@ -11,6 +12,8 @@ type SiteShellProps = {
 };
 
 export default function SiteShell({ children }: SiteShellProps) {
+  const lenis = useLenis();
+
   useEffect(() => {
     const header = document.getElementById("siteHeader");
     const onScroll = () => {
@@ -21,19 +24,31 @@ export default function SiteShell({ children }: SiteShellProps) {
         header.classList.remove("scrolled");
       }
     };
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
     const mobileToggle = document.getElementById("mobileToggle");
     const mobileDrawer = document.getElementById("mobileDrawer");
     const drawerOverlay = document.getElementById("drawerOverlay");
 
+    function lockPageScroll() {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+      lenis?.stop();
+    }
+
+    function unlockPageScroll() {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      lenis?.start();
+    }
+
     function openMobileDrawer() {
       if (!mobileDrawer || !drawerOverlay || !mobileToggle) return;
       mobileDrawer.classList.add("open");
       drawerOverlay.classList.add("active");
       mobileToggle.setAttribute("aria-expanded", "true");
-      document.body.style.overflow = "hidden";
+      lockPageScroll();
     }
 
     function closeMobileDrawer() {
@@ -41,7 +56,7 @@ export default function SiteShell({ children }: SiteShellProps) {
       mobileDrawer.classList.remove("open");
       drawerOverlay.classList.remove("active");
       mobileToggle.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
+      unlockPageScroll();
     }
 
     function toggleMobileDrawer() {
@@ -74,12 +89,16 @@ export default function SiteShell({ children }: SiteShellProps) {
       if (!serviceModal) return;
       serviceModal.classList.add("active");
       serviceModal.setAttribute("aria-hidden", "false");
+      lockPageScroll();
     };
 
     const closeModal = () => {
       if (!serviceModal) return;
       serviceModal.classList.remove("active");
       serviceModal.setAttribute("aria-hidden", "true");
+      if (!mobileDrawer?.classList.contains("open")) {
+        unlockPageScroll();
+      }
     };
 
     openModalBtns.forEach((btn) => btn.addEventListener("click", openModal));
@@ -132,7 +151,7 @@ export default function SiteShell({ children }: SiteShellProps) {
       mobileToggle?.removeEventListener("click", toggleMobileDrawer);
       drawerOverlay?.removeEventListener("click", closeMobileDrawer);
       document.removeEventListener("click", onDrawerClick);
-      document.body.style.overflow = "";
+      unlockPageScroll();
       openModalBtns.forEach((btn) => btn.removeEventListener("click", openModal));
       closeModalBtn?.removeEventListener("click", closeModal);
       serviceModal?.removeEventListener("click", onModalBackdropClick);
@@ -140,7 +159,7 @@ export default function SiteShell({ children }: SiteShellProps) {
       requestForm?.removeEventListener("submit", onSubmit);
       revealObserver.disconnect();
     };
-  }, []);
+  }, [lenis]);
 
   return (
     <>

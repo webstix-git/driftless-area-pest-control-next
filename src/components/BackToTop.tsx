@@ -1,9 +1,11 @@
 "use client";
 
+import { useLenis } from "lenis/react";
 import { useEffect, useState } from "react";
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
+  const lenis = useLenis();
 
   useEffect(() => {
     const onScroll = () => {
@@ -17,6 +19,10 @@ export default function BackToTop() {
   }, []);
 
   const scrollToTop = () => {
+    if (lenis) {
+      lenis.scrollTo(0, { duration: 1.2 });
+      return;
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 

@@ -19,7 +19,7 @@ export default function SiteFooter() {
           </div>
 
           <div className="footer-col">
-            <h4>Navigation</h4>
+            <h4>Quick Links</h4>
             <ul className="footer-links">
               <li><a href="/">Home</a></li>
               <li><a href="/about">About Us</a></li>
@@ -43,17 +43,6 @@ export default function SiteFooter() {
           </div>
 
           <div className="footer-col">
-            <h4>Products</h4>
-            <ul className="footer-links">
-              <li><a href="/literature/pit-magic-infosheet.pdf" target="_blank" rel="noopener noreferrer">Pit Magic Info Sheet</a></li>
-              <li><a href="/literature/pit-magic-label.pdf" target="_blank" rel="noopener noreferrer">Pit Magic Label</a></li>
-              <li><a href="/literature/litter-magic-infosheet.pdf" target="_blank" rel="noopener noreferrer">Litter Magic Info Sheet</a></li>
-              <li><a href="/literature/litter-magic-label.pdf" target="_blank" rel="noopener noreferrer">Litter Magic Label</a></li>
-              <li><a href="/literature/premium-executive-literature.pdf" target="_blank" rel="noopener noreferrer">Executive Literature</a></li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
             <h4>Contact Us</h4>
             <ul className="contact-info">
               <li>
@@ -66,7 +55,11 @@ export default function SiteFooter() {
               </li>
               <li>
                 <svg className="icon" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                <a href={CONTACT.emailHref} className="contact-info-link" style={{wordBreak: 'break-all'}}>{CONTACT.emailDisplay}</a>
+                <a href={CONTACT.emailHref} className="contact-info-link contact-info-email">
+                  {CONTACT.emailLocal}
+                  <wbr />
+                  @{CONTACT.emailDomain}
+                </a>
               </li>
             </ul>
           </div>

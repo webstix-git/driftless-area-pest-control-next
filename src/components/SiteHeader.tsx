@@ -12,6 +12,45 @@ const SERVICE_FORM_PATHS = new Set([
   "/weed-control",
 ]);
 
+function PdfMenuIcon() {
+  return (
+    <svg className="menu-pdf-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"
+        opacity="0.15"
+      />
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"
+      />
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M14 2v6h6"
+      />
+      <text
+        x="12"
+        y="17.2"
+        textAnchor="middle"
+        fill="currentColor"
+        fontSize="6.2"
+        fontWeight="800"
+        fontFamily="system-ui, sans-serif"
+      >
+        PDF
+      </text>
+    </svg>
+  );
+}
+
 export default function SiteHeader() {
   const pathname = usePathname();
   const quoteHref = SERVICE_FORM_PATHS.has(pathname) ? "#request-service" : "/contact";
@@ -22,9 +61,15 @@ export default function SiteHeader() {
         <div className="container header-inner">
           <a href="/" className="brand-logo" aria-label="Driftless Area Pest Control Home">
             <img
-              src="/images/logos/logo-dark.png"
+              src="/images/logos/logo-white.png"
               alt="Driftless Area Pest Control"
-              className="brand-logo-img"
+              className="brand-logo-img brand-logo-img--light"
+            />
+            <img
+              src="/images/logos/logo-dark.png"
+              alt=""
+              aria-hidden="true"
+              className="brand-logo-img brand-logo-img--dark"
             />
           </a>
 
@@ -63,11 +108,19 @@ export default function SiteHeader() {
                   <svg className="icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                 </span>
                 <ul className="dropdown-menu" aria-label="Products Submenu">
-                  <li><a href="/literature/pit-magic-infosheet.pdf" className="dropdown-link" target="_blank" rel="noopener noreferrer">Pit Magic Info Sheet</a></li>
-                  <li><a href="/literature/pit-magic-label.pdf" className="dropdown-link" target="_blank" rel="noopener noreferrer">Pit Magic Label</a></li>
-                  <li><a href="/literature/litter-magic-infosheet.pdf" className="dropdown-link" target="_blank" rel="noopener noreferrer">Litter Magic Info Sheet</a></li>
-                  <li><a href="/literature/litter-magic-label.pdf" className="dropdown-link" target="_blank" rel="noopener noreferrer">Litter Magic Label</a></li>
-                  <li><a href="/literature/premium-executive-literature.pdf" className="dropdown-link" target="_blank" rel="noopener noreferrer">Premium Executive Literature</a></li>
+                  <li>
+                    <a
+                      href="/literature/premium-executive-literature.pdf"
+                      className="dropdown-link dropdown-link--pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Our Products
+                      <PdfMenuIcon />
+                    </a>
+                  </li>
+                  <li><a href="/#pit-magic" className="dropdown-link">Pit Magic</a></li>
+                  <li><a href="/#litter-magic" className="dropdown-link">Litter Magic</a></li>
                 </ul>
               </li>
               <li className="nav-item">
@@ -98,11 +151,15 @@ export default function SiteHeader() {
 
       {/* Mobile Off-Canvas Drawer */}
       <div className="drawer-overlay" id="drawerOverlay"></div>
-      <div className="mobile-drawer" id="mobileDrawer">
+      <div
+        className="mobile-drawer"
+        id="mobileDrawer"
+        data-lenis-prevent
+      >
         <div className="mobile-drawer-header">
           <a href="/" className="brand-logo mobile-drawer-brand close-drawer">
             <img
-              src="/images/logos/logo-dark.png"
+              src="/images/logos/logo-white.png"
               alt="Driftless Area Pest Control"
               className="brand-logo-img"
             />
@@ -133,11 +190,20 @@ export default function SiteHeader() {
             <li><a href="/wildlife-removal" className="mobile-nav-link close-drawer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Wildlife Removal</a></li>
             <li><a href="/weed-control" className="mobile-nav-link close-drawer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Perimeter Weed Control</a></li>
             <li><span className="mobile-nav-link" style={{ cursor: "default", opacity: 0.7 }}>Products</span></li>
-            <li><a href="/literature/pit-magic-infosheet.pdf" className="mobile-nav-link close-drawer" target="_blank" rel="noopener noreferrer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Pit Magic Info Sheet</a></li>
-            <li><a href="/literature/pit-magic-label.pdf" className="mobile-nav-link close-drawer" target="_blank" rel="noopener noreferrer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Pit Magic Label</a></li>
-            <li><a href="/literature/litter-magic-infosheet.pdf" className="mobile-nav-link close-drawer" target="_blank" rel="noopener noreferrer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Litter Magic Info Sheet</a></li>
-            <li><a href="/literature/litter-magic-label.pdf" className="mobile-nav-link close-drawer" target="_blank" rel="noopener noreferrer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Litter Magic Label</a></li>
-            <li><a href="/literature/premium-executive-literature.pdf" className="mobile-nav-link close-drawer" target="_blank" rel="noopener noreferrer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Premium Executive Literature</a></li>
+            <li>
+              <a
+                href="/literature/premium-executive-literature.pdf"
+                className="mobile-nav-link mobile-nav-link--pdf close-drawer"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}
+              >
+                Our Products
+                <PdfMenuIcon />
+              </a>
+            </li>
+            <li><a href="/#pit-magic" className="mobile-nav-link close-drawer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Pit Magic</a></li>
+            <li><a href="/#litter-magic" className="mobile-nav-link close-drawer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Litter Magic</a></li>
             <li><a href="/resources" className="mobile-nav-link close-drawer">Resources</a></li>
             <li><a href="/pest-library" className="mobile-nav-link close-drawer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Pest Library</a></li>
             <li><a href="/cockroach-guide" className="mobile-nav-link close-drawer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Cockroach Guide</a></li>
