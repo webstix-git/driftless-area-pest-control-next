@@ -83,7 +83,6 @@ export default function SiteHeader() {
                 </a>
                 <ul className="dropdown-menu" aria-label="About Submenu">
                   <li><a href="/about" className="dropdown-link">About Us</a></li>
-                  <li><a href="/team" className="dropdown-link">Our Team</a></li>
                   <li><a href="/service-area" className="dropdown-link">Service Area</a></li>
                   <li><a href="/case-studies" className="dropdown-link">Case Studies</a></li>
                 </ul>
@@ -180,7 +179,6 @@ export default function SiteHeader() {
           <ul className="mobile-nav-list">
             <li><a href="/" className="mobile-nav-link close-drawer">Home</a></li>
             <li><a href="/about" className="mobile-nav-link close-drawer">About Us</a></li>
-            <li><a href="/team" className="mobile-nav-link close-drawer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Our Team</a></li>
             <li><a href="/service-area" className="mobile-nav-link close-drawer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Service Area</a></li>
             <li><a href="/case-studies" className="mobile-nav-link close-drawer" style={{paddingLeft: '1.5rem', fontSize: '0.9rem'}}>Case Studies</a></li>
             <li><a href="/services" className="mobile-nav-link close-drawer">Services Overview</a></li>

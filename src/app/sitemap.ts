@@ -8,7 +8,6 @@ const baseUrl =
 const staticRoutes = [
   "",
   "/about",
-  "/team",
   "/service-area",
   "/case-studies",
   "/services",

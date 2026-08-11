@@ -148,8 +148,8 @@ export default function AboutPage() {
                 problem areas, and the conditions that attract pests, then build a customized plan
                 that fits your facility, your schedule, and your long-term goals.
               </p>
-              <a href="/team" className="btn btn-service-green about-intro-cta">
-                Meet Our Team
+              <a href="/contact" className="btn btn-service-green about-intro-cta">
+                Request a Free Inspection
                 <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">
                   <line x1="5" x2="19" y1="12" y2="12" />
                   <polyline points="12 5 19 12 12 19" />

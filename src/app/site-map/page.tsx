@@ -21,7 +21,6 @@ const navSections = [
     href: "/about",
     links: [
       { href: "/about", label: "About Us" },
-      { href: "/team", label: "Our Team" },
       { href: "/service-area", label: "Service Area" },
       { href: "/case-studies", label: "Case Studies" },
     ],

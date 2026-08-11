@@ -1,41 +1,68 @@
 "use client";
 
+import { useState } from "react";
 import { FileText } from "lucide-react";
 import SiteShell from "./SiteShell";
+import HeroBackgroundSlider, { type HeroSlide } from "./HeroBackgroundSlider";
 import { CONTACT } from "@/lib/contact";
 
-export default function HomePage() {
+type HomePageProps = {
+  heroSlides?: HeroSlide[];
+  /** Temporary review mode: header + hero only */
+  heroOnly?: boolean;
+};
+
+export default function HomePage({ heroSlides, heroOnly = false }: HomePageProps) {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const activeSlide = heroSlides?.[slideIndex];
+  const imageBannerOnly = Boolean(activeSlide?.imageBannerOnly);
+
   return (
-    <SiteShell>
+    <SiteShell chrome={heroOnly ? "header-only" : "full"}>
 
 
       {/* ==========================================================================
            1. HERO — Who we are & what we do
            ========================================================================== */}
-      <section className="hero-section" id="hero">
-        <div className="hero-bg">
-          <img
-            src="/images/hero_bg.png"
-            alt="Farmer spraying crop rows at golden hour across a Wisconsin agricultural field"
+      <section
+        className={`hero-section${heroSlides?.length ? " hero-section-mockup" : ""}${imageBannerOnly ? " hero-section-image-banner" : ""}`}
+        id="hero"
+      >
+        {heroSlides?.length ? (
+          <HeroBackgroundSlider
+            slides={heroSlides}
+            index={slideIndex}
+            onIndexChange={setSlideIndex}
           />
-        </div>
-        <div className="hero-overlay"></div>
+        ) : (
+          <div className="hero-bg">
+            <img
+              src="/images/hero_bg.png"
+              alt="Farmer spraying crop rows at golden hour across a Wisconsin agricultural field"
+            />
+          </div>
+        )}
+        {!imageBannerOnly ? <div className="hero-overlay"></div> : null}
 
-        <div className="container">
-          <div className="hero-content reveal-up active">
-            <h1 className="hero-title">Commercial, Industrial &amp; Agricultural<br /><span className="text-accent">Pest</span> Solutions</h1>
-            <p className="hero-subtitle">
-              Protecting farms, businesses, and industrial&nbsp;facilities across Wisconsin with
-              reliable pest management.
-            </p>
-            <div className="hero-actions">
-              <a href="/services" className="btn btn-accent">Explore Our Services</a>
-              <a href="/service-area" className="btn btn-outline">Our Service Areas</a>
+        {!imageBannerOnly ? (
+          <div className="container">
+            <div className="hero-content reveal-up active">
+              <h1 className="hero-title">Commercial, Industrial &amp; Agricultural<br /><span className="text-accent">Pest</span> Solutions</h1>
+              <p className="hero-subtitle">
+                Protecting farms, businesses, and industrial&nbsp;facilities across Wisconsin with
+                reliable pest management.
+              </p>
+              <div className="hero-actions">
+                <a href="/services" className="btn btn-accent">Explore Our Services</a>
+                <a href="/service-area" className="btn btn-outline">Our Service Areas</a>
+              </div>
             </div>
           </div>
-        </div>
+        ) : null}
       </section>
 
+      {!heroOnly ? (
+      <>
       {/* ==========================================================================
            ABOUT US — collage layout
            ========================================================================== */}
@@ -653,6 +680,8 @@ export default function HomePage() {
       </section>
 
     
+      </>
+      ) : null}
     </SiteShell>
   );
 }

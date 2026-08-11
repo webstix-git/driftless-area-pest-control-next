@@ -9,9 +9,11 @@ import BackToTop from "./BackToTop";
 
 type SiteShellProps = {
   children: ReactNode;
+  /** header-only: skip footer/modal/back-to-top (used by temporary mockup pages) */
+  chrome?: "full" | "header-only";
 };
 
-export default function SiteShell({ children }: SiteShellProps) {
+export default function SiteShell({ children, chrome = "full" }: SiteShellProps) {
   const lenis = useLenis();
 
   useEffect(() => {
@@ -165,9 +167,13 @@ export default function SiteShell({ children }: SiteShellProps) {
     <>
       <SiteHeader />
       <main id="mainContent">{children}</main>
-      <SiteFooter />
-      <ServiceModal />
-      <BackToTop />
+      {chrome === "full" ? (
+        <>
+          <SiteFooter />
+          <ServiceModal />
+          <BackToTop />
+        </>
+      ) : null}
     </>
   );
 }
