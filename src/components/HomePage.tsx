@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FileText } from "lucide-react";
 import SiteShell from "./SiteShell";
 import HeroBackgroundSlider, { type HeroSlide } from "./HeroBackgroundSlider";
+import HeroShieldIcon from "./icons/HeroShieldIcon";
 import { CONTACT } from "@/lib/contact";
 
 type HomePageProps = {
@@ -25,7 +26,7 @@ export default function HomePage({ heroSlides, heroOnly = false }: HomePageProps
            1. HERO — Who we are & what we do
            ========================================================================== */}
       <section
-        className={`hero-section${heroSlides?.length ? " hero-section-mockup" : ""}${imageBannerOnly ? " hero-section-image-banner" : ""}`}
+        className={`hero-section${heroSlides?.length ? " hero-section-mockup" : " hero-section-commercial"}${imageBannerOnly ? " hero-section-image-banner" : ""}`}
         id="hero"
       >
         {heroSlides?.length ? (
@@ -36,15 +37,45 @@ export default function HomePage({ heroSlides, heroOnly = false }: HomePageProps
           />
         ) : (
           <div className="hero-bg">
-            <img
-              src="/images/hero_bg.png"
-              alt="Farmer spraying crop rows at golden hour across a Wisconsin agricultural field"
-            />
+            <picture>
+              <source
+                srcSet="/images/hero_commercial_panorama_4k.webp"
+                type="image/webp"
+              />
+              <img
+                src="/images/hero_commercial_panorama_4k.jpg"
+                alt="Grain storage, dairy farm, warehouse docks, and office building at dusk"
+                width={3840}
+                height={2048}
+                decoding="async"
+                fetchPriority="high"
+              />
+            </picture>
           </div>
         )}
         {!imageBannerOnly ? <div className="hero-overlay"></div> : null}
 
-        {!imageBannerOnly ? (
+        {!heroSlides?.length ? (
+          <div className="hero-banner reveal-up active">
+            <h1 className="hero-banner-title">Protecting What Matters Most</h1>
+            <div className="hero-banner-divider" aria-hidden="true">
+              <span className="hero-banner-line" />
+              <HeroShieldIcon className="hero-banner-shield" />
+              <span className="hero-banner-line" />
+            </div>
+            <ul className="hero-banner-industries">
+              <li>Grain Storage</li>
+              <li>Dairy Farms</li>
+              <li>Warehouses</li>
+              <li>Office Buildings</li>
+            </ul>
+            <p className="hero-banner-tagline">
+              Commercial pest control solutions{" "}
+              <br className="hero-banner-br" />
+              you can count on
+            </p>
+          </div>
+        ) : !imageBannerOnly ? (
           <div className="container">
             <div className="hero-content reveal-up active">
               <h1 className="hero-title">Commercial, Industrial &amp; Agricultural<br /><span className="text-accent">Pest</span> Solutions</h1>

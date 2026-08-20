@@ -8,22 +8,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const heroSlides = [
-  {
-    src: "/images/wedsite bg 1.png",
-    alt: "Farm landscape with crop rows, grain silos, and pasture cattle at golden hour",
-  },
-  {
-    src: "/images/website bg 2.png",
-    alt: "Protecting What Matters Most — grain storage, dairy farms, warehouses, and office buildings",
-    imageBannerOnly: true,
-  },
-  {
-    src: "/images/website bg 3.png",
-    alt: "Agricultural and commercial facilities from grain storage through warehouse and office buildings",
-  },
-];
-
 export default function HomeMockupPage() {
-  return <HomePage heroSlides={heroSlides} heroOnly />;
+  return <HomePage />;
 }
