@@ -894,7 +894,7 @@
     }
 
     .hero-banner {
-      --hero-banner-accent: #0073C5;
+      --hero-banner-accent: var(--color-gold-accent);
       position: relative;
       z-index: 3;
       width: min(1120px, 100%);
@@ -945,7 +945,7 @@
       height: auto;
       flex-shrink: 0;
       margin: 0 0.35rem;
-      color: #0073C5;
+      color: var(--hero-banner-accent);
       overflow: visible;
       filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
     }
@@ -994,7 +994,7 @@
 
     .hero-banner-tagline {
       font-family: var(--font-heading);
-      color: #0073C5;
+      color: var(--hero-banner-accent);
       text-transform: uppercase;
       letter-spacing: 1px;
       word-spacing: 0.35em;
