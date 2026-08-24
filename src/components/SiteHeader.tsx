@@ -54,6 +54,11 @@ function PdfMenuIcon() {
 export default function SiteHeader() {
   const pathname = usePathname();
   const quoteHref = SERVICE_FORM_PATHS.has(pathname) ? "#request-service" : "/contact";
+  const isHome = pathname === "/";
+  const lightLogo = isHome
+    ? "/images/logos/new_logo2.png?v=1"
+    : "/images/logos/logo-white.backup.png?v=2";
+  const darkLogo = "/images/logos/new_logo2.png?v=1";
 
   return (
     <>
@@ -61,12 +66,12 @@ export default function SiteHeader() {
         <div className="container header-inner">
           <a href="/" className="brand-logo" aria-label="Driftless Area Pest Control Home">
             <img
-              src="/images/logos/new_logo2.png?v=1"
+              src={lightLogo}
               alt="Driftless Area Pest Control"
               className="brand-logo-img brand-logo-img--light"
             />
             <img
-              src="/images/logos/new_logo2.png?v=1"
+              src={darkLogo}
               alt=""
               aria-hidden="true"
               className="brand-logo-img brand-logo-img--dark"

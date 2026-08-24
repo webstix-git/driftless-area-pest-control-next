@@ -400,6 +400,11 @@
       opacity: 0;
     }
 
+    /* No white tint on inside-page heroes */
+    body:has(.page-hero) .site-header::before {
+      display: none;
+    }
+
     .site-header .header-inner {
       position: relative;
       z-index: 1;
@@ -464,8 +469,8 @@
 
     .brand-logo-img {
       display: block;
-      width: 155px;
-      height: 155px;
+      width: 160px;
+      height: 160px;
       max-width: none;
       aspect-ratio: 1 / 1;
       object-fit: contain;
@@ -493,19 +498,19 @@
     }
 
     .site-header.scrolled .brand-logo-img {
-      width: 95px;
-      height: 95px;
+      width: 100px;
+      height: 100px;
     }
 
     /* Inside pages (with page hero): slightly smaller default logo */
     body:has(.page-hero) .site-header .brand-logo-img {
-      width: 135px;
-      height: 135px;
+      width: 140px;
+      height: 140px;
     }
 
     body:has(.page-hero) .site-header.scrolled .brand-logo-img {
-      width: 95px;
-      height: 95px;
+      width: 100px;
+      height: 100px;
     }
 
     .brand-logo--footer .brand-logo-img {
@@ -4093,13 +4098,13 @@
 
       /* Keep logo clear of hero title in hamburger layout */
       .site-header .brand-logo-img {
-        width: 115px;
-        height: 115px;
+        width: 120px;
+        height: 120px;
       }
 
       body:has(.page-hero) .site-header .brand-logo-img {
-        width: 105px;
-        height: 105px;
+        width: 110px;
+        height: 110px;
       }
 
       .premium-services-grid,
@@ -4513,15 +4518,15 @@
 
       .brand-logo-img,
       body:has(.page-hero) .site-header .brand-logo-img {
-        width: 93px;
-        height: 93px;
+        width: 98px;
+        height: 98px;
         max-width: none;
       }
 
       .site-header.scrolled .brand-logo-img,
       body:has(.page-hero) .site-header.scrolled .brand-logo-img {
-        width: 77px;
-        height: 77px;
+        width: 82px;
+        height: 82px;
       }
 
       .hero-section-commercial .hero-overlay {
