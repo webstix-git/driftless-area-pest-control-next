@@ -61,12 +61,12 @@ export default function SiteHeader() {
         <div className="container header-inner">
           <a href="/" className="brand-logo" aria-label="Driftless Area Pest Control Home">
             <img
-              src="/images/logos/logo-white.png"
+              src="/images/logos/new_logo2.png?v=1"
               alt="Driftless Area Pest Control"
               className="brand-logo-img brand-logo-img--light"
             />
             <img
-              src="/images/logos/logo-dark.png"
+              src="/images/logos/new_logo2.png?v=1"
               alt=""
               aria-hidden="true"
               className="brand-logo-img brand-logo-img--dark"
@@ -156,13 +156,6 @@ export default function SiteHeader() {
         data-lenis-prevent
       >
         <div className="mobile-drawer-header">
-          <a href="/" className="brand-logo mobile-drawer-brand close-drawer">
-            <img
-              src="/images/logos/logo-white.png"
-              alt="Driftless Area Pest Control"
-              className="brand-logo-img"
-            />
-          </a>
           <button
             type="button"
             id="mobileDrawerClose"
@@ -215,7 +208,6 @@ export default function SiteHeader() {
             <svg className="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Call {CONTACT.phoneDisplay}
           </a>
-          <a href={quoteHref} className="btn btn-accent close-drawer" style={{width: '100%'}}>Get a Free Quote</a>
         </div>
       </div>
     </>

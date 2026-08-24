@@ -10,7 +10,7 @@ export default function SiteFooter() {
           <div className="footer-brand">
             <a href="/" className="brand-logo brand-logo--footer" style={{marginBottom: '1rem'}}>
               <img
-                src="/images/logos/logo-white.png"
+                src="/images/logos/logo-white.backup.png?v=1"
                 alt="Driftless Area Pest Control"
                 className="brand-logo-img"
               />
