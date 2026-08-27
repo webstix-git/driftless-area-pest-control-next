@@ -13,6 +13,7 @@ export type ServiceSegment = {
   imageLabel: string;
   imageSrc?: string;
   imageAlt?: string;
+  objectPosition?: string;
   icon?: ReactNode;
 };
 
@@ -202,6 +203,7 @@ export default function ServiceDetailLayout({
                     alt={segment.imageAlt}
                     label={segment.imageLabel}
                     aspect="4 / 3"
+                    objectPosition={segment.objectPosition}
                   />
                 </div>
                 <div className="rc-serve-copy">

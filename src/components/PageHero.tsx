@@ -23,7 +23,13 @@ export default function PageHero({
       <div className="page-hero-overlay" aria-hidden="true"></div>
       <div className="container">
         <div className="page-hero-content reveal-up active">
-          <h1 className="page-hero-title">{title}</h1>
+          <h1 className="page-hero-title">
+            {title.split("\n").map((line, index) => (
+              <span key={`${line}-${index}`} className="page-hero-title-line">
+                {line}
+              </span>
+            ))}
+          </h1>
           {description ? <p className="page-hero-subtitle">{description}</p> : null}
         </div>
       </div>

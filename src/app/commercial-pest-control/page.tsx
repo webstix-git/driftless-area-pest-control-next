@@ -111,8 +111,9 @@ const content: ServiceDetailContent = {
       benefit:
         "Targeted insect and facility programs that support food-safety and compliance conversations.",
       imageLabel: "food plant commercial pest program",
-      imageSrc: "/images/service_commercial.jpg",
-      imageAlt: "Commercial food facility exterior and operations area",
+      imageSrc: "/images/commercial-food-processing.png?v=1",
+      imageAlt: "Workers on a food processing line with stainless steel equipment",
+      objectPosition: "center 45%",
     },
     {
       title: "Warehouses",
@@ -127,16 +128,18 @@ const content: ServiceDetailContent = {
       benefit:
         "Discreet service for cockroaches, ants, spiders, and flies that keeps pests off the sales floor.",
       imageLabel: "retail store commercial pest service",
-      imageSrc: "/images/why_insect.jpg",
-      imageAlt: "Technician treating insect activity along a facility baseboard",
+      imageSrc: "/images/commercial-retail-store.png?v=1",
+      imageAlt: "Clean grocery retail aisle with produce and packaged goods",
+      objectPosition: "center 40%",
     },
     {
       title: "Office Buildings",
       benefit:
         "A cleaner workspace through proactive insect prevention and monitoring around common areas.",
       imageLabel: "office building pest prevention",
-      imageSrc: "/images/why_farm_facility.jpg",
-      imageAlt: "Commercial building exterior for office pest prevention",
+      imageSrc: "/images/commercial-office-buildings.png?v=1",
+      imageAlt: "Modern commercial office buildings for office pest prevention",
+      objectPosition: "center 32%",
     },
   ],
   approachTitle: (
