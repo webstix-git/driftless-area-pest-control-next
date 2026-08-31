@@ -397,10 +397,7 @@ export default function AboutPage() {
           <div className="faq-header reveal-up">
             <span className="section-eyebrow">FAQ</span>
             <h2>Frequently Asked Questions</h2>
-            <p>
-              Straight answers to the questions commercial and agricultural clients ask most
-              often.
-            </p>
+            <p>Straight answers to the questions commercial and agricultural clients ask most often.</p>
           </div>
 
           <div className="faq-list reveal-up">

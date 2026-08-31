@@ -3399,7 +3399,7 @@
 
     .faq-header {
       text-align: center;
-      max-width: 640px;
+      max-width: none;
       margin: 0 auto 3rem auto;
     }
 
@@ -3411,7 +3411,7 @@
     .faq-header p {
       font-size: 1.05rem;
       color: var(--color-slate-subtle);
-      text-wrap: pretty;
+      white-space: nowrap;
     }
 
     .faq-list {
@@ -5961,6 +5961,10 @@
         padding: 1.1rem 1.15rem;
         padding-right: 2.75rem;
         font-size: 1.125rem;
+      }
+
+      .faq-header p {
+        white-space: normal;
       }
 
       .faq-item summary::after {
