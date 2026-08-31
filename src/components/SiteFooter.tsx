@@ -1,6 +1,7 @@
 "use client";
 
 import { CONTACT } from "@/lib/contact";
+import { bellAttribution } from "@/data/case-studies";
 
 export default function SiteFooter() {
   return (
@@ -8,13 +9,22 @@ export default function SiteFooter() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <a href="/" className="brand-logo brand-logo--footer" style={{marginBottom: '1rem'}}>
-              <img
-                src="/images/logos/logo-white.backup.png?v=1"
-                alt="Driftless Area Pest Control"
-                className="brand-logo-img"
-              />
-            </a>
+            <div className="footer-brand-logos">
+              <a href="/" className="brand-logo brand-logo--footer">
+                <img
+                  src="/images/logos/logo-white.backup.png?v=1"
+                  alt="Driftless Area Pest Control"
+                  className="brand-logo-img"
+                />
+              </a>
+              <div className="footer-bell-logo-wrap">
+                <img
+                  src={`${bellAttribution.logoSrc}?v=3`}
+                  alt={bellAttribution.logoAlt}
+                  className="footer-bell-logo"
+                />
+              </div>
+            </div>
             <p>Protecting farms, businesses, and facilities across Wisconsin with thoughtful pest management and dependable service.</p>
           </div>
 

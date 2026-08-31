@@ -514,8 +514,8 @@
     }
 
     .brand-logo--footer .brand-logo-img {
-      width: 160px;
-      height: 160px;
+      width: 140px;
+      height: 140px;
       max-width: none;
     }
 
@@ -3547,7 +3547,32 @@
     }
 
     .footer-brand .brand-logo {
+      margin-bottom: 0;
+    }
+
+    .footer-brand-logos {
+      display: flex;
+      align-items: center;
+      gap: 30px;
       margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-bell-logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border-radius: 5px;
+      padding: 4px;
+    }
+
+    .footer-bell-logo {
+      object-fit: contain;
+      width: auto;
+      max-width: 150px;
+      height: 56px;
+      display: block;
     }
 
     .footer-brand .logo-title {

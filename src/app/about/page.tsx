@@ -118,7 +118,7 @@ export default function AboutPage() {
                 />
                 <span className="about-intro-experience-badge">
                   <span className="about-intro-experience-kicker">Trusted Expertise</span>
-                  <strong>2.5+</strong>
+                  <strong>3+</strong>
                   <span className="about-intro-experience-label">Years Experience</span>
                 </span>
               </div>
@@ -138,7 +138,7 @@ export default function AboutPage() {
               </h2>
               <p className="about-intro-lead">
                 Driftless Area Pest Control has been serving farms, grain sites, warehouses, and
-                industrial facilities across southwestern Wisconsin for the past 2.5 years. Our
+                industrial facilities across southwestern Wisconsin for the past 3 years. Our
                 approach is shaped by more than 27 years of hands-on agricultural experience,
                 giving us a practical understanding of farm operations, biosecurity, and the
                 day-to-day challenges commercial facilities face.

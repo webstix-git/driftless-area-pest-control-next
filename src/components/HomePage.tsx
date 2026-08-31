@@ -115,7 +115,7 @@ export default function HomePage({ heroSlides, heroOnly = false }: HomePageProps
               </span>
               <h2>Pest Control Built Around How <span className="text-accent">Farms</span> and Facilities Operate</h2>
               <p className="about-intro-lead">
-                Driftless Area Pest Control has been serving farms, grain sites, warehouses, and industrial facilities across southwestern Wisconsin for the past 2.5 years. Our approach is shaped by more than 27 years of hands-on agricultural experience, giving us a practical understanding of farm operations, biosecurity, and the day-to-day challenges commercial facilities face.
+                Driftless Area Pest Control has been serving farms, grain sites, warehouses, and industrial facilities across southwestern Wisconsin for the past 3 years. Our approach is shaped by more than 27 years of hands-on agricultural experience, giving us a practical understanding of farm operations, biosecurity, and the day-to-day challenges commercial facilities face.
               </p>
               <p className="about-intro-lead">
                 Every service begins with a thorough site walkthrough. We identify entry points, problem areas, and the conditions that attract pests, then build a customized plan that fits your facility, your schedule, and your long-term goals.
