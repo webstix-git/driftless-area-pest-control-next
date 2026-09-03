@@ -12,7 +12,7 @@ export default function SiteFooter() {
             <div className="footer-brand-logos">
               <a href="/" className="brand-logo brand-logo--footer">
                 <img
-                  src="/images/logos/logo-white.backup.png?v=1"
+                  src="/images/logos/new_logo2.png?v=1"
                   alt="Driftless Area Pest Control"
                   className="brand-logo-img"
                 />
