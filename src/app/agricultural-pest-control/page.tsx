@@ -110,24 +110,32 @@ const content: ServiceDetailContent = {
       benefit:
         "Support for barns, parlors, and calf areas with fly and rodent programs built around milk quality and herd health.",
       imageLabel: "dairy farm pest management",
+      imageSrc: "/images/agriculture/dairy-farm.jpg",
+      imageAlt: "Dairy cows feeding inside a well-maintained barn",
     },
     {
       title: "Chicken Farms",
       benefit:
         "Poultry-focused service that accounts for housing layout, manure pressure, and biosecurity protocols.",
       imageLabel: "poultry facility pest control",
+      imageSrc: "/images/agriculture/chicken-farm.jpg",
+      imageAlt: "Chickens feeding in a poultry facility",
     },
     {
       title: "Hog Facilities",
       benefit:
         "Practical pest pressure reduction around barns and production areas without disrupting livestock routines.",
       imageLabel: "hog facility pest program",
+      imageSrc: "/images/agriculture/hog-facility.jpg",
+      imageAlt: "Farm worker inspecting pigs in a modern hog facility",
     },
     {
       title: "Grain & Feed Operations",
       benefit:
         "Defense for grain facilities, feed mills, and stored-product areas where insects and rodents put inventory at risk.",
       imageLabel: "grain and feed mill pest protection",
+      imageSrc: "/images/agriculture/grain-feed.jpg",
+      imageAlt: "Worker handling a scoop of grain feed",
     },
   ],
   approachTitle: (
@@ -179,6 +187,8 @@ const content: ServiceDetailContent = {
   ],
   calloutCta: "Ask about farm service",
   calloutImageLabel: "biosecurity-aware farm pest service",
+  calloutImageSrc: "/images/agriculture/biosecurity-cleaning.jpg",
+  calloutImageAlt: "Worker in protective equipment treating a livestock barn",
   whyTitle: (
     <>
       Why farms <span className="text-accent">choose</span> us
@@ -219,6 +229,8 @@ const content: ServiceDetailContent = {
   complianceBody:
     "Whether you manage a dairy, poultry house, hog facility, grain site, or feed mill, we can document findings and keep service records useful for managers. Our goal is practical pest pressure reduction that fits how your operation runs day to day.",
   complianceImageLabel: "agricultural pest service documentation",
+  complianceImageSrc: "/images/agriculture/farm-inspection.jpg",
+  complianceImageAlt: "Farm worker reviewing inspection information on a tablet",
   ctaTitle: (
     <>
       Let&apos;s protect your farm <span className="text-accent">operation</span>.

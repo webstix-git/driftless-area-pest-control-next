@@ -119,24 +119,32 @@ const content: ServiceDetailContent = {
       benefit:
         "Manage nesting and roosting pressure that contaminates roofs, docks, and exterior structures.",
       imageLabel: "bird control on facility exterior",
+      imageSrc: "/images/wildlife/bird-control.jpg",
+      imageAlt: "Bird nests hanging in a leafy tree",
     },
     {
       title: "Raccoons",
       benefit:
         "Respond to raccoon activity around buildings with removal and exclusion that closes access paths.",
       imageLabel: "raccoon wildlife management",
+      imageSrc: "/images/wildlife/raccoons.jpg",
+      imageAlt: "Raccoons walking along a wooded path",
     },
     {
       title: "Skunks",
       benefit:
         "Address skunk pressure around foundations and grounds to reduce odor, damage, and safety issues.",
       imageLabel: "skunk wildlife removal",
+      imageSrc: "/images/wildlife/skunks.jpg",
+      imageAlt: "Two skunks on a fallen tree",
     },
     {
       title: "Exclusion & Prevention",
       benefit:
         "Seal vents, openings, and nesting sites so wildlife cannot return to the same entry points.",
       imageLabel: "wildlife exclusion and prevention work",
+      imageSrc: "/images/wildlife/exclusion-prevention.jpg",
+      imageAlt: "Gloved worker removing a dirty ventilation cover",
     },
   ],
   approachTitle: (
@@ -188,6 +196,8 @@ const content: ServiceDetailContent = {
   ],
   calloutCta: "Ask about wildlife service",
   calloutImageLabel: "wildlife exclusion sealing detail",
+  calloutImageSrc: "/images/wildlife/wildlife-treatment.jpg",
+  calloutImageAlt: "Wildlife control team inspecting a screened structure",
   whyTitle: (
     <>
       Why facilities <span className="text-accent">choose</span> us
@@ -228,6 +238,8 @@ const content: ServiceDetailContent = {
   complianceBody:
     "Wildlife pressure around roofs, docks, and grounds affects sanitation and safety. We document findings and exclusion work so your team has a clear record of what was addressed and what to watch for next.",
   complianceImageLabel: "wildlife service documentation and exclusion map",
+  complianceImageSrc: "/images/wildlife/exterior-cleaning.jpg",
+  complianceImageAlt: "Worker pressure-washing a commercial building exterior",
   ctaTitle: (
     <>
       Let&apos;s keep wildlife out of <span className="text-accent">critical</span> areas.

@@ -109,24 +109,32 @@ const content: ServiceDetailContent = {
       benefit:
         "Audit-ready rodent control that supports your food-safety and compliance requirements.",
       imageLabel: "food processing facility rodent program",
+      imageSrc: "/images/rodent-control/food-processing.jpg",
+      imageAlt: "Produce crates stored inside a refrigerated food facility",
     },
     {
       title: "Warehouses",
       benefit:
         "Protecting stored product, packaging, and inventory from rodent damage and contamination.",
       imageLabel: "warehouse rodent protection",
+      imageSrc: "/images/rodent-control/warehouse.jpg",
+      imageAlt: "Wrapped produce pallets in a warehouse aisle",
     },
     {
       title: "Retail Stores",
       benefit:
         "Discreet, professional service that keeps rodents out of sight and off your shelves.",
       imageLabel: "retail store rodent prevention",
+      imageSrc: "/images/rodent-control/retail-store.jpg",
+      imageAlt: "Rodent control treatment in a retail storage area",
     },
     {
       title: "Office Buildings",
       benefit:
         "A clean, healthy workspace through proactive rodent prevention and monitoring.",
       imageLabel: "office building rodent monitoring",
+      imageSrc: "/images/rodent-control/office-building.jpg",
+      imageAlt: "Clean modern office workspace with glass meeting rooms",
     },
   ],
   approachTitle: (
@@ -178,6 +186,8 @@ const content: ServiceDetailContent = {
   ],
   calloutCta: "Ask about remote monitoring",
   calloutImageLabel: "remote rodent monitoring dashboard",
+  calloutImageSrc: "/images/rodent-control/remote-monitoring.jpg",
+  calloutImageAlt: "Technicians in protective equipment inspecting a facility",
   whyTitle: (
     <>
       Why facilities <span className="text-accent">choose</span> us
@@ -218,6 +228,8 @@ const content: ServiceDetailContent = {
   complianceBody:
     "If your site prepares for audits, we can provide electronic reporting and documentation that supports food-safety and compliance conversations. Our goal is simple: keep rodent activity visible, documented, and under control between visits.",
   complianceImageLabel: "audit-ready rodent service documentation",
+  complianceImageSrc: "/images/rodent-control/audit-documentation.jpg",
+  complianceImageAlt: "Staff organizing facility audit and compliance documents",
   ctaTitle: (
     <>
       Let&apos;s keep your facility <span className="text-accent">protected</span>.

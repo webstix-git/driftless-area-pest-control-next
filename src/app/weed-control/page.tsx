@@ -82,8 +82,8 @@ const content: ServiceDetailContent = {
   heroDescription:
     "Vegetation management for building perimeters and facility exteriors.",
   heroImage: "/images/service_ag.png",
-  heroImageAlt: "Technician applying perimeter weed treatment along a facility exterior",
-  objectPosition: "100% 40%",
+  heroImageAlt: "Clear facility perimeter with gravel and maintained grass",
+  objectPosition: "center 40%",
   breadcrumbLabel: "Perimeter Weed Control",
   introEyebrow: "Perimeter Care",
   introTitle: (
@@ -110,24 +110,32 @@ const content: ServiceDetailContent = {
       benefit:
         "Practical plant and weed control that supports cleaner grounds around farms and facilities.",
       imageLabel: "vegetation management around facility",
+      imageSrc: "/images/weed-control/vegetation-management.jpg",
+      imageAlt: "Grounds crew trimming vegetation in a landscaped area",
     },
     {
       title: "Building Perimeters",
       benefit:
         "Clearer foundation edges that make inspections easier and reduce harborage next to structures.",
       imageLabel: "building perimeter weed control",
+      imageSrc: "/images/weed-control/building-perimeters.jpg",
+      imageAlt: "Livestock pasture enclosed by a metal perimeter fence",
     },
     {
       title: "Access Areas",
       benefit:
         "Clearer lot edges and access routes that reduce harborage and make grounds easier to maintain.",
       imageLabel: "access area vegetation clearing",
+      imageSrc: "/images/weed-control/access-areas.jpg",
+      imageAlt: "Fenced farm access area at sunset",
     },
     {
       title: "Facility Exteriors",
       benefit:
         "Exterior grounds support that pairs with rodent, insect, and wildlife prevention programs.",
       imageLabel: "facility exterior grounds management",
+      imageSrc: "/images/weed-control/facility-exteriors.jpg",
+      imageAlt: "Clean grass and walkway along a facility exterior",
     },
   ],
   approachTitle: (
@@ -179,6 +187,8 @@ const content: ServiceDetailContent = {
   ],
   calloutCta: "Ask about perimeter service",
   calloutImageLabel: "cleared facility perimeter after vegetation management",
+  calloutImageSrc: "/images/weed-control/weed-trimming.jpg",
+  calloutImageAlt: "String trimmer clearing grass along a concrete walkway",
   whyTitle: (
     <>
       Why facilities <span className="text-accent">choose</span> us
@@ -219,6 +229,8 @@ const content: ServiceDetailContent = {
   complianceBody:
     "Clear perimeters help managers see issues sooner and keep exterior conditions aligned with pest prevention goals. We document service areas and keep recommendations practical for your maintenance schedule.",
   complianceImageLabel: "perimeter weed service documentation",
+  complianceImageSrc: "/images/weed-control/farm-fields.jpg",
+  complianceImageAlt: "Green agricultural fields extending across a rural landscape",
   ctaTitle: (
     <>
       Let&apos;s clear the edges around your <span className="text-accent">facility</span>.
