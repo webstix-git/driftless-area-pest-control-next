@@ -110,32 +110,32 @@ const content: ServiceDetailContent = {
       benefit:
         "Practical plant and weed control that supports cleaner grounds around farms and facilities.",
       imageLabel: "vegetation management around facility",
-      imageSrc: "/images/weed-control/vegetation-management.jpg",
-      imageAlt: "Grounds crew trimming vegetation in a landscaped area",
+      imageSrc: "/images/weed-control/vegetation-management.png",
+      imageAlt: "Overgrown weeds along the edge of an agricultural facility",
     },
     {
       title: "Building Perimeters",
       benefit:
         "Clearer foundation edges that make inspections easier and reduce harborage next to structures.",
       imageLabel: "building perimeter weed control",
-      imageSrc: "/images/weed-control/building-perimeters.jpg",
-      imageAlt: "Livestock pasture enclosed by a metal perimeter fence",
+      imageSrc: "/images/weed-control/building-perimeters.png",
+      imageAlt: "Clear gravel perimeter beside a metal agricultural building",
     },
     {
       title: "Access Areas",
       benefit:
         "Clearer lot edges and access routes that reduce harborage and make grounds easier to maintain.",
       imageLabel: "access area vegetation clearing",
-      imageSrc: "/images/weed-control/access-areas.jpg",
-      imageAlt: "Fenced farm access area at sunset",
+      imageSrc: "/images/weed-control/access-areas.png",
+      imageAlt: "Gravel access drive beside an agricultural facility",
     },
     {
       title: "Facility Exteriors",
       benefit:
         "Exterior grounds support that pairs with rodent, insect, and wildlife prevention programs.",
       imageLabel: "facility exterior grounds management",
-      imageSrc: "/images/weed-control/facility-exteriors.jpg",
-      imageAlt: "Clean grass and walkway along a facility exterior",
+      imageSrc: "/images/weed-control/facility-exteriors.png",
+      imageAlt: "Technician treating landscaped vegetation beside a facility exterior",
     },
   ],
   approachTitle: (
