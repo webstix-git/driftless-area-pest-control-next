@@ -125,7 +125,7 @@ const content: ServiceDetailContent = {
       benefit:
         "Discreet, professional service that keeps rodents out of sight and off your shelves.",
       imageLabel: "retail store rodent prevention",
-      imageSrc: "/images/rodent-control/retail-store.jpg",
+      imageSrc: "/images/commercial-retail-store.png?v=1",
       imageAlt: "Rodent control treatment in a retail storage area",
     },
     {
