@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Case Studies | Driftless Area Pest Control",
   description:
     "Bell Laboratories iQ smart rodent-monitoring case studies shared with permission — commercial buildings and food production facilities.",
+  alternates: { canonical: "/case-studies" },
 };
 
 export default function CaseStudiesPage() {

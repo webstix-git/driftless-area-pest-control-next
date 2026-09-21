@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Homeowner FAQ | Driftless Area Pest Control",
   description:
     "FAQ for homeowners and clarity on Driftless Area Pest Control’s commercial and agricultural service focus.",
+  alternates: { canonical: "/homeowner-faq" },
 };
 
 const faqs = [

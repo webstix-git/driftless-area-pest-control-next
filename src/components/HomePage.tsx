@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FileText } from "lucide-react";
 import SiteShell from "./SiteShell";
 import HeroBackgroundSlider, { type HeroSlide } from "./HeroBackgroundSlider";
 import HeroShieldIcon from "./icons/HeroShieldIcon";
 import { CONTACT } from "@/lib/contact";
+
+const HERO_READY_CLASS = "hero-media-ready";
 
 type HomePageProps = {
   heroSlides?: HeroSlide[];
@@ -13,10 +15,55 @@ type HomePageProps = {
   heroOnly?: boolean;
 };
 
+function markHeroMediaReady() {
+  document.documentElement.classList.add(HERO_READY_CLASS);
+}
+
 export default function HomePage({ heroSlides, heroOnly = false }: HomePageProps) {
   const [slideIndex, setSlideIndex] = useState(0);
   const activeSlide = heroSlides?.[slideIndex];
   const imageBannerOnly = Boolean(activeSlide?.imageBannerOnly);
+
+  useEffect(() => {
+    // Mockup slider pages don't use the commercial hero — show chrome immediately
+    if (heroSlides?.length) {
+      markHeroMediaReady();
+      return () => {
+        document.documentElement.classList.remove(HERO_READY_CLASS);
+      };
+    }
+
+    const heroImg = document.querySelector<HTMLImageElement>(
+      ".hero-section-commercial .hero-bg img"
+    );
+
+    if (!heroImg) {
+      markHeroMediaReady();
+      return () => {
+        document.documentElement.classList.remove(HERO_READY_CLASS);
+      };
+    }
+
+    if (heroImg.complete && heroImg.naturalWidth > 0) {
+      markHeroMediaReady();
+      return () => {
+        document.documentElement.classList.remove(HERO_READY_CLASS);
+      };
+    }
+
+    const onLoad = () => markHeroMediaReady();
+    const fallback = window.setTimeout(markHeroMediaReady, 4000);
+
+    heroImg.addEventListener("load", onLoad);
+    heroImg.addEventListener("error", onLoad);
+
+    return () => {
+      window.clearTimeout(fallback);
+      heroImg.removeEventListener("load", onLoad);
+      heroImg.removeEventListener("error", onLoad);
+      document.documentElement.classList.remove(HERO_READY_CLASS);
+    };
+  }, [heroSlides]);
 
   return (
     <SiteShell chrome={heroOnly ? "header-only" : "full"}>
@@ -49,6 +96,8 @@ export default function HomePage({ heroSlides, heroOnly = false }: HomePageProps
                 height={2048}
                 decoding="async"
                 fetchPriority="high"
+                loading="eager"
+                onLoad={markHeroMediaReady}
               />
             </picture>
           </div>

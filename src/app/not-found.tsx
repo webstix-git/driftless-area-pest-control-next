@@ -1,38 +1,108 @@
 import SiteShell from "@/components/SiteShell";
-import { CONTACT } from "@/lib/contact";
+import Breadcrumb from "@/components/Breadcrumb";
+import PageHero from "@/components/PageHero";
+import PageCTA from "@/components/PageCTA";
+
+const navSections = [
+  {
+    title: "Home",
+    href: "/",
+    links: [] as { href: string; label: string }[],
+  },
+  {
+    title: "About",
+    href: "/about",
+    links: [
+      { href: "/about", label: "About Us" },
+      { href: "/service-area", label: "Service Area" },
+      { href: "/case-studies", label: "Case Studies" },
+    ],
+  },
+  {
+    title: "Services",
+    href: "/services",
+    links: [
+      { href: "/services", label: "Services Overview" },
+      { href: "/commercial-pest-control", label: "Commercial Pest Control" },
+      { href: "/agricultural-pest-control", label: "Agricultural Pest Control" },
+      { href: "/rodent-control", label: "Rodent Control & Exclusion" },
+      { href: "/wildlife-removal", label: "Wildlife Removal" },
+      { href: "/weed-control", label: "Perimeter Weed Control" },
+    ],
+  },
+  {
+    title: "Products",
+    href: "/#products",
+    links: [
+      { href: "/literature/premium-executive-literature.pdf", label: "Our Products" },
+      { href: "/#pit-magic", label: "Pit Magic" },
+      { href: "/#litter-magic", label: "Litter Magic" },
+    ],
+  },
+  {
+    title: "Resources",
+    href: "/resources",
+    links: [
+      { href: "/resources", label: "Resources" },
+      { href: "/pest-library", label: "Pest Library" },
+      { href: "/cockroach-guide", label: "Cockroach Guide" },
+      { href: "/homeowner-faq", label: "Homeowner FAQ" },
+      { href: "/blog", label: "Blog" },
+    ],
+  },
+  {
+    title: "Contact Us",
+    href: "/contact",
+    links: [],
+  },
+];
 
 export default function NotFound() {
   return (
     <SiteShell>
-      <section className="not-found-page page-section bg-cream">
+      <PageHero
+        title="Page Not Found"
+        description="The page you requested is unavailable or may have moved. Browse the site pages below to continue."
+        imageSrc="/images/why_insect.jpg"
+        imageAlt="Pest control technician inspecting a facility exterior"
+        objectPosition="center 35%"
+      />
+
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Page Not Found" }]} />
+
+      <section className="page-section bg-cream">
         <div className="container">
-          <div className="not-found-inner reveal-up active">
-            <span className="section-eyebrow">Error 404</span>
-            <h1>
-              Page not <span className="text-accent">found</span>
-            </h1>
-            <p>
-              The page you requested is unavailable or may have moved. Use the links below to
-              continue, or contact our team if you need help finding a service.
-            </p>
-            <div className="not-found-actions">
-              <a href="/" className="btn btn-accent">
-                Back to Home
-              </a>
-              <a href="/services" className="btn btn-gold">
-                View Services
-              </a>
-              <a href="/contact" className="btn btn-outline-dark">
-                Contact Us
-              </a>
+          <div className="sitemap-layout reveal-up active">
+            <div className="resources-hub-header">
+              <span className="section-eyebrow">Site navigation</span>
+              <h2>Pages</h2>
             </div>
-            <p className="not-found-contact">
-              Call <a href={CONTACT.phoneHref}>{CONTACT.phoneDisplay}</a> or email{" "}
-              <a href={CONTACT.emailHref}>{CONTACT.emailDisplay}</a>
-            </p>
+
+            <nav className="sitemap-nav" aria-label="Site pages">
+              <ul className="sitemap-nav-list">
+                {navSections.map((section) => (
+                  <li key={section.title} className="sitemap-nav-section">
+                    <a href={section.href} className="sitemap-nav-parent">
+                      {section.title}
+                    </a>
+                    {section.links.length > 0 ? (
+                      <ul className="sitemap-nav-children">
+                        {section.links.map((link) => (
+                          <li key={`${section.title}-${link.href}-${link.label}`}>
+                            <a href={link.href}>{link.label}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
         </div>
       </section>
+
+      <PageCTA />
     </SiteShell>
   );
 }

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Perimeter Weed Control | Driftless Area Pest Control",
   description:
     "Perimeter weed and vegetation management for building exteriors and facility grounds in Wisconsin.",
+  alternates: { canonical: "/weed-control" },
 };
 
 const icons = {

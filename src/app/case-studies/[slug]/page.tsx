@@ -24,6 +24,7 @@ export async function generateMetadata({
   return {
     title: `iQ ${study.title.replace(/\n/g, " ")} | Driftless Area Pest Control`,
     description: plainCaseStudyText(study.abstract).slice(0, 155),
+    alternates: { canonical: `/case-studies/${study.slug}` },
   };
 }
 

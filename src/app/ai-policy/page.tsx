@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "AI Policy | Driftless Area Pest Control",
   description:
     "How Driftless Area Pest Control uses AI tools to support website content and operations while keeping human oversight on service recommendations.",
+  alternates: { canonical: "/ai-policy" },
 };
 
 const sections = [

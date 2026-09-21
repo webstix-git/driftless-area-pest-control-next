@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "Pest Library | Driftless Area Pest Control",
   description:
     "Common pests affecting Wisconsin farms, warehouses, and commercial facilities — and how to respond.",
+  alternates: { canonical: "/pest-library" },
 };
 
 const pests = [

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Driftless Area Pest Control",
   description:
     "How Driftless Area Pest Control collects, uses, and protects information submitted through our website and service requests.",
+  alternates: { canonical: "/privacy-policy" },
 };
 
 const sections = [

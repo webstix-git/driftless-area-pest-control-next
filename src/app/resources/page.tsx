@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Resources | Driftless Area Pest Control",
   description:
     "Guides, pest library references, FAQs, and blog articles for Wisconsin farms and commercial facilities.",
+  alternates: { canonical: "/resources" },
 };
 
 const guides = [

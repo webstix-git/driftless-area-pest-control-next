@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Service Index | Driftless Area Pest Control",
   description:
     "Index of commercial and agricultural pest control services for Wisconsin farms, warehouses, and facilities.",
+  alternates: { canonical: "/service-index" },
 };
 
 const serviceIndex = [

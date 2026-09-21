@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Agricultural Pest Control | Driftless Area Pest Control",
   description:
     "Biosecurity-aware agricultural pest management for dairy, poultry, hog, grain, and feed operations in Wisconsin.",
+  alternates: { canonical: "/agricultural-pest-control" },
 };
 
 const icons = {

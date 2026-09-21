@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Cockroach Guide | Driftless Area Pest Control",
   description:
     "A practical cockroach guide for commercial kitchens, food plants, and facility managers in Wisconsin.",
+  alternates: { canonical: "/cockroach-guide" },
 };
 
 const warningSigns = [

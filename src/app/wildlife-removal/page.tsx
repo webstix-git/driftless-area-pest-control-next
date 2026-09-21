@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Wildlife Removal | Driftless Area Pest Control",
   description:
     "Bird and wildlife management with exclusion and prevention for Wisconsin farms and commercial facilities.",
+  alternates: { canonical: "/wildlife-removal" },
 };
 
 const icons = {

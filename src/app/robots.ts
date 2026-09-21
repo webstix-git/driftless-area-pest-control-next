@@ -2,13 +2,14 @@ import type { MetadataRoute } from "next";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://driftlessareapestcontrol.com";
+  "https://www.driftlessareapestcontrol.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/hero-bg-mockups", "/home-mockup"],
     },
     sitemap: `${baseUrl}/sitemap.xml`,
   };

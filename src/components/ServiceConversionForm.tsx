@@ -1,5 +1,6 @@
 "use client";
 
+import Script from "next/script";
 import { useId, useState, type FormEvent } from "react";
 import { ClipboardList, Search, ShieldCheck } from "lucide-react";
 import { CONTACT } from "@/lib/contact";
@@ -103,9 +104,12 @@ export default function ServiceConversionForm({
   });
   const [errors, setErrors] = useState<FormErrors>(initialErrors);
   const [submitted, setSubmitted] = useState(false);
+  const [turnstileError, setTurnstileError] = useState("");
 
   const fieldId = (name: string) => `${formId}-${name}`;
   const isEmbedded = variant === "embedded";
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  const requiresTurnstile = isEmbedded && Boolean(turnstileSiteKey);
 
   const updateField = (field: keyof FormState, value: string) => {
     setValues((prev) => ({ ...prev, [field]: value }));
@@ -125,6 +129,16 @@ export default function ServiceConversionForm({
     if (Object.keys(nextErrors).length > 0) {
       return;
     }
+
+    if (requiresTurnstile) {
+      const token = new FormData(event.currentTarget).get("cf-turnstile-response");
+      if (typeof token !== "string" || !token) {
+        setTurnstileError("Please complete the security check before sending your request.");
+        return;
+      }
+    }
+
+    setTurnstileError("");
 
     // Placeholder handler — replace with API / CRM integration when backend is ready.
     // mailto fallback keeps a working path for early launches.
@@ -354,6 +368,23 @@ export default function ServiceConversionForm({
           onChange={(e) => updateField("message", e.target.value)}
         />
       </div>
+
+      {requiresTurnstile ? (
+        <div className="scf-turnstile">
+          <Script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            strategy="afterInteractive"
+          />
+          <div
+            className="cf-turnstile"
+            data-sitekey={turnstileSiteKey}
+            data-theme="light"
+            data-size="flexible"
+            data-action="contact_form"
+          />
+          {turnstileError ? <p className="scf-error">{turnstileError}</p> : null}
+        </div>
+      ) : null}
 
       <button type="submit" className="btn btn-accent scf-submit">
         Send Request

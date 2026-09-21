@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Rodent Control & Exclusion | Driftless Area Pest Control",
   description:
     "Root-cause rodent control for commercial and industrial facilities across Wisconsin. Inspection-led, prevention-first service with optional remote monitoring.",
+  alternates: { canonical: "/rodent-control" },
 };
 
 const icons = {

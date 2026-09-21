@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Service Area | Driftless Area Pest Control",
   description:
     "Commercial and agricultural pest control across Richland, Sauk, Vernon, Crawford, Grant, Iowa, and neighboring Wisconsin counties.",
+  alternates: { canonical: "/service-area" },
 };
 
 const counties = [

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Commercial Pest Control | Driftless Area Pest Control",
   description:
     "Commercial and industrial pest control for warehouses, food plants, retail sites, and office facilities in Wisconsin. Inspection-led insect and facility programs.",
+  alternates: { canonical: "/commercial-pest-control" },
 };
 
 const icons = {

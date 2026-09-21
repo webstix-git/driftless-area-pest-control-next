@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Sitemap | Driftless Area Pest Control",
   description:
     "Browse every page on the Driftless Area Pest Control website — organized the same way as the main navigation.",
+  alternates: { canonical: "/site-map" },
 };
 
 const navSections = [

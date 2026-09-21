@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "About Us | Driftless Area Pest Control",
   description:
     "Learn how Driftless Area Pest Control delivers farm-based, root-cause pest management for Wisconsin dairies, grain sites, warehouses, and industrial facilities.",
+  alternates: { canonical: "/about" },
 };
 
 const experienceCards = [

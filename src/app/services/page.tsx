@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Services Overview | Driftless Area Pest Control",
   description:
     "Inspection-led pest management for commercial, industrial, and agricultural facilities across Wisconsin.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

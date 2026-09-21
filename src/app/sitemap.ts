@@ -4,7 +4,7 @@ import { caseStudies } from "@/data/case-studies";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://driftlessareapestcontrol.com";
+  "https://www.driftlessareapestcontrol.com";
 
 const staticRoutes = [
   "",

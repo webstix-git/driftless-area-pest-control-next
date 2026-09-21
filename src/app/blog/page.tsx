@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Blog | Driftless Area Pest Control",
   description:
     "Practical pest management articles for Wisconsin farms, warehouses, and commercial facilities.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {
