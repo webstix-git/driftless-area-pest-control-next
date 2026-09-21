@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   description:
     "Root-cause commercial and agricultural pest management in Wisconsin. Built on 27+ years of hands-on dairy and ag experience with 24/7 remote monitoring.",
   verification: {
-    google: process.env.GOOGLE_SITE_VERIFICATION,
+    google: "Mzl3YkwvClJXs4NescY-tjkz-Eqn6rNcuo7H58DAg_s",
   },
   robots: {
     index: true,
