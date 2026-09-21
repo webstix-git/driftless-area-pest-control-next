@@ -98,6 +98,7 @@ export default function HomePage({ heroSlides, heroOnly = false }: HomePageProps
                 fetchPriority="high"
                 loading="eager"
                 onLoad={markHeroMediaReady}
+                onError={markHeroMediaReady}
               />
             </picture>
           </div>

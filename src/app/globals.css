@@ -377,7 +377,7 @@
         padding 450ms ease;
     }
 
-    /* Matches the live site's curved white logo overlay. */
+    /* Soft white logo wash — hidden until hero image is ready */
     .site-header::before {
       content: "";
       position: absolute;
@@ -387,6 +387,7 @@
       height: 300px;
       z-index: 0;
       pointer-events: none;
+      opacity: 0;
       background: radial-gradient(
         100% 100% at 0 0,
         rgb(255, 255, 255) 0%,
@@ -397,9 +398,14 @@
         rgba(255, 255, 255, 0.27) 85%,
         rgba(255, 255, 255, 0) 100%
       );
-      transition: opacity 350ms ease;
+      transition: opacity 450ms ease;
     }
 
+    html.hero-media-ready .site-header::before {
+      opacity: 1;
+    }
+
+    html.hero-media-ready .site-header.scrolled::before,
     .site-header.scrolled::before {
       opacity: 0;
     }
@@ -611,6 +617,11 @@
 
     .nav-link:hover::after {
       width: 100%;
+    }
+
+    /* Inside pages: white hover underline over the dark hero */
+    body:has(.page-hero) .site-header:not(.scrolled) .nav-link::after {
+      background-color: #ffffff;
     }
 
     /* Services Dropdown Menu */
@@ -873,7 +884,8 @@
       align-items: center;
       padding-top: max(8rem, var(--header-safe-space));
       padding-bottom: 5rem;
-      background-color: var(--color-charcoal-deep);
+      /* Dark gray placeholder while the hero photo downloads */
+      background-color: #2f3338;
       overflow: hidden;
     }
 
@@ -914,22 +926,33 @@
     .hero-section-commercial .hero-bg img {
       object-position: center center;
       transform: none;
-      opacity: 0;
-      transition: opacity 450ms ease;
-    }
-
-    html.hero-media-ready .hero-section-commercial .hero-bg img {
+      /* Paint as soon as the browser can — don't hold a blank placeholder until full load */
       opacity: 1;
     }
 
     .hero-section-commercial .hero-overlay {
-      /* Bottom dark wash for hero copy only — logo tint lives on .brand-logo */
+      /* Bottom dark wash for hero copy only — logo tint lives on header wash */
+      opacity: 0;
+      transition: opacity 400ms ease;
       background: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.78) 0%,
         rgba(0, 0, 0, 0.42) 38%,
         rgba(0, 0, 0, 0) 72%
       );
+    }
+
+    html.hero-media-ready .hero-section-commercial .hero-overlay {
+      opacity: 1;
+    }
+
+    .hero-section-commercial .hero-banner {
+      opacity: 0;
+      transition: opacity 400ms ease;
+    }
+
+    html.hero-media-ready .hero-section-commercial .hero-banner {
+      opacity: 1;
     }
 
     .hero-banner {
@@ -7198,6 +7221,80 @@
       color: var(--color-slate-subtle);
       font-size: 1rem;
       line-height: 1.65;
+    }
+
+    .scf-submit-error {
+      margin: 0.85rem 0 0;
+      text-align: left;
+    }
+
+    .thank-you-page {
+      min-height: 58vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .thank-you-card {
+      max-width: 40rem;
+      margin: 0 auto;
+      text-align: center;
+      background: var(--color-cream-card, #fff);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: clamp(2rem, 5vw, 3rem);
+    }
+
+    .thank-you-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      margin: 0 auto 1.25rem;
+      color: var(--color-forest-dark);
+    }
+
+    .thank-you-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .thank-you-title {
+      margin: 0 0 0.75rem;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: var(--color-forest-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .thank-you-lead {
+      margin: 0 0 0.85rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--color-charcoal-text);
+      line-height: 1.5;
+    }
+
+    .thank-you-copy {
+      margin: 0 0 1.75rem;
+      color: var(--color-slate-subtle);
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    .thank-you-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      .thank-you-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .thank-you-actions .btn {
+        width: 100%;
+      }
     }
 
     @media (max-width: 1024px) {

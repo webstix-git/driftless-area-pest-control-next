@@ -1,6 +1,7 @@
 "use client";
 
 import Script from "next/script";
+import { useRouter } from "next/navigation";
 import { useId, useState, type FormEvent } from "react";
 import { ClipboardList, Search, ShieldCheck } from "lucide-react";
 import { CONTACT } from "@/lib/contact";
@@ -92,6 +93,7 @@ export default function ServiceConversionForm({
   formTitle = "Request Service",
   formDescription = "We'll get back to you quickly to talk through your needs.",
 }: ServiceConversionFormProps) {
+  const router = useRouter();
   const formId = useId();
   const [values, setValues] = useState<FormState>({
     name: "",
@@ -103,13 +105,17 @@ export default function ServiceConversionForm({
     message: "",
   });
   const [errors, setErrors] = useState<FormErrors>(initialErrors);
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [turnstileError, setTurnstileError] = useState("");
 
   const fieldId = (name: string) => `${formId}-${name}`;
   const isEmbedded = variant === "embedded";
   const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
   const requiresTurnstile = isEmbedded && Boolean(turnstileSiteKey);
+  const formSubmitUrl =
+    process.env.NEXT_PUBLIC_FORM_SUBMIT_URL?.trim() ||
+    "https://ywwxvriolxwuqcwjaluh.supabase.co/functions/v1/form-submit/3afad767-0991-4124-b839-b3d29cc30342";
 
   const updateField = (field: keyof FormState, value: string) => {
     setValues((prev) => ({ ...prev, [field]: value }));
@@ -120,9 +126,10 @@ export default function ServiceConversionForm({
         return next;
       });
     }
+    if (submitError) setSubmitError("");
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const nextErrors = validate(values);
     setErrors(nextErrors);
@@ -130,63 +137,86 @@ export default function ServiceConversionForm({
       return;
     }
 
+    const formEl = event.currentTarget;
+    let turnstileToken = "";
     if (requiresTurnstile) {
-      const token = new FormData(event.currentTarget).get("cf-turnstile-response");
+      const token = new FormData(formEl).get("cf-turnstile-response");
       if (typeof token !== "string" || !token) {
         setTurnstileError("Please complete the security check before sending your request.");
         return;
       }
+      turnstileToken = token;
     }
 
     setTurnstileError("");
+    setSubmitError("");
+    setIsSubmitting(true);
 
-    // Placeholder handler — replace with API / CRM integration when backend is ready.
-    // mailto fallback keeps a working path for early launches.
     const serviceLabel =
       SERVICE_TYPE_OPTIONS.find((option) => option.value === values.serviceType)?.label ||
       values.serviceType;
     const facilityLabel =
       FACILITY_TYPE_OPTIONS.find((option) => option.value === values.facilityType)?.label ||
       "Not specified";
-    const subject = encodeURIComponent(`Service request — ${serviceLabel}`);
-    const body = encodeURIComponent(
-      [
-        `Name: ${values.name}`,
-        `Business / Facility: ${values.business || "Not provided"}`,
-        `Phone: ${values.phone || "Not provided"}`,
-        `Email: ${values.email || "Not provided"}`,
-        `Service Type: ${serviceLabel}`,
-        `Facility Type: ${facilityLabel}`,
-        "",
-        "Message:",
-        values.message,
-      ].join("\n")
-    );
 
-    const mailtoUrl = `${CONTACT.emailHref}?subject=${subject}&body=${body}`;
-    try {
-      const mailLink = document.createElement("a");
-      mailLink.href = mailtoUrl;
-      mailLink.rel = "noopener";
-      document.body.appendChild(mailLink);
-      mailLink.click();
-      mailLink.remove();
-    } catch {
-      // Ignore mailto failures in restricted environments; still show success state.
+    const payload: Record<string, string> = {
+      name: values.name.trim(),
+      business: values.business.trim(),
+      phone: values.phone.trim(),
+      email: values.email.trim(),
+      serviceType: values.serviceType,
+      facilityType: values.facilityType,
+      message: values.message.trim(),
+      serviceTypeLabel: serviceLabel,
+      facilityTypeLabel: facilityLabel,
+      source: isEmbedded ? "contact-page" : "service-page",
+      pageUrl: typeof window !== "undefined" ? window.location.href : "",
+    };
+
+    if (turnstileToken) {
+      payload["cf-turnstile-response"] = turnstileToken;
     }
 
-    setSubmitted(true);
+    try {
+      const response = await fetch(formSubmitUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      let data: { success?: boolean; redirect_url?: string; error?: string; message?: string } =
+        {};
+      try {
+        data = (await response.json()) as typeof data;
+      } catch {
+        data = {};
+      }
+
+      if (!response.ok || data.success === false) {
+        throw new Error(
+          data.error || data.message || "Unable to send your request. Please try again."
+        );
+      }
+
+      const redirectTo =
+        typeof data.redirect_url === "string" && data.redirect_url.startsWith("/")
+          ? data.redirect_url
+          : "/thank-you";
+      router.push(redirectTo);
+    } catch (error) {
+      setIsSubmitting(false);
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Unable to send your request. Please try again or call us."
+      );
+    }
   };
 
-  const formBody = submitted ? (
-    <div className="scf-success" role="status" aria-live="polite">
-      <h3>Thanks — we&apos;ve received your request and will be in touch.</h3>
-      <p>
-        Our team will review your details and follow up to talk through the next step for your
-        facility.
-      </p>
-    </div>
-  ) : (
+  const formBody = (
     <form className="scf-form" onSubmit={handleSubmit} noValidate>
       <div className="scf-form-header">
         <h3 className="scf-form-title">{formTitle}</h3>
@@ -386,9 +416,18 @@ export default function ServiceConversionForm({
         </div>
       ) : null}
 
-      <button type="submit" className="btn btn-accent scf-submit">
-        Send Request
+      <button
+        type="submit"
+        className="btn btn-accent scf-submit"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Sending…" : "Send Request"}
       </button>
+      {submitError ? (
+        <p className="scf-error scf-submit-error" role="alert">
+          {submitError}
+        </p>
+      ) : null}
     </form>
   );
 
