@@ -6,9 +6,9 @@ import PageCTA from "@/components/PageCTA";
 import ServiceConversionForm from "@/components/ServiceConversionForm";
 
 export const metadata: Metadata = {
-  title: "Services Overview | Driftless Area Pest Control",
+  title: "Our Services",
   description:
-    "Inspection-led pest management for commercial, industrial, and agricultural facilities across Wisconsin.",
+    "Inspection-led pest control for Wisconsin farms, warehouses, and commercial facilities—rodents, insects, wildlife, weeds, and remote monitoring.",
   alternates: { canonical: "/services" },
 };
 

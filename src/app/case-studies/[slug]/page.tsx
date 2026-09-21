@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CaseStudyDetailLayout from "@/components/CaseStudyDetailLayout";
 import { caseStudies, getCaseStudy, plainCaseStudyText } from "@/data/case-studies";
+import { withBrand } from "@/lib/seo";
 
 type CaseStudyDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -18,13 +19,36 @@ export async function generateMetadata({
   const study = getCaseStudy(slug);
 
   if (!study) {
-    return { title: "Case Study Not Found | Driftless Area Pest Control" };
+    return { title: "Case Study Not Found" };
   }
 
-  return {
-    title: `iQ ${study.title.replace(/\n/g, " ")} | Driftless Area Pest Control`,
+  const seoBySlug: Record<string, { title: string; description: string }> = {
+    "commercial-buildings": {
+      title: "iQ Commercial Rodent Study",
+      description:
+        "Bell Laboratories iQ case study: 50% less outdoor and 75% less indoor rodent activity at a 600,000 sq. ft. commercial facility.",
+    },
+    "food-production": {
+      title: "iQ Food Plant Pest Study",
+      description:
+        "Bell Laboratories iQ case study on smarter rodent monitoring and control for food production facilities and audit-ready programs.",
+    },
+  };
+
+  const seo = seoBySlug[study.slug] ?? {
+    title: "Rodent Monitoring Case Study",
     description: plainCaseStudyText(study.abstract).slice(0, 155),
+  };
+
+  return {
+    title: seo.title,
+    description: seo.description,
     alternates: { canonical: `/case-studies/${study.slug}` },
+    openGraph: {
+      title: withBrand(seo.title),
+      description: seo.description,
+      type: "article",
+    },
   };
 }
 

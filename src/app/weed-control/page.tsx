@@ -4,9 +4,9 @@ import ServiceDetailLayout, {
 } from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "Perimeter Weed Control | Driftless Area Pest Control",
+  title: "Perimeter Weed Control",
   description:
-    "Perimeter weed and vegetation management for building exteriors and facility grounds in Wisconsin.",
+    "Perimeter weed and vegetation control for Wisconsin facility exteriors. Reduce pest harborage around buildings, docks, and access areas.",
   alternates: { canonical: "/weed-control" },
 };
 

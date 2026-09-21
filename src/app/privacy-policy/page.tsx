@@ -6,9 +6,9 @@ import PageCTA from "@/components/PageCTA";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Driftless Area Pest Control",
+  title: "Privacy Policy",
   description:
-    "How Driftless Area Pest Control collects, uses, and protects information submitted through our website and service requests.",
+    "How Driftless Area Pest Control collects, uses, and protects information from website forms, calls, and service requests.",
   alternates: { canonical: "/privacy-policy" },
 };
 

@@ -5,9 +5,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 import PageCTA from "@/components/PageCTA";
 
 export const metadata: Metadata = {
-  title: "Sitemap | Driftless Area Pest Control",
+  title: "Sitemap",
   description:
-    "Browse every page on the Driftless Area Pest Control website — organized the same way as the main navigation.",
+    "Browse every Driftless Area Pest Control page—Home, About, Services, Products, Resources, and Contact—organized like the main menu.",
   alternates: { canonical: "/site-map" },
 };
 

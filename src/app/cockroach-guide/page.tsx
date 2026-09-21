@@ -5,9 +5,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 import PageCTA from "@/components/PageCTA";
 
 export const metadata: Metadata = {
-  title: "Cockroach Guide | Driftless Area Pest Control",
+  title: "Cockroach Control Guide",
   description:
-    "A practical cockroach guide for commercial kitchens, food plants, and facility managers in Wisconsin.",
+    "Practical cockroach identification and control guide for Wisconsin commercial kitchens, food plants, and facility managers.",
   alternates: { canonical: "/cockroach-guide" },
 };
 

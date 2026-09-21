@@ -6,9 +6,9 @@ import PageCTA from "@/components/PageCTA";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Homeowner FAQ | Driftless Area Pest Control",
+  title: "Homeowner FAQ",
   description:
-    "FAQ for homeowners and clarity on Driftless Area Pest Control’s commercial and agricultural service focus.",
+    "Answers for homeowners about Driftless Area Pest Control’s focus on commercial, industrial, and agricultural pest management in Wisconsin.",
   alternates: { canonical: "/homeowner-faq" },
 };
 

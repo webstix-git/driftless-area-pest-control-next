@@ -6,9 +6,9 @@ import PageCTA from "@/components/PageCTA";
 import { bellAttribution, caseStudies, plainCaseStudyText } from "@/data/case-studies";
 
 export const metadata: Metadata = {
-  title: "Case Studies | Driftless Area Pest Control",
+  title: "Case Studies",
   description:
-    "Bell Laboratories iQ smart rodent-monitoring case studies shared with permission — commercial buildings and food production facilities.",
+    "Bell Laboratories iQ smart rodent-monitoring case studies for commercial buildings and food production facilities.",
   alternates: { canonical: "/case-studies" },
 };
 

@@ -8,6 +8,8 @@ export type BlogPost = {
   slug: string;
   tag: string;
   title: string;
+  /** Meta title segment (brand added by layout template). Keep ≤30 chars. */
+  seoTitle: string;
   description: string;
   img: string;
   imgAlt: string;
@@ -24,8 +26,9 @@ export const blogPosts: BlogPost[] = [
     slug: "rodent-activity-warning-signs",
     tag: "Rodent Control",
     title: "5 Signs of Rodent Activity in Your Facility (And What to Do)",
+    seoTitle: "5 Rodent Signs in Facilities",
     description:
-      "Learn the early warning signs of mice and rats in warehouses and food plants — from droppings and gnaw marks to nesting spots — and the steps that stop an infestation before it spreads.",
+      "Spot early mouse and rat signs in warehouses and food plants—droppings, gnaw marks, and nests—and act before an infestation spreads.",
     img: "/images/blog_rodent.jpg",
     imgAlt: "Rodent peeking from a hole in a concrete facility wall",
     objectPosition: "center 40%",
@@ -95,8 +98,9 @@ export const blogPosts: BlogPost[] = [
     slug: "dairy-farm-pest-prevention",
     tag: "Agricultural Pest Management",
     title: "Pest Prevention Strategies for Modern Dairy Farms",
+    seoTitle: "Dairy Farm Pest Prevention",
     description:
-      "See how dairy operations can reduce fly and rodent pressure around barns, parlors, and feed areas with biosecurity-aware prevention that protects herd health and milk quality.",
+      "Reduce fly and rodent pressure around barns, parlors, and feed areas with biosecurity-aware dairy pest prevention that protects herd health.",
     img: "/images/blog_dairy.jpg",
     imgAlt: "Holstein dairy cows feeding in a modern barn",
     objectPosition: "center 30%",
@@ -157,8 +161,9 @@ export const blogPosts: BlogPost[] = [
     slug: "spring-insect-control-prep",
     tag: "Insect Control",
     title: "Spring Insect Control: What to Expect and How to Prepare",
+    seoTitle: "Spring Insect Control Prep",
     description:
-      "Get ahead of ants, flies, and crawling insects as temperatures rise. This guide covers seasonal pressure points and how commercial sites can prepare before spring activity peaks.",
+      "Prepare for spring ants, flies, and crawling insects at commercial sites. Seasonal pressure points and steps to take before activity peaks.",
     img: "/images/blog_ants.jpg",
     imgAlt: "Black ants crawling along a surface crack",
     objectPosition: "center 35%",

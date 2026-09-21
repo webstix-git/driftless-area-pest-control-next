@@ -4,9 +4,9 @@ import ServiceDetailLayout, {
 } from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "Agricultural Pest Control | Driftless Area Pest Control",
+  title: "Agricultural Pest Control",
   description:
-    "Biosecurity-aware agricultural pest management for dairy, poultry, hog, grain, and feed operations in Wisconsin.",
+    "Biosecurity-aware agricultural pest control for Wisconsin dairy, poultry, hog, grain, and feed operations—built around how farms actually run.",
   alternates: { canonical: "/agricultural-pest-control" },
 };
 

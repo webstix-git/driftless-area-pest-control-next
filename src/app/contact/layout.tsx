@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Driftless Area Pest Control",
+  title: "Contact Us",
   description:
-    "Contact Driftless Area Pest Control for commercial and agricultural pest management across southwestern Wisconsin.",
+    "Request a free inspection from Driftless Area Pest Control. Call or email for commercial and agricultural pest service across southwestern Wisconsin.",
   alternates: { canonical: "/contact" },
 };
 

@@ -6,9 +6,9 @@ import PageCTA from "@/components/PageCTA";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "About Us | Driftless Area Pest Control",
+  title: "About Us",
   description:
-    "Learn how Driftless Area Pest Control delivers farm-based, root-cause pest management for Wisconsin dairies, grain sites, warehouses, and industrial facilities.",
+    "Farm-based pest control for Wisconsin dairies, grain sites, warehouses, and industrial facilities. Root-cause inspections and practical prevention.",
   alternates: { canonical: "/about" },
 };
 

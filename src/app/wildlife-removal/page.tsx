@@ -4,9 +4,9 @@ import ServiceDetailLayout, {
 } from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "Wildlife Removal | Driftless Area Pest Control",
+  title: "Wildlife Removal",
   description:
-    "Bird and wildlife management with exclusion and prevention for Wisconsin farms and commercial facilities.",
+    "Bird and wildlife removal with exclusion for Wisconsin farms and commercial facilities. Stop nesting, contamination, and damage at the source.",
   alternates: { canonical: "/wildlife-removal" },
 };
 

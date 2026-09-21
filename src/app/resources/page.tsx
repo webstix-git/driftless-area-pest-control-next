@@ -6,9 +6,9 @@ import PageCTA from "@/components/PageCTA";
 import { blogPosts } from "@/data/blog-posts";
 
 export const metadata: Metadata = {
-  title: "Resources | Driftless Area Pest Control",
+  title: "Resources",
   description:
-    "Guides, pest library references, FAQs, and blog articles for Wisconsin farms and commercial facilities.",
+    "Pest guides, library references, FAQs, and blog tips for Wisconsin farms and commercial facilities from Driftless Area Pest Control.",
   alternates: { canonical: "/resources" },
 };
 

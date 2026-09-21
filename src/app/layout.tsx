@@ -3,6 +3,12 @@ import Script from "next/script";
 import { Inter, Oswald } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
 import SeoStructuredData from "@/components/SeoStructuredData";
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+  SITE_NAME,
+  TITLE_TEMPLATE,
+} from "@/lib/seo";
 import "./globals.css";
 
 const siteUrl =
@@ -26,10 +32,11 @@ const oswald = Oswald({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title:
-    "Driftless Area Pest Control | Commercial & Agricultural Pest Management in Wisconsin",
-  description:
-    "Root-cause commercial and agricultural pest management in Wisconsin. Built on 27+ years of hands-on dairy and ag experience with 24/7 remote monitoring.",
+  title: {
+    default: DEFAULT_TITLE,
+    template: TITLE_TEMPLATE,
+  },
+  description: DEFAULT_DESCRIPTION,
   verification: {
     google: "Mzl3YkwvClJXs4NescY-tjkz-Eqn6rNcuo7H58DAg_s",
   },
@@ -42,10 +49,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "Driftless Area Pest Control",
-    title: "Driftless Area Pest Control | Commercial & Agricultural Pest Management in Wisconsin",
-    description:
-      "Root-cause commercial and agricultural pest management in Wisconsin.",
+    siteName: SITE_NAME,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
   },
 };
 

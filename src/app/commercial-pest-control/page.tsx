@@ -4,9 +4,9 @@ import ServiceDetailLayout, {
 } from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "Commercial Pest Control | Driftless Area Pest Control",
+  title: "Commercial Pest Control",
   description:
-    "Commercial and industrial pest control for warehouses, food plants, retail sites, and office facilities in Wisconsin. Inspection-led insect and facility programs.",
+    "Commercial pest control for Wisconsin warehouses, food plants, retail, and offices. Inspection-led insect programs that protect facilities and audits.",
   alternates: { canonical: "/commercial-pest-control" },
 };
 

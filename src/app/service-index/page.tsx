@@ -5,9 +5,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 import PageCTA from "@/components/PageCTA";
 
 export const metadata: Metadata = {
-  title: "Service Index | Driftless Area Pest Control",
+  title: "Service Index",
   description:
-    "Index of commercial and agricultural pest control services for Wisconsin farms, warehouses, and facilities.",
+    "A–Z index of commercial and agricultural pest control services for Wisconsin farms, warehouses, and industrial facilities.",
   alternates: { canonical: "/service-index" },
 };
 

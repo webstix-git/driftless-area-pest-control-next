@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostLayout from "@/components/BlogPostLayout";
 import { blogPosts, getBlogPost } from "@/data/blog-posts";
+import { withBrand } from "@/lib/seo";
 
 type BlogDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -18,13 +19,18 @@ export async function generateMetadata({
   const post = getBlogPost(slug);
 
   if (!post) {
-    return { title: "Article Not Found | Driftless Area Pest Control" };
+    return { title: "Article Not Found" };
   }
 
   return {
-    title: `${post.title} | Driftless Area Pest Control`,
+    title: post.seoTitle,
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      title: withBrand(post.seoTitle),
+      description: post.description,
+      type: "article",
+    },
   };
 }
 

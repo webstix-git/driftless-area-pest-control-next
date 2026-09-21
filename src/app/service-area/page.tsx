@@ -5,9 +5,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 import PageCTA from "@/components/PageCTA";
 
 export const metadata: Metadata = {
-  title: "Service Area | Driftless Area Pest Control",
+  title: "Service Area",
   description:
-    "Commercial and agricultural pest control across Richland, Sauk, Vernon, Crawford, Grant, Iowa, and neighboring Wisconsin counties.",
+    "Commercial and agricultural pest control across Richland, Sauk, Vernon, Crawford, Grant, Iowa, and neighboring southwestern Wisconsin counties.",
   alternates: { canonical: "/service-area" },
 };
 

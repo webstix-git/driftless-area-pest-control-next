@@ -4,9 +4,9 @@ import ServiceDetailLayout, {
 } from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "Rodent Control & Exclusion | Driftless Area Pest Control",
+  title: "Rodent Control & Exclusion",
   description:
-    "Root-cause rodent control for commercial and industrial facilities across Wisconsin. Inspection-led, prevention-first service with optional remote monitoring.",
+    "Commercial rodent control and exclusion for Wisconsin warehouses, food plants, and offices. Prevention-first service with optional remote monitoring.",
   alternates: { canonical: "/rodent-control" },
 };
 

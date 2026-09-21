@@ -6,9 +6,9 @@ import PageCTA from "@/components/PageCTA";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "AI Policy | Driftless Area Pest Control",
+  title: "AI Policy",
   description:
-    "How Driftless Area Pest Control uses AI tools to support website content and operations while keeping human oversight on service recommendations.",
+    "How Driftless Area Pest Control uses AI to support website content while keeping human oversight on service recommendations.",
   alternates: { canonical: "/ai-policy" },
 };
 

@@ -11,9 +11,9 @@ import AntIcon from "@/components/icons/AntIcon";
 import BirdIcon from "@/components/icons/BirdIcon";
 
 export const metadata: Metadata = {
-  title: "Pest Library | Driftless Area Pest Control",
+  title: "Pest Library",
   description:
-    "Common pests affecting Wisconsin farms, warehouses, and commercial facilities — and how to respond.",
+    "Identify common pests on Wisconsin farms and in commercial facilities—rodents, cockroaches, flies, ants, birds, and stored-product insects.",
   alternates: { canonical: "/pest-library" },
 };
 
