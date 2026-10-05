@@ -112,7 +112,9 @@ export default function ServiceConversionForm({
   const fieldId = (name: string) => `${formId}-${name}`;
   const isEmbedded = variant === "embedded";
   const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
-  const requiresTurnstile = isEmbedded && Boolean(turnstileSiteKey);
+  // All persistent service-request forms use the same Cloudflare Turnstile
+  // check as the Contact Us form when the site key is configured.
+  const requiresTurnstile = Boolean(turnstileSiteKey);
   const formSubmitUrl =
     process.env.NEXT_PUBLIC_FORM_SUBMIT_URL?.trim() ||
     "https://ywwxvriolxwuqcwjaluh.supabase.co/functions/v1/form-submit/3afad767-0991-4124-b839-b3d29cc30342";
