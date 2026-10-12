@@ -5,7 +5,9 @@ import { FileText } from "lucide-react";
 import SiteShell from "./SiteShell";
 import HeroBackgroundSlider, { type HeroSlide } from "./HeroBackgroundSlider";
 import HeroShieldIcon from "./icons/HeroShieldIcon";
+import ServiceAreaMap from "./ServiceAreaMap";
 import { CONTACT } from "@/lib/contact";
+import { SERVICE_AREA_TRAVEL_NOTE, SERVICE_COUNTIES } from "@/lib/service-area";
 
 const HERO_READY_CLASS = "hero-media-ready";
 
@@ -595,38 +597,19 @@ export default function HomePage({ heroSlides, heroOnly = false }: HomePageProps
               <p>Based in the Driftless Region, we provide commercial and agricultural pest control across Richland, Sauk, Vernon, Crawford, Grant, Iowa, and neighboring counties — with rapid response when your facility needs help.</p>
 
               <div className="county-tags">
-                <span className="county-tag">Richland County</span>
-                <span className="county-tag">Sauk County</span>
-                <span className="county-tag">Vernon County</span>
-                <span className="county-tag">Crawford County</span>
-                <span className="county-tag">Grant County</span>
-                <span className="county-tag">Iowa County</span>
-                <span className="county-tag">Lafayette County</span>
-                <span className="county-tag">Juneau County</span>
-                <span className="county-tag">La Crosse County</span>
-                <span className="county-tag">Monroe County</span>
-                <span className="county-tag">Columbia County</span>
-                <span className="county-tag">Jackson County</span>
-                <span className="county-tag">Adams County</span>
-                <span className="county-tag">Western Dane County</span>
-                <span className="county-tag">Trempealeau County</span>
+                {SERVICE_COUNTIES.map((county) => (
+                  <span key={county} className="county-tag">{county} County</span>
+                ))}
               </div>
+
+              <p className="service-area-note">
+                {SERVICE_AREA_TRAVEL_NOTE}
+              </p>
 
               <a href="/service-area" className="btn btn-accent">Check Service for Your Location</a>
             </div>
 
-            <div className="map-visual reveal-up stagger-delay-1" style={{padding: '0', minHeight: '420px', background: 'none', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--color-border)', boxShadow: 'var(--shadow-md)'}}>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186450.77196024194!2d-90.52843484218753!3d43.33694086438865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87fd40fb7e248b11%3A0xb3e164cf38a0670!2sRichland%20Center%2C%20WI%2053581!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style={{border: '0', width: '100%', height: '100%', minHeight: '420px', display: 'block'}}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Driftless Area Pest Control Service Map - Richland Center, WI">
-              </iframe>
-            </div>
+            <ServiceAreaMap className="reveal-up stagger-delay-1" />
           </div>
         </div>
       </section>
@@ -725,7 +708,7 @@ export default function HomePage({ heroSlides, heroOnly = false }: HomePageProps
 
             <details className="faq-item" open>
               <summary>Which areas of Wisconsin do you cover?</summary>
-              <p>We serve southwestern and central Wisconsin, including Richland, Sauk, Vernon, Crawford, Grant, Iowa, Lafayette, Juneau, and neighboring counties in the Driftless Region.</p>
+              <p>We serve southwestern and central Wisconsin, including Richland, Sauk, Vernon, Crawford, Grant, Iowa, Lafayette, Juneau, La Crosse, Monroe, Columbia, Jackson, Adams, Dane, Trempealeau, and Green counties.</p>
             </details>
 
             <details className="faq-item" open>

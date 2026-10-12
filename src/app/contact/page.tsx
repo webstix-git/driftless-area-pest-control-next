@@ -6,12 +6,12 @@ import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import PageCTA from "@/components/PageCTA";
 import ServiceConversionForm from "@/components/ServiceConversionForm";
+import ServiceAreaMap from "@/components/ServiceAreaMap";
+import { SERVICE_COUNTIES } from "@/lib/service-area";
 
-const mapEmbedSrc =
-  "https://maps.google.com/maps?q=18617+County+Highway+A,+Wisconsin&t=&z=14&ie=UTF8&iwloc=&output=embed";
-
-const directionsHref =
-  "https://www.google.com/maps/dir/?api=1&destination=18617+County+Highway+A,+Wisconsin";
+const serviceAreaDisplay = `${SERVICE_COUNTIES.slice(0, -1).join(", ")}, and ${
+  SERVICE_COUNTIES[SERVICE_COUNTIES.length - 1]
+} counties, Wisconsin`;
 
 export default function ContactPage() {
   return (
@@ -48,14 +48,9 @@ export default function ContactPage() {
                     </svg>
                   </span>
                   <div>
-                    <span className="contact-detail-label">Address</span>
-                    <a
-                      href={directionsHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="contact-detail-value"
-                    >
-                      {CONTACT.addressDisplay}
+                    <span className="contact-detail-label">Service Area</span>
+                    <a href="/service-area" className="contact-detail-value">
+                      {serviceAreaDisplay}
                     </a>
                   </div>
                 </li>
@@ -96,33 +91,16 @@ export default function ContactPage() {
 
             <div className="content-card contact-map-card">
               <div className="contact-map-header">
-                <h3>Directions</h3>
-                <a
-                  href={directionsHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-map-link"
-                >
-                  Open in Google Maps
+                <h3>Service Area Map</h3>
+                <a href="/service-area" className="contact-map-link">
+                  View Service Area
                   <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
+                    <line x1="5" x2="19" y1="12" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
                   </svg>
                 </a>
               </div>
-              <div className="contact-map-frame">
-                <iframe
-                  src={mapEmbedSrc}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Directions to Driftless Area Pest Control - 18617 Cty Hwy A, Wisconsin"
-                />
-              </div>
+              <ServiceAreaMap className="contact-map-frame" />
             </div>
           </div>
         </div>

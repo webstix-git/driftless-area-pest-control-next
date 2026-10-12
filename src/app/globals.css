@@ -2989,21 +2989,85 @@
       border: 1px solid var(--color-border);
     }
 
-    .map-visual {
-      background-color: var(--color-forest-dark);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      color: #ffffff;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-    }
-
     .map-svg-mock {
       max-width: 100%;
       height: auto;
       margin: 0 auto 1.5rem auto;
+    }
+
+    .service-area-note,
+    .area-content .service-area-note,
+    .page-intro .service-area-note {
+      margin: 0 0 2rem;
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-md);
+      border: 1px solid color-mix(in srgb, var(--color-amber-accent) 22%, white);
+      background: var(--color-amber-light);
+      color: var(--color-charcoal-text);
+      font-size: 0.98rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .service-area-page .page-intro .service-area-note {
+      margin: 1.5rem 0 0;
+    }
+
+    .service-map-frame {
+      position: relative;
+      height: 570px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-md);
+      background: var(--color-border);
+    }
+
+    /* The map is fixed so the county labels stay aligned with it. */
+    .service-map-frame iframe {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      pointer-events: none;
+    }
+
+    .service-map-labels {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .service-map-label {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      color: #000000;
+      font-size: 0.85rem;
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
+      text-shadow:
+        0 0 2px #ffffff,
+        0 0 3px #ffffff,
+        0 0 4px #ffffff,
+        0 0 6px #ffffff;
+    }
+
+    .service-map-pin {
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 2px);
+      width: 18px;
+      height: 26px;
+      transform: translateX(-50%);
+      filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.35));
+    }
+
+    .service-map-frame.contact-map-frame {
+      border-radius: var(--radius-md);
+      box-shadow: none;
     }
 
     /* ==========================================================================
@@ -5639,22 +5703,6 @@
       color: var(--color-amber-hover);
     }
 
-    .contact-map-frame {
-      overflow: hidden;
-      border-radius: var(--radius-md, 0.5rem);
-      border: 1px solid var(--color-border);
-      min-height: 260px;
-      height: 260px;
-      background: var(--color-border);
-    }
-
-    .contact-map-frame iframe {
-      width: 100%;
-      height: 100%;
-      display: block;
-      border: 0;
-    }
-
     .team-page .team-members {
       background-color: #ffffff;
     }
@@ -7748,8 +7796,18 @@
         max-height: none;
       }
 
-      .map-visual {
-        min-height: 280px !important;
+      .service-map-frame,
+      .service-map-frame.contact-map-frame {
+        height: 380px;
+      }
+
+      .service-map-label {
+        font-size: 0.62rem;
+      }
+
+      .service-map-pin {
+        width: 13px;
+        height: 19px;
       }
 
       .service-area-local-photo {

@@ -3,7 +3,9 @@ import SiteShell from "@/components/SiteShell";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import PageCTA from "@/components/PageCTA";
+import ServiceAreaMap from "@/components/ServiceAreaMap";
 import { CONTACT } from "@/lib/contact";
+import { SERVICE_COUNTIES } from "@/lib/service-area";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -72,24 +74,6 @@ const industries = [
     iconSrc: "/images/icons/industry-retail.png",
     iconAlt: "Retail and offices",
   },
-];
-
-const counties = [
-  "Richland County",
-  "Sauk County",
-  "Vernon County",
-  "Crawford County",
-  "Grant County",
-  "Iowa County",
-  "Lafayette County",
-  "Juneau County",
-  "La Crosse County",
-  "Monroe County",
-  "Columbia County",
-  "Jackson County",
-  "Adams County",
-  "Western Dane County",
-  "Trempealeau County",
 ];
 
 export default function AboutPage() {
@@ -347,9 +331,9 @@ export default function AboutPage() {
               </p>
 
               <div className="county-tags">
-                {counties.map((county) => (
+                {SERVICE_COUNTIES.map((county) => (
                   <span key={county} className="county-tag">
-                    {county}
+                    {county} County
                   </span>
                 ))}
               </div>
@@ -359,35 +343,7 @@ export default function AboutPage() {
               </a>
             </div>
 
-            <div
-              className="map-visual reveal-up stagger-delay-1"
-              style={{
-                padding: 0,
-                minHeight: "420px",
-                background: "none",
-                borderRadius: "var(--radius-lg)",
-                overflow: "hidden",
-                border: "1px solid var(--color-border)",
-                boxShadow: "var(--shadow-md)",
-              }}
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186450.77196024194!2d-90.52843484218753!3d43.33694086438865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87fd40fb7e248b11%3A0xb3e164cf38a0670!2sRichland%20Center%2C%20WI%2053581!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style={{
-                  border: 0,
-                  width: "100%",
-                  height: "100%",
-                  minHeight: "420px",
-                  display: "block",
-                }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Driftless Area Pest Control Service Map - Richland Center, WI"
-              />
-            </div>
+            <ServiceAreaMap className="reveal-up stagger-delay-1" />
           </div>
         </div>
       </section>

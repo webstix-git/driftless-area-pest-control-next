@@ -3,31 +3,15 @@ import SiteShell from "@/components/SiteShell";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import PageCTA from "@/components/PageCTA";
+import ServiceAreaMap from "@/components/ServiceAreaMap";
+import { SERVICE_AREA_TRAVEL_NOTE, SERVICE_COUNTIES } from "@/lib/service-area";
 
 export const metadata: Metadata = {
   title: "Service Area",
   description:
-    "Commercial and agricultural pest control across Richland, Sauk, Vernon, Crawford, Grant, Iowa, and neighboring southwestern Wisconsin counties.",
+    "Commercial and agricultural pest control across Richland, Sauk, Vernon, Crawford, Grant, Iowa, Dane, Green, and neighboring southwestern Wisconsin counties.",
   alternates: { canonical: "/service-area" },
 };
-
-const counties = [
-  "Richland County",
-  "Sauk County",
-  "Vernon County",
-  "Crawford County",
-  "Grant County",
-  "Iowa County",
-  "Lafayette County",
-  "Juneau County",
-  "La Crosse County",
-  "Monroe County",
-  "Columbia County",
-  "Jackson County",
-  "Adams County",
-  "Western Dane County",
-  "Trempealeau County",
-];
 
 const localBenefits = [
   {
@@ -110,40 +94,17 @@ export default function ServiceAreaPage() {
                 the region and plan service around how your site actually runs.
               </p>
               <div className="county-list">
-                {counties.map((county) => (
+                {SERVICE_COUNTIES.map((county) => (
                   <span key={county} className="county-tag">
-                    {county}
+                    {county} County
                   </span>
                 ))}
               </div>
+              <p className="service-area-note">
+                {SERVICE_AREA_TRAVEL_NOTE}
+              </p>
             </div>
-            <div
-              className="reveal-up stagger-delay-1"
-              style={{
-                minHeight: "420px",
-                borderRadius: "var(--radius-lg)",
-                overflow: "hidden",
-                border: "1px solid var(--color-border)",
-                boxShadow: "var(--shadow-md)",
-              }}
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186450.77196024194!2d-90.52843484218753!3d43.33694086438865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87fd40fb7e248b11%3A0xb3e164cf38a0670!2sRichland%20Center%2C%20WI%2053581!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style={{
-                  border: 0,
-                  width: "100%",
-                  height: "100%",
-                  minHeight: "420px",
-                  display: "block",
-                }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Driftless Area Pest Control Service Map - Richland Center, WI"
-              />
-            </div>
+            <ServiceAreaMap className="reveal-up stagger-delay-1" />
           </div>
         </section>
 
