@@ -11,7 +11,7 @@ import { SERVICE_COUNTIES } from "@/lib/service-area";
 
 const serviceAreaDisplay = `${SERVICE_COUNTIES.slice(0, -1).join(", ")}, and ${
   SERVICE_COUNTIES[SERVICE_COUNTIES.length - 1]
-} counties, Wisconsin`;
+} counties`;
 
 export default function ContactPage() {
   return (
