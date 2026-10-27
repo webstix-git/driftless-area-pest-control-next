@@ -6,5 +6,7 @@ export const CONTACT = {
   emailDomain: "gmail.com",
   emailDisplay: "driftlessareapestcontrol@gmail.com",
   emailHref: "mailto:driftlessareapestcontrol@gmail.com",
-  addressDisplay: "18617 Cty Hwy A, Wisconsin",
+  addressStreet: "18617 CTH A",
+  addressLocality: "Richland Center, WI 53581",
+  addressDisplay: "18617 CTH A, Richland Center, WI 53581",
 } as const;

@@ -48,6 +48,22 @@ export default function ContactPage() {
                     </svg>
                   </span>
                   <div>
+                    <span className="contact-detail-label">Address</span>
+                    <span className="contact-detail-value">
+                      {CONTACT.addressStreet},
+                      <br />
+                      {CONTACT.addressLocality}
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <span className="contact-detail-icon" aria-hidden="true">
+                    <svg className="icon" viewBox="0 0 24 24">
+                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </span>
+                  <div>
                     <span className="contact-detail-label">Service Area</span>
                     <a href="/service-area" className="contact-detail-value">
                       {serviceAreaDisplay}
