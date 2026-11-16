@@ -3,6 +3,7 @@ import SiteShell from "@/components/SiteShell";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import PageCTA from "@/components/PageCTA";
+import FaqStructuredData from "@/components/FaqStructuredData";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
@@ -11,6 +12,29 @@ export const metadata: Metadata = {
     "Answers for homeowners about Driftless Area Pest Control’s focus on commercial, industrial, and agricultural pest management in Wisconsin.",
   alternates: { canonical: "/homeowner-faq" },
 };
+
+const homeownerFaqSchema = [
+  {
+    name: "Do you serve homes?",
+    text: "Our primary focus is commercial, industrial, and agricultural clients. If you manage a farm, processing plant, warehouse, or similar facility in our service area, we are set up to help.",
+  },
+  {
+    name: "Can homeowners still call with questions?",
+    text: "Yes. You can call 608-604-9190 with questions. We will let you know whether your need fits our commercial and agricultural service model or point you toward a better next step.",
+  },
+  {
+    name: "What areas do you cover?",
+    text: "We serve southwestern and central Wisconsin, including Richland, Sauk, Vernon, Crawford, Grant, Iowa, Lafayette, Juneau, and neighboring counties in the Driftless Region.",
+  },
+  {
+    name: "What should I do if I see rodents or insects?",
+    text: "Note where activity appears, keep food sealed, and reduce clutter that creates harborage. For facility or farm sites in our area, request an inspection so we can identify entry points and pressure sources.",
+  },
+  {
+    name: "How do I request service for a farm or business?",
+    text: "Use Request a Free Inspection or call 608-604-9190. Tell us your facility type, location, and urgency so our team can follow up quickly.",
+  },
+];
 
 const faqs = [
   {
@@ -46,6 +70,7 @@ const faqs = [
 export default function HomeownerFaqPage() {
   return (
     <SiteShell>
+      <FaqStructuredData faqs={homeownerFaqSchema} />
       <PageHero
         title="Homeowner FAQ"
         description="Helpful answers for common homeowner questions, plus clarity on the commercial and agricultural work we specialize in. If you manage a farm or facility, we can help you take the next step."
