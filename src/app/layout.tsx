@@ -67,7 +67,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
-      <head />
+      <head>
+        <script
+          defer
+          data-site="9956a8540f90413b"
+          data-endpoint="https://ywwxvriolxwuqcwjaluh.supabase.co/functions/v1/track-event"
+          src="https://midwestfamilyportal.com/track.js"
+        />
+      </head>
       <body className={inter.className}>
         {gaMeasurementId ? (
           <>
